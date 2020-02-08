@@ -12,16 +12,14 @@ class Pesantren extends Model
     ];
     public $timestamps = true;
 
-    public function kategori()
+    public function provinsi()
     {
-        return $this->belongsTo('App\Kategori', 'id_provinsi');
+        return $this->belongsTo('App\Provinsi', 'id_provinsi');
     }
-
     public function user()
     {
         return $this->belongsTo('App\User', 'id_user');
-    }
-
+    }   
     public function getRouteKeyName()
     {
         return 'slug';

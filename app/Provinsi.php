@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Session;
 
 class Provinsi extends Model
 {
@@ -11,7 +12,7 @@ class Provinsi extends Model
 
     public function pesantren()
     {
-        return $this->hasMany('App\Pesantren', 'id_pesantren');
+        return $this->hasMany('App\Pesantren', 'id_provinsi');
     }
 
     public static function boot()

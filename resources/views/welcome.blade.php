@@ -58,11 +58,11 @@
                                                 <ul class="submenu">
                                                 @foreach($provinsi as $data)
                                                     <li>
-                                                        <a href="/blog/{{ $data->slug}}">{{ $data->nama_provinsi}}</a>
+                                                        <a href="/provinsi/{{ $data->slug}}">{{ $data->nama_provinsi}}</a>
                                                     </li>
                                                 @endforeach 
                                                 </ul>
-                                            <li><a href="contact.html">Gallery</a></li>
+                                            <li><a href="gallery">Gallery</a></li>
                                             </li>
                                         </ul>
                                     </nav>

@@ -16,29 +16,24 @@
     Route::get('/contact', function () {
         return view('contact'); 
     });
-    Route::get('/single', function () {
-        return view('singleblog'); 
-    });
-    Route::get('/blog/{kategori}', 'FrontendController@blog');
-    route::get('singleblog/{artikel}', 'FrontendController@singleblog');
-
+   
+  
+    Route::get('/provinsi/{provinsi}', 'FrontendController@provinsi');   
+    Route::get('/blog/{blog}', 'FrontendController@blog');   
+    route::get('/singleblog/{pesantren}', 'FrontendController@singleblog');
+    Route::get('/gallery', 'FrontendController@gallery');   
+    
 Auth::routes();
 
-Route::group(['prefix' => 'backend', 'middleware' => ['auth', 'role:Admin']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     
        
         Route::resource('pesantren', 'PesantrenController');
         Route::resource('provinsi', 'ProvinsiController');      
        Route::resource('kategori', 'KategoriController');
        Route::resource('artikel', 'ArtikelController');
-       Route::resource('kontak', 'KontakController');
-
+       Route::resource('gallery', 'GalleryController');
 });
-        Route::resource('pesantren', 'PesantrenController');
-        Route::resource('provinsi', 'ProvinsiController'); 
-        Route::resource('kategori', 'KategoriController');
-        Route::resource('artikel', 'ArtikelController');
-        Route::resource('kontak', 'KontakController');
 
 Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
