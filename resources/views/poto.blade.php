@@ -122,15 +122,10 @@
 
     
     <!-- about_area_start  -->
-    <section class="blog_area single-post-area section-padding">
-      <div class="container">
-         <div class="row">
-         @foreach($gallery as $data)
-            <div class="col-lg-8 posts-list">
-               <div class="single-post"> 
-               <div class="service_area">
+    <div class="service_area">
         <div class="container">
             <div class="row">
+           
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-90">
                         <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
@@ -138,25 +133,32 @@
                     </div>
                 </div>
             </div>
-                         <div class="case_heading">
-                         <h3> {{$data->judul}}</h3>               
-                         <div class="feature-img">
-                  <img src="../assets/img/ponpes/{{ $data->foto }}" style="width:50%; "alt="">
-                  </div>
-                         <div class="quote-wrapper">
-                        <div class="quotes">
-                           MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                           should have to spend money on boot camp when you can get the MCSE study materials yourself at
-                           a fraction of the camp price. However, who has the willpower to actually sit through a
-                           self-imposed MCSE training.
-                        </div>
-                     </div>
-                     <br>
-                                    </div>
-                                </div>
+            @foreach($gallery as $data)
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".5s">
+                        <div class="service_icon_wrap text-center">
+                            <div class="service_icon ">
+                            <img src="../assets/img/ponpes/{{ $data->foto }}" style="width:50%; "alt="">
                             </div>
-                            @endforeach
+                        </div>
+                        
+                        <div class="info text-center">
+                            <span>{{$data->judul}}</span>
+                        </div>
+                        <div class="service_content">
+                            <ul>
+                                <li> {{$data->konten}} </li>
+                               
+                            </ul>
+                            <div class="apply_btn">
+                                <button class="boxed-btn3" type="submit">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            @endforeach
         </div>
     </div>
     <!-- about_area_end  -->

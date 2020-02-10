@@ -52,7 +52,7 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="/">home</a></li>
+                                              <li><a href="/">home</a></li>
                                           
                                             <li><a href="#">Pondok Pesantren <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -62,7 +62,7 @@
                                                     </li>
                                                 @endforeach 
                                                 </ul>
-                                            <li><a href="gallery">Gallery</a></li>
+                                            <li><a href="/gallery">Gallery</a></li>
                                             </li>
                                         </ul>
                                     </nav>
