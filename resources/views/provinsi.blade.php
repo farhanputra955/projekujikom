@@ -30,6 +30,26 @@
     .bradcam_bg_2 {
         background-image: url(/assets/baru/img/banner/2.jpg);
     }
+ 
+        h1, h2, h3, h4, h5 {
+    font-family: fantasy;
+    color: rgb(255, 255, 255);
+}
+    .footer .socail_links ul li a {
+        color: #f91842 !important;
+        border: 1px solid #040e27;
+    }
+    .header-area .main-header-area .main-menu ul li a {
+    color: #fff;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: inline-block;
+    padding: 35px 0px 35px 0px;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    text-transform: capitalize;
+}
     </style>
 
 </head>
@@ -67,7 +87,17 @@
                                                     </li>
                                                 @endforeach 
                                                 </ul>
+                                                <li><a href="/berdoa"> Doa Harian <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                @foreach($berdoa as $data)
+                                                    <li>
+                                                        <a href="/berdoa/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                    </li>
+                                                @endforeach 
+                                                
+                                                </ul>
                                             <li><a href="/gallery">Gallery</a></li>
+                                            <li><a href="/kontak">Kontak</a></li>
                                             </li>
                                         </ul>
                                     </nav>
@@ -134,7 +164,7 @@
                         <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s"></p>
                         <div class="about_list">
                             <div class="about_btn wow fadeInRight" data-wow-duration="1.3s" data-wow-delay=".5s">
-                                <a class="boxed-btn3" href="/singleblog/{{$data->slug}}">Sekilasnya</a>
+                                <a class="boxed-btn3" href="/pondok/{{$data->slug}}">Sekilasnya</a>
                             </div>
                             <br>
                             <br>
@@ -164,9 +194,9 @@
                                 </a>
                             </div>
                             <p>
-                                finloan@support.com <br>
-                                +10 873 672 6782 <br>
-                                600/D, Green road, NewYork
+                                farhanputra955@gmail.com <br>
+                               0895 3201 02320 <br>
+                                Bandung City, Indonesia
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -178,11 +208,6 @@
                                     <li>
                                         <a href="#">
                                             <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
                                         </a>
                                     </li>
                                     <li>
@@ -234,20 +259,6 @@
                             <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
                                 luckily.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
-            <div class="container">
-                <div class="footer_border"></div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
                     </div>
                 </div>
             </div>

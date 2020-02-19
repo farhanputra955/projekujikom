@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js')}}" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Gallery</title>
+    <title>Berdoa</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,37 +13,39 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/nice-select.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/gijgo.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/slick.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/slicknav.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/style.css')}}">
-    <!-- <link rel="stylesheet" href="css/responsive.css')}}"> -->
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/gijgo.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/animate.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/slicknav.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/style.css')}}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <style>
-    .bradcam_bg_2 {
-        background-image: url(/assets/baru/img/banner/2.jpg);
+        .bradcam_bg_3 {
+    background-image: url(/assets/baru/img/banner/2.jpg);
     }
-    .single-post-area .quote-wrapper {
-        padding: 8px;
-        line-height: 1;
-        background: rgba(0, 29, 56, 0.8);
-        font-style: normal;
-    }
-    .single-post-area .quotes {
-    background: #fff;
-    padding: 13px 16px 19px 18px;
-    border-left: 2px solid;
+
+    .blog_details p {
+    margin-bottom: 30px;
     font-family: cursive;
+    }
+
+    h1, h2, h3, h4, h5 {
+    font-family: fantasy;
+    color: rgb(255, 255, 255);
+    }
+
+    .blog_right_sidebar .single_sidebar_widget {
+    background: #455A64;
+    padding: 30px;
+    margin-bottom: 30px;
 }
     </style>
-
 </head>
 
 <body>
@@ -79,20 +81,23 @@
                                                     </li>
                                                 @endforeach 
                                                 </ul>
+                                                <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                @foreach($doaharian2 as $data)
+                                                    <li>
+                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                    </li>
+                                                @endforeach
+                                                
+                                                </ul>
                                             <li><a href="/gallery">Gallery</a></li>
+                                            <li><a href="/kontak">Kontak</a></li>
                                             </li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                <div class="Appointment">
-                                    <div class="phone_num d-none d-xl-block">
-                                    </div>
-                                    <div class="d-none d-lg-block">
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
@@ -104,15 +109,14 @@
         </div>
     </header>
     <!-- header-end -->
-    
+  
       <!-- bradcam_area  -->
-      <div class="bradcam_area bradcam_bg_2">
+      <div class="bradcam_area bradcam_bg_3">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>
-                       </h3>
+                        <h3>Doa Harian</h3>
                     </div>
                 </div>
             </div>
@@ -120,53 +124,75 @@
     </div>
     <!--/ bradcam_area  -->
 
-    
-    <!-- about_area_start  -->
-    <div class="service_area">
+
+    <!--================Blog Area =================-->
+    <section class="blog_area section-padding">
         <div class="container">
             <div class="row">
-           
-                <div class="col-lg-12">
-                    <div class="section_title text-center mb-90">
-                        <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
-                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Gallery Pesantren</h3>
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        <article class="blog_item">
+                       
+                            <div class="blog_details">
+                                <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
+                                    <h4> {{$doaharian->judul}}</h4>
+                                </div>  
+                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$doaharian->arab}}</p>
+                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$doaharian->latin}}</p>
+                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">Artinya : <br> "{{$doaharian->arti}}</p>
+                            </div>
+                      
+                        </article>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Recent Post</h3>
+                            <div class="media post_item">
+                                <img src="img/post/post_1.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>From life was you fish...</h3>
+                                    </a>
+                                    <p>January 12, 2019</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="img/post/post_2.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>The Amazing Hubble</h3>
+                                    </a>
+                                    <p>02 Hours ago</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="img/post/post_3.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Astronomy Or Astrology</h3>
+                                    </a>
+                                    <p>03 Hours ago</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="img/post/post_4.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Asteroids telescope</h3>
+                                    </a>
+                                    <p>01 Hours ago</p>
+                                </div>
+                            </div>
+                        </aside>
                     </div>
                 </div>
             </div>
-            @foreach($gallery as $data)
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".5s">
-                        <div class="service_icon_wrap text-center">
-                            <div class="service_icon ">
-                            <img src="../assets/img/ponpes/{{ $data->foto }}" style="width:50%; "alt="">
-                            </div>
-                        </div>
-                        
-                        <div class="info text-center">
-                            <span>{{$data->judul}}</span>
-                        </div>
-                        <div class="service_content">
-                            <ul>
-                                <li> {{$data->konten}} </li>
-                               
-                            </ul>
-                            <div class="apply_btn">
-                                <button class="boxed-btn3" type="submit">Apply Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
         </div>
-    </div>
-    <!-- about_area_end  -->
-  
+    </section>
+    <!--================Blog Area =================-->
 
-    <!-- testimonial_area  -->
-  
-    <!-- /testimonial_area  -->
     <!-- footer start -->
     <footer class="footer">
         <div class="footer_top">
@@ -270,7 +296,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!--/ footer end  -->
-    <!-- link that opens popup -->
+
+
     <!-- JS here -->
     <script src="{{ asset ('assets/baru/js/vendor/modernizr-3.5.0.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/vendor/jquery-1.12.4.min.js')}}"></script>
@@ -290,9 +317,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ asset ('assets/baru/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/plugins.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/gijgo.min.js')}}"></script>
-    <script src="{{ asset ('assets/baru/js/slick.min.js')}}"></script>
-
-
 
     <!--contact js-->
     <script src="{{ asset ('assets/baru/js/contact.js')}}"></script>
@@ -301,8 +325,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ asset ('assets/baru/js/jquery.validate.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/mail-script.js')}}"></script>
 
-
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
-</body>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
 
+        });
+    </script>
+</body>
 </html>

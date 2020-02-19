@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sekilasnya</title>
+    <title>Detail</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,21 +35,8 @@
     </style>
 
     <style>
-        body {
-    font-family: cursive;
-    font-weight: normal;
-    font-style: normal;
-}
-    </style>
-
-    <style>
-        p {
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 32px;
-    color: #7A838B;
-    margin-bottom: 13px;
-    font-family: sans-serif;
+    p {
+        font-family: monospace;
 }
     </style>
     <style>
@@ -83,7 +70,7 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="/">home</a></li>
+                                              <li><a href="/">home</a></li>
                                           
                                             <li><a href="#">Pondok Pesantren <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -92,18 +79,17 @@
                                                         <a href="/provinsi/{{ $data->slug}}">{{ $data->nama_provinsi}}</a>
                                                     </li>
                                                 @endforeach 
-                                                
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($doaharian as $data)
+                                                @foreach($berdoa as $data)
                                                     <li>
-                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/berdoa/{{ $data->slug}}">{{ $data->judul}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
                                                 </ul>
-                                            <li><a href="/foto">Gallery</a></li>
+                                            <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
                                         </ul>
@@ -139,7 +125,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Sekilas</h3>
+                        <h3></h3>
                     </div>
                 </div>
             </div>
@@ -152,17 +138,19 @@
     <div class="about_area plus_padding">
         <center>
         <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
-                <h3>Sekilasnya</h3>
+                <h3>Detail</h3>
         </div>
          </center>
+         <br>
+         <br>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
                 <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
-                <h4> {{$pesantren->judul}}</h4>
+                <h4> {{$gallery->judul}}</h4>
                         </div>
                     <div class="about_img wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                    <img class="img-fluid" src="../assets/img/ponpes/{{ $pesantren->foto }}" alt="">
+                    <img class="img-fluid" src="../assets/img/ponpes/{{ $gallery->foto }} "height="200px" alt="">
                     </div>
                 </div>
                    
@@ -172,38 +160,15 @@
                         <br>
                         <br> 
                          <br>              
-                        <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s"> &nbsp;&nbsp;&nbsp;&nbsp;{{ $pesantren->konten}}</p>
+                        <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s"> {{ $gallery->konten}}</p>
                         <br>
-                        <div class="d-sm-flex justify-content-between text-left">                       
-                            <p class="like-info"><span class="align-middle"><i class=""></i></span>   
-                            <div class="d-none d-lg-block">
-                            <a class="boxed-btn4" href="">Selengkapnya</a>
-                        </div>
+                       
                     </div>
                 </div>
                 
                 <br>
                 <div class="col-lg-10">
-                <div class="about_btn wow fadeInRight" data-wow-duration="1.3s" data-wow-delay=".5s">
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class=""></i></span>
-                        <div class="media-body">
-                        <li><i class="ti-home"></i>  :  {{$pesantren->alamat}}</h5></li>            
-                        </div>
-                    </div>
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class=""></i></span>
-                        <div class="media-body">
-                        <li><i class="ti-tablet"></i>    :  {{$pesantren->telepon}}</h5></li>
-                        </div>
-                    </div>
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class=""></i></span>
-                        <div class="media-body">
-                        <li><i class="ti-email"></i>    :  {{$pesantren->email}}</h5></li>
-                        </div>
-                    </div>
-                    </div>
+                 
             </div>
         </div>
     </div>

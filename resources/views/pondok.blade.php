@@ -83,7 +83,7 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="/">home</a></li>
+                                              <li><a href="/">home</a></li>
                                           
                                             <li><a href="#">Pondok Pesantren <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -92,25 +92,23 @@
                                                         <a href="/provinsi/{{ $data->slug}}">{{ $data->nama_provinsi}}</a>
                                                     </li>
                                                 @endforeach 
-                                                
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($doaharian as $data)
+                                                @foreach($berdoa as $data)
                                                     <li>
-                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/berdoa/{{ $data->slug}}">{{ $data->judul}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
                                                 </ul>
-                                            <li><a href="/foto">Gallery</a></li>
+                                            <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                         
                           <div class="col-12">
                             </div>
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">

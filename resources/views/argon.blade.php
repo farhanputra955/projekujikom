@@ -103,24 +103,37 @@
           <a class=" nav-link active "> <i class="ni ni-tv-2 text-primary"></i> MENU</a> 
           <li class="nav-item">
             <a class="nav-link " href="artikel">
-              <i class="ni ni-single-02 text-yellow"></i> Artikel
+             Artikel
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="kategori">
-              <i class="ni ni-bullet-list-67 text-red"></i> Kategori
+              Kategori
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="pesantren">
-              <i class="ni ni-planet text-blue"></i> Pesantren
+               Pesantren
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="provinsi">
-              <i class="ni ni-pin-3 text-orange"></i> Provinsi
+               Provinsi
             </a>
           </li>
+         
+          <li class="nav-item">
+            <a class="nav-link " href="berdoa">
+              Doa Harian
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="foto">
+              Gallery
+            </a>
+          </li>
+         
          
         </ul>
         <!-- Divider -->

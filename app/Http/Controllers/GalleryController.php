@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Gallery;
 use App\Kategori;
+use Session;
+use Illuminate\Support\Facades\File;
+use Illuminate\Queue\Jobs\SyncJob;
 
 class GalleryController extends Controller
 {
@@ -34,6 +37,7 @@ class GalleryController extends Controller
     {
         $gallery = new gallery;
         $gallery->judul = $request->judul;
+        $gallery->slug = Str::slug($request->judul, '-');
         $gallery->konten = $request->konten;
         # Foto
         if ($request->hasFile('foto')) {
@@ -90,6 +94,7 @@ class GalleryController extends Controller
 
         $gallery = gallery::findOrFail($id);
         $gallery->judul = $request->judul;
+        $gallery->slug = Str::slug($request->judul, '-');
         $gallery->konten = $request->konten;
         $gallery->id_user = Auth::user()->id;
         // foto

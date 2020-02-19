@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js')}}" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sekilasnya</title>
+    <title>Berdoa</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,49 +13,37 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/nice-select.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/gijgo.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/slick.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/slicknav.css')}}">
-
-    <link rel="stylesheet" href="{{ asset ('assets/baru/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/gijgo.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/animate.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/slicknav.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/baru/css/style.css')}}">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <style>
-        h1, h2, h3, h4, h5 {
+        .bradcam_bg_3 {
+    background-image: url(/assets/baru/img/banner/2.jpg);
+    }
+
+    .blog_details p {
+    margin-bottom: 30px;
+    font-family: cursive;
+    }
+
+    h1, h2, h3, h4, h5 {
     font-family: fantasy;
     color: rgb(255, 255, 255);
-}
-    </style>
+    }
 
-    <style>
-        body {
-    font-family: cursive;
-    font-weight: normal;
-    font-style: normal;
-}
-    </style>
-
-    <style>
-        p {
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 32px;
-    color: #7A838B;
-    margin-bottom: 13px;
-    font-family: sans-serif;
-}
-    </style>
-    <style>
-   .footer .socail_links ul li a {
-    color: #f91842 !important;
-    border: 1px solid #040e27;
+    .blog_right_sidebar .single_sidebar_widget {
+    background: #455A64;
+    padding: 30px;
+    margin-bottom: 30px;
 }
     </style>
 </head>
@@ -83,7 +71,7 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="/">home</a></li>
+                                              <li><a href="/">home</a></li>
                                           
                                             <li><a href="#">Pondok Pesantren <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -92,35 +80,24 @@
                                                         <a href="/provinsi/{{ $data->slug}}">{{ $data->nama_provinsi}}</a>
                                                     </li>
                                                 @endforeach 
-                                                
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($doaharian as $data)
+                                                @foreach($berdoa as $data)
                                                     <li>
-                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/berdoa/{{ $data->slug}}">{{ $data->judul}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
                                                 </ul>
-                                            <li><a href="/foto">Gallery</a></li>
+                                            <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                         
-                          <div class="col-12">
-                            </div>
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                <div class="Appointment">
-                                    <div class="phone_num d-none d-xl-block">
-                                     
-                                    </div>
-                                   
-                                </div>
-                            </div>
+                            
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
@@ -132,14 +109,14 @@
         </div>
     </header>
     <!-- header-end -->
-
+  
       <!-- bradcam_area  -->
-      <div class="bradcam_area bradcam_bg_2">
+      <div class="bradcam_area bradcam_bg_3">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Sekilas</h3>
+                        <h3>Berdoa</h3>
                     </div>
                 </div>
             </div>
@@ -147,70 +124,74 @@
     </div>
     <!--/ bradcam_area  -->
 
-    
-    <!-- about_area_start  --> 
-    <div class="about_area plus_padding">
-        <center>
-        <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
-                <h3>Sekilasnya</h3>
-        </div>
-         </center>
+
+    <!--================Blog Area =================-->
+    <section class="blog_area section-padding">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
-                <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
-                <h4> {{$pesantren->judul}}</h4>
-                        </div>
-                    <div class="about_img wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                    <img class="img-fluid" src="../assets/img/ponpes/{{ $pesantren->foto }}" alt="">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        <article class="blog_item">
+                        @foreach($berdoa as $data)
+                            <div class="blog_details">
+                                <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
+                                    <h4> {{$data->judul}}</h4>
+                                </div>  
+                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$data->arab}}</p>
+                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$data->latin}}</p>
+                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">Artinya : <br> "{{$data->arti}}</p>
+                            </div>
+                            @endforeach
+                        </article>
                     </div>
                 </div>
-                   
-                <div class="col-lg-6 col-md-6">
-                    <div class="about_info pl-68">   
-                        <br> 
-                        <br>
-                        <br> 
-                         <br>              
-                        <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s"> &nbsp;&nbsp;&nbsp;&nbsp;{{ $pesantren->konten}}</p>
-                        <br>
-                        <div class="d-sm-flex justify-content-between text-left">                       
-                            <p class="like-info"><span class="align-middle"><i class=""></i></span>   
-                            <div class="d-none d-lg-block">
-                            <a class="boxed-btn4" href="">Selengkapnya</a>
-                        </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Recent Post</h3>
+                            <div class="media post_item">
+                                <img src="img/post/post_1.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>From life was you fish...</h3>
+                                    </a>
+                                    <p>January 12, 2019</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="img/post/post_2.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>The Amazing Hubble</h3>
+                                    </a>
+                                    <p>02 Hours ago</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="img/post/post_3.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Astronomy Or Astrology</h3>
+                                    </a>
+                                    <p>03 Hours ago</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="img/post/post_4.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Asteroids telescope</h3>
+                                    </a>
+                                    <p>01 Hours ago</p>
+                                </div>
+                            </div>
+                        </aside>
                     </div>
                 </div>
-                
-                <br>
-                <div class="col-lg-10">
-                <div class="about_btn wow fadeInRight" data-wow-duration="1.3s" data-wow-delay=".5s">
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class=""></i></span>
-                        <div class="media-body">
-                        <li><i class="ti-home"></i>  :  {{$pesantren->alamat}}</h5></li>            
-                        </div>
-                    </div>
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class=""></i></span>
-                        <div class="media-body">
-                        <li><i class="ti-tablet"></i>    :  {{$pesantren->telepon}}</h5></li>
-                        </div>
-                    </div>
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class=""></i></span>
-                        <div class="media-body">
-                        <li><i class="ti-email"></i>    :  {{$pesantren->email}}</h5></li>
-                        </div>
-                    </div>
-                    </div>
             </div>
         </div>
-    </div>
-
-                    <!-- testimonial_area  -->
-    
-    <!-- /testimonial_area  -->
+    </section>
+    <!--================Blog Area =================-->
 
     <!-- footer start -->
     <footer class="footer">
@@ -225,9 +206,9 @@
                                 </a>
                             </div>
                             <p>
-                                farhanputra955@gmail.com <br>
-                               0895 3201 02320 <br>
-                                Bandung City, Indonesia
+                                finloan@support.com <br>
+                                +10 873 672 6782 <br>
+                                600/D, Green road, NewYork
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -239,6 +220,11 @@
                                     <li>
                                         <a href="#">
                                             <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
                                         </a>
                                     </li>
                                     <li>
@@ -294,10 +280,24 @@
                 </div>
             </div>
         </div>
+        <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
     <!--/ footer end  -->
 
-    <!-- link that opens popup -->
+
     <!-- JS here -->
     <script src="{{ asset ('assets/baru/js/vendor/modernizr-3.5.0.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/vendor/jquery-1.12.4.min.js')}}"></script>
@@ -317,9 +317,6 @@
     <script src="{{ asset ('assets/baru/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/plugins.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/gijgo.min.js')}}"></script>
-    <script src="{{ asset ('assets/baru/js/slick.min.js')}}"></script>
-
-
 
     <!--contact js-->
     <script src="{{ asset ('assets/baru/js/contact.js')}}"></script>
@@ -328,8 +325,21 @@
     <script src="{{ asset ('assets/baru/js/jquery.validate.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/mail-script.js')}}"></script>
 
-
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
-</body>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
 
+        });
+    </script>
+</body>
 </html>

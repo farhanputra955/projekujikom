@@ -37,10 +37,18 @@
         font-style: normal;
     }
     .single-post-area .quotes {
-    background: #fff;
-    padding: 13px 16px 19px 18px;
-    border-left: 2px solid;
-    font-family: cursive;
+        background: #fff;
+        padding: 13px 16px 19px 18px;
+        border-left: 2px solid;
+        font-family: cursive;
+    }
+    .service_area .single_service {
+        background: linear-gradient(to bottom, #000000 0%, rgba(0, 29, 56, 0.8) 100%);
+    }
+
+    .footer .socail_links ul li a {
+    color: #f91842 !important;
+    border: 1px solid #040e27;
 }
     </style>
 
@@ -79,7 +87,17 @@
                                                     </li>
                                                 @endforeach 
                                                 </ul>
+                                                <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                @foreach($berdoa as $data)
+                                                    <li>
+                                                        <a href="/berdoa/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                    </li>
+                                                @endforeach 
+                                                
+                                                </ul>
                                             <li><a href="/gallery">Gallery</a></li>
+                                            <li><a href="/kontak">Kontak</a></li>
                                             </li>
                                         </ul>
                                     </nav>
@@ -122,15 +140,10 @@
 
     
     <!-- about_area_start  -->
-    <section class="blog_area single-post-area section-padding">
-      <div class="container">
-         <div class="row">
-         @foreach($gallery as $data)
-            <div class="col-lg-8 posts-list">
-               <div class="single-post"> 
-               <div class="service_area">
+    <div class="service_area">
         <div class="container">
             <div class="row">
+           
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-90">
                         <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
@@ -138,24 +151,30 @@
                     </div>
                 </div>
             </div>
-                         <div class="case_heading">
-                         <h3> {{$data->judul}}</h3>               
-                         <div class="feature-img">
-                  <img src="../assets/img/ponpes/{{ $data->foto }}" style="width:50%; "alt="">
-                  </div>
-                         <div class="quote-wrapper">
-                        <div class="quotes">
-                           MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                           should have to spend money on boot camp when you can get the MCSE study materials yourself at
-                           a fraction of the camp price. However, who has the willpower to actually sit through a
-                           self-imposed MCSE training.
-                        </div>
-                     </div>
-                     <br>
-                                    </div>
-                                </div>
+            <div class="row">
+            @foreach($gallery as $data)
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".5s">
+                        <div class="service_icon_wrap text-center">
+                            <div class="service_icon ">
+                            <img src="../assets/img/ponpes/{{ $data->foto }}" style="width:80%; "alt="">
                             </div>
-                            @endforeach
+                        </div>
+                        
+                        <div class="info text-center">
+                            <span>{{$data->judul}}</span>
+                        </div>
+                        <div class="service_content">
+                            <ul>
+                                <li> {{$data->konten}} </li>   
+                            </ul>
+                            <div class="apply_btn">
+                                <a class="boxed-btn3" href="/detail/{{$data->slug}}" type="submit">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
             </div>
         </div>
     </div>
@@ -178,9 +197,9 @@
                                 </a>
                             </div>
                             <p>
-                                finloan@support.com <br>
-                                +10 873 672 6782 <br>
-                                600/D, Green road, NewYork
+                                farhanputra955@gmail.com <br>
+                               0895 3201 02320 <br>
+                                Bandung City, Indonesia
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -192,11 +211,6 @@
                                     <li>
                                         <a href="#">
                                             <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
                                         </a>
                                     </li>
                                     <li>
@@ -248,20 +262,6 @@
                             <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
                                 luckily.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
-            <div class="container">
-                <div class="footer_border"></div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
                     </div>
                 </div>
             </div>
