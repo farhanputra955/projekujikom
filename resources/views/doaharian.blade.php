@@ -124,7 +124,6 @@
     </div>
     <!--/ bradcam_area  -->
 
-
     <!--================Blog Area =================-->
     <section class="blog_area section-padding">
         <div class="container">
@@ -137,7 +136,7 @@
                                 <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
                                     <h4> {{$doaharian->judul}}</h4>
                                 </div>  
-                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$doaharian->arab}}</p>
+                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$doaharian->arab}} </p>
                                 <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$doaharian->latin}}</p>
                                 <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">Artinya : <br> "{{$doaharian->arti}}</p>
                             </div>
@@ -145,49 +144,27 @@
                         </article>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="blog_right_sidebar">
+                
+                <div class="col-lg-4">              
+                    <div class="blog_right_sidebar">             
                         <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title">Recent Post</h3>
-                            <div class="media post_item">
-                                <img src="img/post/post_1.png" alt="post">
+                        <h3 class="widget_title"> Tokoh Islam</h3> 
+                        @foreach($tokoh as $data)                                                        
+                            <div class="media post_item">                     
+                                <img src="/assets/img/tokoh/{{ $data->foto }}" style="width:80px" alt="">
                                 <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>From life was you fish...</h3>
+                                    <a href="/tokoh/{{ $data->slug}}">
+                                        <h3>{{$data->nama_tokoh}}</h3>
                                     </a>
                                     <p>January 12, 2019</p>
-                                </div>
+                                </div>                          
                             </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_2.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>The Amazing Hubble</h3>
-                                    </a>
-                                    <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_3.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>Astronomy Or Astrology</h3>
-                                    </a>
-                                    <p>03 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_4.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>Asteroids telescope</h3>
-                                    </a>
-                                    <p>01 Hours ago</p>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
+                            @endforeach
+                        </aside> 
+                                
+                    </div>                
                 </div>
+                
             </div>
         </div>
     </section>

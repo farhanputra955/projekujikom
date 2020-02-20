@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Artikel;
 use App\Kategori;
-use App\Pesantren;
+use App\Pesantren;  
 use App\Provinsi;
 use App\Gallery;
+use App\Tokoh;
 use App\Berdoa;
 use App\Doa;
 use App\DoaHarian;
@@ -27,7 +28,8 @@ class FrontendController extends Controller
         $berdoa = Berdoa::take(3)->get();
         $doa = Doa::take(10)->get();
         $doaharian = DoaHarian::take(10)->get();
-        return view('welcome', compact('artikel','kategori','pesantren','provinsi','gallery','pesantren','berdoa','doa','doaharian'));
+        $tokoh = Tokoh::take(9)->get();
+        return view('welcome', compact('artikel','kategori','pesantren','provinsi','gallery','pesantren','berdoa','doa','doaharian','tokoh'));
     }
 
     public function blog(Kategori $kategori){
@@ -54,9 +56,9 @@ class FrontendController extends Controller
         $doaharian = DoaHarian::with('user')->where('slug', '=', $doaharian)->first();
         $doaharian2 =  DoaHarian::with('user')->get();
         $provinsi = provinsi::take(10)->get();
-        return view('doaharian',compact('doaharian','provinsi','doaharian2'));
+        $tokoh = tokoh::take(10)->get();
+        return view('doaharian',compact('doaharian','provinsi','doaharian2','tokoh'));
     }
-  
 
 
     public function singleblog($artikel){
@@ -105,5 +107,12 @@ class FrontendController extends Controller
         $provinsi = Provinsi::take(10)->get();
         return view('berdoa',compact('berdoa','provinsi'));
     }
-  
-}
+
+        public function tokoh($tokoh){
+            $tokoh = tokoh::where('slug', '=', $tokoh)->first();
+            $provinsi = provinsi::take(10)->get();
+            $doaharian = DoaHarian::take(10)->get();
+            return view('tokoh',compact('tokoh','provinsi','doaharian'));
+        }
+    }  
+

@@ -96,6 +96,10 @@
     transition: 0.3s;
     cursor: pointer;
     }
+    .service_area {
+    padding-top: 15px;
+    padding-bottom: 120px;
+    }
     </style>
 </head>
 
@@ -188,7 +192,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-90">
-                        <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
+                    <br>
+                        <br><span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
                         <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Pondok Pesantren</h3>
                     </div>
                 </div>
@@ -223,7 +228,38 @@
         </div>
     </div>
     <!-- service_area_end  -->
-    
+    <div class="testimonial_area">    
+        <div class="container">
+            <div class="row">          
+                <div class="col-xl-12">
+                    <div class="testmonial_active owl-carousel">
+                        @foreach($tokoh as $data)
+                        <div class="single_carousel">
+                            <div class="row">
+                                <div class="col-lg-11">
+                                    <div class="single_testmonial d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="/assets/img/tokoh/{{ $data->foto }}" alt="">
+                                            <div class="quote_icon">
+                                                <i class="Flaticon flaticon-quote"></i>
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                        <p>"{{$data->konten}}</p>
+                                        <a href="/tokoh/{{ $data->slug}}">
+                                        <span>- {{$data->nama_tokoh}}</span>
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>       
+            </div>
+        </div>
+    </div>
     <!-- about_area_start  -->
    
     <!-- about_area_end  -->
@@ -267,77 +303,7 @@
         </div>
     </div>
     <!-- testimonial_area  -->
-    <div class="testimonial_area  ">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="testmonial_active owl-carousel">
-                        <div class="single_carousel">
-                            <div class="row">
-                                <div class="col-lg-11">
-                                    <div class="single_testmonial d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="{{ asset ('assets/baru/img/banner/hasyim.jpg')}}" alt="">
-                                            <div class="quote_icon">
-                                                <i class="Flaticon flaticon-quote"></i>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                        <p>" KH Hasyim Asy’ari. Pria yang lahir di Kabupaten Jombang, Jawa Timur, 14 Februari 1871adalah salah seorang Pahlawan Nasional Indonesia yang merupakan pendiri Nahdlatul Ulama, organisasi massa Islam yang terbesar di Indonesia.
-
-Di kalangan Nahdliyin dan ulama pesantren ia dijuluki dengan sebutan Hadratus Syeikh yang berarti maha guru. Pada tahun 1899, sepulangnya dari Mekah, K.H. Hasyim Asy’ari mendirikan Pesantren Tebu Ireng, yang kelak menjadi pesantren terbesar dan terpenting di Jawa pada abad 20. Lalu pada 1926, K.H Hasyim Asy’ari menjadi salah satu pemrakarsa berdirinya Nadhlatul Ulama (NU), yang berarti kebangkitan ulama.</p>
-                                            <span>- KH Hasyim Asy’ari</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_carousel">
-                            <div class="row">
-                                <div class="col-lg-11">
-                                    <div class="single_testmonial d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="{{ asset ('assets/baru/img/banner/dahlan.jpg')}}" alt="">
-                                            <div class="quote_icon">
-                                                <i class=" Flaticon flaticon-quote"></i>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <p>"Kiai Haji Ahmad Dahlan atau Muhammad Darwis ini lahir di Yogyakarta, 1 Agustus 1868. Pada tahun 1912, Ahmad Dahlan mendirikan organisasi Muhammadiyah untuk melaksanakan cita-cita pembaruan Islam di bumi Nusantara.
-
-Dia ingin mengadakan suatu pembaruan dalam cara berpikir dan beramal menurut tuntunan agama Islam.
-
-Ahmad Dahlan ingin mengajak umat Islam Indonesia untuk kembali hidup menurut tuntunan al-Qur’an dan al-Hadits. Perkumpulan ini berdiri bertepatan pada tanggal 18 November 1912. Dan sejak awal Dahlan telah menetapkan bahwa Muhammadiyah bukan organisasi politik tetapi bersifat sosial dan bergerak di bidang pendidikan.</p>
-
-                                            <span>- Ahmad Dahlan</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_carousel">
-                            <div class="row">
-                                <div class="col-lg-11">
-                                    <div class="single_testmonial d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="{{ asset ('assets/baru/img/testmonial/author.png')}}" alt="">
-                                            <div class="quote_icon">
-                                                <i class="Flaticon flaticon-quote"></i>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
-                                            <span>- Micky Mouse</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <!-- /testimonial_area  -->
 
     <!-- footer start -->

@@ -158,7 +158,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="about_info pl-68">
                         <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
-                        <?php $no= 1; ?>
+                        
                             <h4> {{$data->judul}}</h4>
                         </div>                     
                         <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s"></p>

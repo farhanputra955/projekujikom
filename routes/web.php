@@ -22,7 +22,8 @@
     Route::get('/gallery', 'FrontendController@gallery');
     Route::get('/contact', 'FrontendController@contact');
     Route::get('/doaharian/{doaharian}', 'FrontendController@doaharian'); 
-    Route::get('/berdoa/{berdoa}', 'FrontendController@berdoa');   
+    Route::get('/berdoa/{berdoa}', 'FrontendController@berdoa');  
+    Route::get('/tokoh/{tokoh}', 'FrontendController@tokoh');   
     
 Auth::routes();
 
@@ -30,6 +31,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     
        
         Route::resource('pesantren', 'PesantrenController');
+        Route::resource('tokoh', 'TokohController');
         Route::resource('berdoa', 'BerdoaController');
         Route::resource('foto', 'FotoController');
         Route::resource('provinsi', 'ProvinsiController');      
