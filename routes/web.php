@@ -23,7 +23,14 @@
     Route::get('/contact', 'FrontendController@contact');
     Route::get('/doaharian/{doaharian}', 'FrontendController@doaharian'); 
     Route::get('/berdoa/{berdoa}', 'FrontendController@berdoa');  
-    Route::get('/tokoh/{tokoh}', 'FrontendController@tokoh');   
+    Route::get('/tokoh/{tokoh}', 'FrontendController@tokoh');
+    Route::get('/kerajaan', 'FrontendController@kerajaan');  
+    route::get('/kerajaanislam/{kerajaan}', 'FrontendController@kerajaanislam');
+    route::get('/walisongo/{walisongo}', 'FrontendController@walisongo');
+    Route::get('/email','FrontendController@email');
+    Route::get('/sendemail','FrontendController@email');
+    Route::post('/sendemail/send','FrontendController@send');
+
     
 Auth::routes();
 
@@ -31,6 +38,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     
        
         Route::resource('pesantren', 'PesantrenController');
+        Route::resource('kerajaan', 'KerajaanController');
+        Route::resource('walisongo', 'WalisongoController');
         Route::resource('tokoh', 'TokohController');
         Route::resource('berdoa', 'BerdoaController');
         Route::resource('foto', 'FotoController');
@@ -39,7 +48,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
        Route::resource('artikel', 'ArtikelController');
        Route::resource('gallery', 'GalleryController');
        Route::resource('doa', 'DoaController');
+       
        Route::resource('doaharian', 'DoaHarianController');
+       
 });
 
 Auth::routes(['register' => false]);

@@ -104,8 +104,8 @@ class TokohController extends Controller
     public function update(Request $request, $id)
     {
         $tokoh = tokoh::findOrFail($id);
-        $tokoh->judul = $request->judul;
-        $tokoh->slug = Str::slug($request->judul, '-');
+        $tokoh->nama_tokoh = $request->nama_tokoh;
+        $tokoh->slug = Str::slug($request->nama_tokoh, '-');
         $tokoh->konten = $request->konten;
        
         // foto

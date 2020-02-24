@@ -41,7 +41,7 @@
     }
 
     .blog_right_sidebar .single_sidebar_widget {
-    background: #455A64;
+    background: #025049;
     padding: 30px;
     margin-bottom: 30px;
 }
@@ -90,6 +90,7 @@
                                                 @endforeach
                                                 
                                                 </ul>
+                                                <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
@@ -156,7 +157,6 @@
                                     <a href="/tokoh/{{ $data->slug}}">
                                         <h3>{{$data->nama_tokoh}}</h3>
                                     </a>
-                                    <p>January 12, 2019</p>
                                 </div>                          
                             </div>
                             @endforeach

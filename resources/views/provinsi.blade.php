@@ -41,7 +41,7 @@
     }
     .header-area .main-header-area .main-menu ul li a {
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     text-transform: capitalize;
     font-weight: 500;
     display: inline-block;
@@ -89,13 +89,14 @@
                                                 </ul>
                                                 <li><a href="/berdoa"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($berdoa as $data)
+                                                @foreach($doaharian as $data)
                                                     <li>
-                                                        <a href="/berdoa/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
                                                 </ul>
+                                                <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>

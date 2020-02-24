@@ -96,10 +96,26 @@
     transition: 0.3s;
     cursor: pointer;
     }
+    .service_icon {
+    margin: 50px auto 3px auto;
+    display: inline-block;
+}
+    .testimonial_area .single_testmonial .info span {
+    color: #7A838B;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
     .service_area {
     padding-top: 15px;
-    padding-bottom: 120px;
+    padding-bottom: 90px;
     }
+    .testimonial_area {
+    padding: 2px 0;
+    }
+    .mb-90 {
+    margin-bottom: 65px;
+}
     </style>
 </head>
 
@@ -145,6 +161,8 @@
                                                 @endforeach 
                                                 
                                                 </ul>
+                                                <li><a href="/kerajaan">Kerajaan Islam</a></li>
+                                                
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
@@ -185,8 +203,6 @@
         </div>
     </div>
     <!-- slider_area_end -->
-
-    <!-- service_area_start  -->
     <div class="service_area oyeah" background="color: red;">
         <div class="container">
             <div class="row">
@@ -194,7 +210,96 @@
                     <div class="section_title text-center mb-90">
                     <br>
                         <br><span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
-                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Pondok Pesantren</h3>
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><strong> Berita Islam</strong></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            @foreach($artikel as $data)
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".5s">
+                        <div class="service_icon_wrap text-center">
+                            <div class="service_icon ">
+                            <img src="../assets/img/ponpes/{{ $data->foto }}" style="width:80%;"alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="info text-center">
+                            <span>{{$data->judul}}</span>
+                        </div>
+                        <div class="service_content">
+                            <ul>
+                            
+                                <li>{{Str::limit($data->konten, 260)}} </li>
+                               
+                            </ul>
+                           
+                            <div class="apply_btn">
+                                <a class="boxed-btn3" href="/pondok/{{$data->slug}}" type="submit">Sekilasnya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            </div>
+        </div>
+    </div>
+    <!-- service_area_start  -->
+    <br>
+    <br>
+    <div class="testimonial_area">    
+        <div class="container">
+        <div class="section_title text-center mb-90">
+                    <br>
+                        <br><span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"> <strong>Tokoh Islam yang Menginspirasi</strong></h3>
+                    </div>
+            <div class="row">          
+                <div class="col-xl-12">
+                    <div class="testmonial_active owl-carousel">
+                        @foreach($tokoh as $data)
+                        <div class="single_carousel">
+                            <div class="row">                  
+                                <div class="col-lg-11">
+                                    <div class="single_testmonial d-flex align-items-center">
+                                        <div class="thumb">
+                                        <a href="/tokoh/{{ $data->slug}}">
+                                            <img src="/assets/img/tokoh/{{ $data->foto }}" alt="">
+                                        </a>
+                                            <div class="quote_icon">
+                                                <i class="Flaticon flaticon-quote"></i>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="info">
+                                        <p>" {{Str::limit($data->konten, 280)}}</p>
+                                        <a href="/tokoh/{{ $data->slug}}">
+                                        <span>- {{$data->nama_tokoh}}</span>
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>       
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div class="service_area oyeah" background="color: red;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title text-center mb-90">
+                    <br>
+                        <br><span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><strong>Pondok Pesantren</strong></h3>
                     </div>
                 </div>
             </div>
@@ -213,7 +318,8 @@
                         </div>
                         <div class="service_content">
                             <ul>
-                                <li> {{$data->konten}} </li>
+                            
+                                <li>{{Str::limit($data->konten, 260)}} </li>
                                
                             </ul>
                            
@@ -228,72 +334,86 @@
         </div>
     </div>
     <!-- service_area_end  -->
+    
+   
+    <!-- about_area_start  -->
     <div class="testimonial_area">    
         <div class="container">
-            <div class="row">          
-                <div class="col-xl-12">
-                    <div class="testmonial_active owl-carousel">
-                        @foreach($tokoh as $data)
-                        <div class="single_carousel">
-                            <div class="row">
-                                <div class="col-lg-11">
-                                    <div class="single_testmonial d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="/assets/img/tokoh/{{ $data->foto }}" alt="">
-                                            <div class="quote_icon">
-                                                <i class="Flaticon flaticon-quote"></i>
+        <div class="section_title text-center mb-90">
+                    <br>
+                        <br><span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"> <strong>Wali Songo</strong></h3>
+                    </div>
+                <div class="row">          
+                    <div class="col-xl-12">
+                        <div class="testmonial_active owl-carousel">
+                            @foreach($walisongo as $data)
+                            <div class="single_carousel">
+                                <div class="row">
+                                
+                                    <div class="col-lg-11">
+                                        <div class="single_testmonial d-flex align-items-center">
+                                            <div class="thumb">
+                                            <a href="/walisongo/{{ $data->slug}}">
+                                                <img src="/assets/img/walisongo/{{ $data->foto }}" alt="Image" height="180px" width="70">
+                                            </a>
+                                                <div class="quote_icon">
+                                                    <i class="Flaticon flaticon-quote"></i>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="info">
-                                        <p>"{{$data->konten}}</p>
-                                        <a href="/tokoh/{{ $data->slug}}">
-                                        <span>- {{$data->nama_tokoh}}</span>
-                                        </a>
+                                            
+                                            <div class="info">
+                                            <p>" {{Str::limit($data->konten, 280)}}</p>
+                                            <a href="/walisongo/{{ $data->slug}}">
+                                            <span>- {{$data->nama_walisongo}}</span>
+                                            </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-                        @endforeach
-                    </div>
-                </div>       
-            </div>
-        </div>
-    </div>
-    <!-- about_area_start  -->
-   
+                    </div>       
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
     <!-- about_area_end  -->
+    
     <div class="service_area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-90">
                         <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
-                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Gallery Pesantren</h3>
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><strong> Kerajaan Islam Di Indonesia</strong></h3>
                     </div>
                 </div>
             </div>
             <div class="row">
-            @foreach($gallery as $data)
+            @foreach($kerajaan as $data)
                 <div class="col-lg-4 col-md-6">
                     <div class="single_service wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".5s">
                         <div class="service_icon_wrap text-center">
                             <div class="service_icon ">
                             
-                            <img src="../assets/img/ponpes/{{ $data->foto }}" style="width:80%;"alt="">
+                            <img src="../assets/img/kerajaan/{{ $data->foto }}" alt="Image" height="160">
                             </div>
                         </div>
                         
                         <div class="info text-center">
-                            <span>{{$data->judul}}</span>
+                            <span>{{$data->nama_kerajaan}}</span>
                         </div>
                         <div class="service_content">
                             <ul>
-                                <li> {{$data->konten}} </li>
+                                <li>  {{Str::limit($data->konten, 100)}} </li>
                                
                             </ul>
                             <div class="apply_btn">
-                                <a class="boxed-btn3" href="/detail/{{$data->slug}}" type="submit">Detail</a>
+                                <a class="boxed-btn3" href="/kerajaanislam/{{$data->slug}}" type="submit">Sekilasnya</a>
                             </div>
                         </div>
                     </div>
@@ -303,7 +423,45 @@
         </div>
     </div>
     <!-- testimonial_area  -->
-   
+    <div class="testimonial_area">    
+        <div class="container">
+        <div class="section_title text-center mb-90">
+                    <br>
+                        <br><span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><strong> Gallery Pesantren</strong></h3>
+                    </div>
+                <div class="row">          
+                    <div class="col-xl-12">
+                        <div class="testmonial_active owl-carousel">
+                            @foreach($gallery as $data)
+                            <div class="single_carousel">
+                                <div class="row">
+                                
+                                    <div class="col-lg-11">
+                                        <div class="single_testmonial d-flex align-items-center">
+                                            <div class="thumb">
+                                            <a href="/detail/{{ $data->slug}}">
+                                                <img src="/assets/img/ponpes/{{ $data->foto }}" alt="Image" height="190px" width="80">
+                                            </a>
+                                                <div class="quote_icon">
+                                                    <i class="Flaticon flaticon-quote"></i>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="info">
+                                            <p>" {{Str::limit($data->konten, 280)}}</p>
+                                            <a href="/detail/{{ $data->slug}}">
+                                            <span>- {{$data->judul}}</span>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>       
+                </div>
     <!-- /testimonial_area  -->
 
     <!-- footer start -->
@@ -336,7 +494,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/farhan.putra29/?hl=id">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
@@ -367,7 +525,7 @@
                             <ul>
                                 <li><a href="#">About</a></li>
                                 <li><a href="#">Blog</a></li>
-                                <li><a href="#"> Contact</a></li>
+                                <li><a href="/kontak"> Contact</a></li>
                                 <li><a href="#">Support</a></li>
                             </ul>
                         </div>

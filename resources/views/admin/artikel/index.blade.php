@@ -27,8 +27,6 @@
                             <tr>
                                 <th>Judul</th>
                             
-                                <th>Kategori</th>
-                                
                                 <th style="text-align: center;">Foto</th>
                                 <th style="text-align: center;">Opsi</th>
                             </tr>
@@ -37,9 +35,7 @@
                             @foreach ($artikel as $data)
                             <tr>
                                 <td>{{$data->judul}}</td>
-                               
-                                <td>{{$data->kategori->nama_kategori}}</td>
-                              
+                                                             
                                 <td><img src="{{asset('assets/img/ponpes/' .$data->foto. '')}}"
                                     style="width:240px; height:140px;" alt="Foto"></td>
 

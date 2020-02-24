@@ -41,7 +41,7 @@
     }
     .header-area .main-header-area .main-menu ul li a {
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     text-transform: capitalize;
     font-weight: 500;
     display: inline-block;
@@ -49,6 +49,19 @@
     font-family: "Roboto", sans-serif;
     position: relative;
     text-transform: capitalize;
+    }
+    .blog_right_sidebar .single_sidebar_widget {
+        background: #12483e;
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+    p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #ffffff;
+    margin-bottom: 13px;
+    font-family: sans-serif;
 }
     </style>
 
@@ -96,6 +109,7 @@
                                                 @endforeach 
                                                 
                                                 </ul>
+                                               <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
@@ -150,15 +164,57 @@
                                 <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
                                     <h4> {{$tokoh->nama_tokoh}}</h4>
                                     <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$tokoh->konten}} </p>
-
-                                    <img class="blog_left_sidebar" src="/assets/img/tokoh/{{ $tokoh->foto }}" alt="">
-                                    
+                                    <img class="blog_left_sidebar" src="/assets/img/tokoh/{{ $tokoh->foto }}" alt="" >                            
                                 </div>  
-                              </div>
-                            
+                              </div>                       
                         </article>
                     </div>
                 </div>
+                <div class="col-lg-4">              
+                    <div class="blog_right_sidebar"> 
+                <aside class="single_sidebar_widget post_category_widget">
+                            <h4 class="widget_title">Category</h4>
+                            <ul class="list cat-list">
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Resaurant food</p>
+                                        <p>(37)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Travel news</p>
+                                        <p>(10)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Modern technology</p>
+                                        <p>(03)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Product</p>
+                                        <p>(11)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Inspiration</p>
+                                        <p>21</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Health Care (21)</p>
+                                        <p>09</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>                
+                </div>         
             </div>
         </div>
     </section>

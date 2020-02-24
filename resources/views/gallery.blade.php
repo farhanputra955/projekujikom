@@ -42,14 +42,20 @@
         border-left: 2px solid;
         font-family: cursive;
     }
+    
     .service_area .single_service {
-        background: linear-gradient(to bottom, #000000 0%, rgba(0, 29, 56, 0.8) 100%);
-    }
+    background: linear-gradient(to bottom, #000000 0%, rgba(0, 27, 49, 0.95) 100%);
+}
 
     .footer .socail_links ul li a {
     color: #f91842 !important;
     border: 1px solid #040e27;
-}
+    }
+    
+    .service_area .single_service .service_icon {
+    margin: 40px auto 20px auto;
+    display: inline-block;
+    }
     </style>
 
 </head>
@@ -96,6 +102,7 @@
                                                 @endforeach 
                                                 
                                                 </ul>
+                                                <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
@@ -166,7 +173,7 @@
                         </div>
                         <div class="service_content">
                             <ul>
-                                <li> {{$data->konten}} </li>   
+                                <li> {{Str::limit($data->konten, 100)}} </li>   
                             </ul>
                             <div class="apply_btn">
                                 <a class="boxed-btn3" href="/detail/{{$data->slug}}" type="submit">Detail</a>

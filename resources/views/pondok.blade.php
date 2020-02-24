@@ -44,7 +44,7 @@
 
     <style>
         p {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 32px;
     color: #7A838B;
@@ -95,13 +95,14 @@
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($berdoa as $data)
+                                                @foreach($doaharian as $data)
                                                     <li>
-                                                        <a href="/berdoa/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
                                                 </ul>
+                                                <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
