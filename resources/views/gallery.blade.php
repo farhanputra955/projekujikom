@@ -95,16 +95,16 @@
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($berdoa as $data)
+                                                @foreach($doaharian as $data)
                                                     <li>
-                                                        <a href="/berdoa/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
                                                 </ul>
                                                 <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                             <li><a href="/gallery">Gallery</a></li>
-                                            <li><a href="/kontak">Kontak</a></li>
+                                            <li><a href="/sendemail">Kontak</a></li>
                                             </li>
                                         </ul>
                                     </nav>
@@ -164,7 +164,7 @@
                     <div class="single_service wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".5s">
                         <div class="service_icon_wrap text-center">
                             <div class="service_icon ">
-                            <img src="../assets/img/ponpes/{{ $data->foto }}" style="width:80%; "alt="">
+                            <img src="../assets/img/ponpes/{{ $data->foto }}" alt="Image" height="150px" width="250">
                             </div>
                         </div>
                         

@@ -25,9 +25,8 @@ use App\User;
 class FrontendController extends Controller
 {
     public function index(){
-        $artikel = Artikel::take(3)->get();
+        $artikel = Artikel::take(2)->get();
         $kategori = Kategori::take(10)->get();
-        $artikel = Pesantren::take(3)->get();
         $provinsi = Provinsi::take(10)->get();
         $gallery = Gallery::take(10)->get();
         $pesantren = Pesantren::take(3)->get();
@@ -46,6 +45,28 @@ class FrontendController extends Controller
         $kategori = Kategori::take(10)->get();
         $data = Artikel::inRandomOrder()->take(1)->get();
         return view('blog',compact('artikel','kategori','data'));
+    }
+
+    public function singleblog($artikel){
+        $artikel = Artikel::where('slug', '=', $artikel)->first();
+        $kategori = Kategori::take(10)->get();  
+        $doaharian =  DoaHarian::take(10)->get();  
+        $provinsi = Provinsi::take(10)->get();
+        return view('singleblog',compact('artikel','kategori','provinsi','doaharian'));
+    }
+
+    public function kategori(kategori $kategori){
+        $artikel=$kategori->artikel()->latest()->paginate(8);
+        $judul=$kategori->artikel()->take(1)->get();
+        $provinsi = Provinsi::take(10)->get();
+        foreach($judul as $data){
+           $oke = $data->id_kategori;
+        }
+        $judulkate = \DB::select('select * from kategoris where id= '.$oke.'');
+        $kategori = kategori::take(10)->get();
+        $doaharian = doaharian::take(19)->get();
+        $data = artikel::inRandomOrder()->take(1)->get();
+        return view('kategori',compact('artikel','kategori','data','judulkate','berdoa','doaharian','provinsi'));
     }
 
     public function provinsi(Provinsi $provinsi){
@@ -89,12 +110,6 @@ class FrontendController extends Controller
     }
 
 
-    public function singleblog($artikel){
-        $artikel = Artikel::with('user', 'provinsi')->where('slug', '=', $artikel)->first();
-        $kategori = Kategori::take(10)->get();       
-        return view('singleblog',compact('artikel','kategori'));
-    }
-
     public function pondok($pesantren){
         $pesantren = Pesantren::with('user', 'provinsi')->where('slug', '=', $pesantren)->first();
         $provinsi = provinsi::take(10)->get();
@@ -112,8 +127,8 @@ class FrontendController extends Controller
     public function gallery(gallery $gallery){
         $gallery= gallery::take(9)->get();
         $provinsi = Provinsi::take(10)->get();
-        $berdoa = Berdoa::take(3)->get();
-        return view('gallery', compact('gallery','provinsi','berdoa'));
+        $doaharian = doaharian::take(3)->get();
+        return view('gallery', compact('gallery','provinsi','doaharian'));
     }
 
     public function detail($gallery){

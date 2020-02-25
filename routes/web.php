@@ -28,9 +28,10 @@
     route::get('/kerajaanislam/{kerajaan}', 'FrontendController@kerajaanislam');
     route::get('/walisongo/{walisongo}', 'FrontendController@walisongo');
     Route::get('/email','FrontendController@email');
+    Route::get('/kategori/{kategori}', 'FrontendController@kategori');  
     Route::get('/sendemail','FrontendController@email');
     Route::post('/sendemail/send','FrontendController@send');
-
+   
     
 Auth::routes();
 

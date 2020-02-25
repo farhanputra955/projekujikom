@@ -57,6 +57,23 @@
     position: relative;
     text-transform: uppercase;
 }
+    b, strong {
+        font-weight: bolder;
+    }
+    label {
+    color: #2d2c2c;
+    cursor: alias;
+    font-size: 17px;
+    font-weight: 400;
+}
+    .contact-title {
+        font-size: 27px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    .contact-section {
+    padding: 90px 0 100px;
+}
     </style>
 </head>
 
@@ -143,10 +160,11 @@
        
           <h2 class="contact-title">Kirim Pesan</h2>
         </div>
+        <br>
         <div class="col-lg-8">
             @if(count($errors) > 0)
                 <div class="alert alert-danger">
-                    <button type="button" class="close" data-dismiss="alert">X</button>
+                    <button type="button" class="close" data-dismiss="alert">x</button>
                     <ul>
                         @foreach($errors->all() as $errors)
                             <li>{{$errors}}</li>
@@ -156,8 +174,8 @@
             @endif
 
             @if($message = Session::get('success'))
-            <div class="alert alert-danger">
-                    <button type="button" class="close" data-dismiss="alert">X</button>
+            <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
                     <strong>{{$message}}</strong>
             </div>
             @endif
@@ -166,20 +184,20 @@
               <div class="col-12">
               {{ csrf_field() }}
                 <div class="form-group">
-                 <label>Masukan Pesan</label>
+                 <label><strong>Masukan Pesan</strong></label>
                     <textarea class="form-control w-100" name="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder = 'Pesan' class="form-control"></textarea>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
-                <label> Masukan Nama</label>
-               <input type="text" name="name" class="form-control"onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Nama'>
+                <label><strong> Masukan Nama</strong></label>
+               <input type="text" name="name" class="form-control"onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Nama Lengkap'>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
-                  <label> Masukan Email</label>
-                  <input type="text" name="email" class="form-control"onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Email'>
+                  <label><strong> Masukan Email</strong></label>
+                  <input type="text" name="email" class="form-control"onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Nama Email'>
                 </div>
               </div>
             </div>

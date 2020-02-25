@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Kategori;
-
 use App\Artikel;
 use Session;
 use Auth;
@@ -53,7 +52,7 @@ class ArtikelController extends Controller
         # Foto
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
-            $path = public_path().'/assets/img/ponpes/';
+            $path = public_path().'/assets/img/artikel/';
             $filename = $file->getClientOriginalName();
             $upload = $file->move($path, $filename);
             $artikel->foto = $filename;
@@ -115,7 +114,7 @@ class ArtikelController extends Controller
         // foto
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
-            $path = public_path() . '/assets/img/ponpes';
+            $path = public_path() . '/assets/img/artikel';
             $filename = str_random(6) . '_'
                 . $file->getClientOriginalName();
             $uploadSuccess = $file->move(
@@ -126,7 +125,7 @@ class ArtikelController extends Controller
             if ($artikel->foto) {
                 $old_foto = $artikel->foto;
                 $filepath = public_path() .
-                    '/assets/img/ponpes/' .
+                    '/assets/img/artikel/' .
                     $artikel->foto;
                 try {
                     File::delete($filepath);
@@ -156,7 +155,7 @@ class ArtikelController extends Controller
         $artikel = Artikel::findOrFail($id);
         if ($artikel->foto) {
             $old_foto = $artikel->foto;
-            $filepath = public_path() . '/assets/img/ponpes/' . $artikel->foto;
+            $filepath = public_path() . '/assets/img/artikel/' . $artikel->foto;
             try {
                 File::delete($filepath);
             } catch (FileNotFoundException $e) { }

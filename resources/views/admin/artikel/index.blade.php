@@ -36,7 +36,7 @@
                             <tr>
                                 <td>{{$data->judul}}</td>
                                                              
-                                <td><img src="{{asset('assets/img/ponpes/' .$data->foto. '')}}"
+                                <td><img src="{{asset('assets/img/artikel/' .$data->foto. '')}}"
                                     style="width:240px; height:140px;" alt="Foto"></td>
 
 								<td style="text-align: center;">

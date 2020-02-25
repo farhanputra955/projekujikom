@@ -36,8 +36,15 @@
 
     <style>
     p {
-        font-family: monospace;
-}
+    font-family: cursive;
+    }
+    .about_area.plus_padding {
+    padding-top: 80px;
+    }
+    .about_area .about_info p {
+        color: #205788;
+        font-size: 18px;
+    }
     </style>
     <style>
    .footer .socail_links ul li a {
@@ -126,7 +133,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3></h3>
+                        <h3>Detail Gallery</h3>
                     </div>
                 </div>
             </div>
@@ -137,13 +144,6 @@
     
     <!-- about_area_start  --> 
     <div class="about_area plus_padding">
-        <center>
-        <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
-                <h3>Detail</h3>
-        </div>
-         </center>
-         <br>
-         <br>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">

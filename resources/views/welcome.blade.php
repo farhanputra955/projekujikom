@@ -33,7 +33,7 @@
 }
 
     h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 12rem;
+    margin-bottom: auto;
     font-family: inherit;
     font-weight: 500;
     line-height: 1.2;
@@ -96,6 +96,12 @@
     transition: 0.3s;
     cursor: pointer;
     }
+    .about_area.plus_padding {
+    padding-top: 10px;
+}
+.about_area {
+    margin-bottom: 10px;
+}
     .service_icon {
     margin: 50px auto 3px auto;
     display: inline-block;
@@ -116,6 +122,18 @@
     .mb-90 {
     margin-bottom: 65px;
 }
+.header-area .main-header-area .main-menu ul li a {
+    color: #fff;
+    font-size: 13px;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: grid;
+    padding: 35px 0px 30px 0px;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    text-transform: capitalize;
+}
+
     </style>
 </head>
 
@@ -132,11 +150,7 @@
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-2">
-                                <div class="logo">
-                                    <a href="index.html">
-                                        <img src="img/logo.png" alt="">
-                                    </a>
-                                </div>
+                               
                             </div>
                             <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu  d-none d-lg-block">
@@ -161,10 +175,11 @@
                                                 @endforeach 
                                                 
                                                 </ul>
+                                                <li><a href="/solat">Sholat</a></li>
                                                 <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                                 
                                             <li><a href="/gallery">Gallery</a></li>
-                                            <li><a href="/kontak">Kontak</a></li>
+                                            <li><a href="/sendemail">Kontak</a></li>
                                             </li>
                                         </ul>
                                     </nav>
@@ -213,40 +228,41 @@
                         <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><strong> Berita Islam</strong></h3>
                     </div>
                 </div>
-            </div>
-            <div class="row">
+                <div class="about_area plus_padding">
+        <div class="container">
+            <div class="row align-items-center">           
             @foreach($artikel as $data)
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".5s">
-                        <div class="service_icon_wrap text-center">
-                            <div class="service_icon ">
-                            <img src="../assets/img/ponpes/{{ $data->foto }}" style="width:80%;"alt="">
-                            </div>
-                        </div>
-                        
-                        <div class="info text-center">
-                            <span>{{$data->judul}}</span>
-                        </div>
-                        <div class="service_content">
-                            <ul>
-                            
-                                <li>{{Str::limit($data->konten, 260)}} </li>
-                               
-                            </ul>
-                           
-                            <div class="apply_btn">
-                                <a class="boxed-btn3" href="/pondok/{{$data->slug}}" type="submit">Sekilasnya</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="about_img wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+                    <a href="/singleblog/{{$data->slug}}">
+                        <img class="img-fluid" src="/assets/img/artikel/{{ $data->foto }}" width="200px" height="300px" alt="">
+                    </a>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    </div>       
                 </div>
-            @endforeach
+                <div class="col-lg-6 col-md-6">
+                    <div class="about_info pl-68">
+                        <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
+                            <a href="/singleblog/{{$data->slug}}">
+                                <h4>{{$data->judul}}</h4>
+                            </a>
+                        </div>
+                        <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{ Str::limit($data->konten,150)}}</p>
+                    </div>
+                </div>        
+                @endforeach
             </div>
         </div>
     </div>
+            </div>
+          </div>
+        </div>
+    </div>
     <!-- service_area_start  -->
-    <br>
-    <br>
+  
     <div class="testimonial_area">    
         <div class="container">
         <div class="section_title text-center mb-90">
