@@ -1,13 +1,9 @@
 
 @extends('argon')
 
-<script src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
 <script>
-  var konten = document.getElementById("konten");
-    CKEDITOR.replace(konten,{
-    language:'en-gb'
-  });
-  CKEDITOR.config.allowedContent = true;
+    CKEDITOR.replace('editor1');
 </script>
 
 @section('content')
@@ -28,10 +24,20 @@
                             <label for="">Foto</label>
                             <input type="file" class="form-control" name="foto">
                         </div>
-                            <div class="form-group">
-                            <label>Konten</label>
-                            <textarea id="konten" class="form-control" name="konten" rows="10" cols="50"></textarea>                        </div>
                         <div class="form-group">
+                            <label for="">Konten</label>
+
+                            <textarea class="form-control ckeditor 
+                            @error('konten') is-invalid @enderror"
+                             name="konten" id="editor1" require>
+                             </textarea>
+                             @error('konten')
+                             <span class="invalid-feedback" role="alert">
+                                <strong>{{$message}}</strong>
+                             </span>
+                             @enderror
+                        </div>
+                           <div class="form-group">
                             <button type="submit" class="btn btn-outline-info">
                             Simpan Data
                             </button>

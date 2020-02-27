@@ -56,6 +56,14 @@
                     <label for="">Email</label>
                     <input type="text" name="email" id="" class="form-control" required>
                 </div>
+                <div class="form-group">
+                    <label for="">Website</label>
+                    <input type="text" name="website" id="" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Maps</label>
+                    <input type="text" name="maps" id="" class="form-control" required>
+                </div>
                 <br>
                     <button type="submit" name="Simpan"class="btn btn-md btn-info">Simpan</button>
                     <a name="" id="" class="btn btn-md btn-warning" href="{{route('pesantren.index')}}" role="button">Kembali</a>

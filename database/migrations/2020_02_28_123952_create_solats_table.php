@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePesantrensTable extends Migration
+class CreateSolatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,15 @@ class CreatePesantrensTable extends Migration
      */
     public function up()
     {
-        Schema::create('pesantrens', function (Blueprint $table) {
+        Schema::create('solats', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('judul');
             $table->string('slug');
-            $table->text('konten');
-            $table->string('foto');
-            $table->string('alamat');
-            $table->char('telepon');
-            $table->string('email');
-            $table->string('website');
-            $table->string('maps');
-            $table->unsignedBigInteger('id_provinsi');
-            $table->foreign('id_provinsi')->references('id')->on('provinsis')->onDelete('cascade');
+            $table->text('arab');
+            $table->string('latin');
+            $table->text('arti');
+            $table->unsignedBigInteger('id_solatfardhu');
+            $table->foreign('id_solatfardhu')->references('id')->on('solat_fardhus')->onDelete('cascade');
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
@@ -39,6 +35,6 @@ class CreatePesantrensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pesantrens');
+        Schema::dropIfExists('solats');
     }
 }

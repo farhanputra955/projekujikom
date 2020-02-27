@@ -57,6 +57,17 @@
     color: #f91842 !important;
     border: 1px solid #040e27;
 }
+.header-area .main-header-area .main-menu ul li a {
+        color: #fff;
+        font-size: 13px;
+        text-transform: capitalize;
+        font-weight: 500;
+        display: grid;
+        padding: 35px 0px 30px 0px;
+        font-family: "Roboto", sans-serif;
+        position: relative;
+        text-transform: capitalize;
+    }
     </style>
 </head>
 
@@ -175,7 +186,7 @@
                         <div class="d-sm-flex justify-content-between text-left">                       
                             <p class="like-info"><span class="align-middle"><i class=""></i></span>   
                             <div class="d-none d-lg-block">
-                            <a class="boxed-btn4" href="">Selengkapnya</a>
+                            <a class="boxed-btn4" href="{{$pesantren->website}}">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -185,7 +196,12 @@
                 <div class="about_btn wow fadeInRight" data-wow-duration="1.3s" data-wow-delay=".5s">
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class=""></i></span>
-                        <div class="media-body">
+                        <div class="row">
+                        <a href="{{$pesantren->maps}}">
+                        <li><i class="fa fa-map-marker" style="font-size:45px;color:red; margin-left:10px" ></i></li>
+                        </a>
+                        </div>
+                        <div class="media-body" style="margin-left: 35px">
                         <li><i class="ti-home"></i>  :  {{$pesantren->alamat}}</h5></li>            
                         </div>
                     </div>

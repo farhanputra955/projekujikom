@@ -13,7 +13,8 @@
 
     Route::get('/', 'FrontendController@index');
     Route::get('/kontak', 'FrontendController@kontak');  
-    Route::get('/provinsi/{provinsi}', 'FrontendController@provinsi');   
+    Route::get('/provinsi/{provinsi}', 'FrontendController@provinsi');
+    Route::get('/doa/{doa}', 'FrontendController@doa');   
     Route::get('/blog/{blog}', 'FrontendController@blog');   
     route::get('/singleblog/{artikel}', 'FrontendController@singleblog');
     route::get('/pondok/{pesantren}', 'FrontendController@pondok');
@@ -29,7 +30,7 @@
     route::get('/walisongo/{walisongo}', 'FrontendController@walisongo');
     Route::get('/email','FrontendController@email');
     Route::get('/kategori/{kategori}', 'FrontendController@kategori');  
-    Route::get('/sendemail','FrontendController@email');
+    Route::get('/kontak','FrontendController@kontak');
     Route::post('/sendemail/send','FrontendController@send');
    
     

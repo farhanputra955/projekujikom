@@ -41,10 +41,21 @@
     }
 
     .blog_right_sidebar .single_sidebar_widget {
-    background: #455A64;
+    background: #025049;
     padding: 30px;
     margin-bottom: 30px;
 }
+    .header-area .main-header-area .main-menu ul li a {
+        color: #fff;
+        font-size: 13px;
+        text-transform: capitalize;
+        font-weight: 500;
+        display: grid;
+        padding: 35px 0px 30px 0px;
+        font-family: "Roboto", sans-serif;
+        position: relative;
+        text-transform: capitalize;
+    }
     </style>
 </head>
 
@@ -83,13 +94,15 @@
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($berdoa as $data)
+                                                @foreach($doa as $data)
                                                     <li>
-                                                        <a href="/berdoa/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/doa/{{ $data->slug}}">{{ $data->nama_doa}}</a>
                                                     </li>
-                                                @endforeach 
+                                                @endforeach
                                                 
                                                 </ul>
+                                                <li><a href="/kerajaan">Sholat</a></li>
+                                                <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
@@ -116,14 +129,13 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Berdoa</h3>
+                     
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!--/ bradcam_area  -->
-
 
     <!--================Blog Area =================-->
     <section class="blog_area section-padding">
@@ -132,62 +144,39 @@
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
                         <article class="blog_item">
-                        @foreach($berdoa as $data)
+                        @foreach($doaharian as $data)
                             <div class="blog_details">
                                 <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
                                     <h4> {{$data->judul}}</h4>
                                 </div>  
-                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$data->arab}}</p>
+                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$data->arab}} </p>
                                 <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$data->latin}}</p>
                                 <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">Artinya : <br> "{{$data->arti}}</p>
                             </div>
-                            @endforeach
+                        @endforeach
                         </article>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="blog_right_sidebar">
+                
+                <div class="col-lg-4">              
+                    <div class="blog_right_sidebar">             
                         <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title">Recent Post</h3>
-                            <div class="media post_item">
-                                <img src="img/post/post_1.png" alt="post">
+                        <h3 class="widget_title"> Tokoh Islam</h3> 
+                        @foreach($tokoh as $data)                                                        
+                            <div class="media post_item">                     
+                                <img src="/assets/img/tokoh/{{ $data->foto }}" style="width:80px" alt="">
                                 <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>From life was you fish...</h3>
+                                    <a href="/tokoh/{{ $data->slug}}">
+                                        <h3>{{$data->nama_tokoh}}</h3>
                                     </a>
-                                    <p>January 12, 2019</p>
-                                </div>
+                                </div>                          
                             </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_2.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>The Amazing Hubble</h3>
-                                    </a>
-                                    <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_3.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>Astronomy Or Astrology</h3>
-                                    </a>
-                                    <p>03 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_4.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>Asteroids telescope</h3>
-                                    </a>
-                                    <p>01 Hours ago</p>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
+                            @endforeach
+                        </aside> 
+                                
+                    </div>                
                 </div>
+                
             </div>
         </div>
     </section>

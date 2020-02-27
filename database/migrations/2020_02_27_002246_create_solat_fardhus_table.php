@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBerdoasTable extends Migration
+class CreateSolatFardhusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateBerdoasTable extends Migration
      */
     public function up()
     {
-        Schema::create('berdoas', function (Blueprint $table) {
+        Schema::create('solat_fardhus', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('judul');
+            $table->string('nama_solat');
             $table->string('slug');
-            $table->text('arab');
-            $table->string('latin');
-            $table->string('arti');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateBerdoasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('berdoas');
+        Schema::dropIfExists('solat_fardhus');
     }
 }

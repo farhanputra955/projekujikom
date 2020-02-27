@@ -168,9 +168,9 @@
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($doaharian as $data)
+                                                @foreach($doa as $data)
                                                     <li>
-                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/doa/{{ $data->slug}}">{{ $data->nama_doa}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
@@ -179,7 +179,7 @@
                                                 <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                                 
                                             <li><a href="/gallery">Gallery</a></li>
-                                            <li><a href="/sendemail">Kontak</a></li>
+                                            <li><a href="/kontak">Kontak</a></li>
                                             </li>
                                         </ul>
                                     </nav>
@@ -559,10 +559,15 @@
                                 luckily.</p>
                         </div>
                     </div>
+                    <a href class="back-to-top hidden-md-down" style="display: block;">
+                <i class="fa fa-angle-up"></i>
+            </a>
                 </div>
             </div>
+           
         </div>
     </footer>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!--/ footer end  -->
 
     <!-- link that opens popup -->

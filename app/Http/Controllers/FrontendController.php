@@ -11,7 +11,6 @@ use App\Pesantren;
 use App\Provinsi;
 use App\Gallery;
 use App\Tokoh;
-use App\Berdoa;
 use App\Doa;
 use App\DoaHarian;
 use App\Kerajaan;
@@ -30,13 +29,12 @@ class FrontendController extends Controller
         $provinsi = Provinsi::take(10)->get();
         $gallery = Gallery::take(10)->get();
         $pesantren = Pesantren::take(3)->get();
-        $berdoa = Berdoa::take(3)->get();
         $doa = Doa::take(10)->get();
         $doaharian = DoaHarian::take(10)->get();
         $tokoh = Tokoh::take(9)->get();
         $kerajaan = Kerajaan::take(3)->get();
         $walisongo = walisongo::take(9)->get();
-        return view('welcome', compact('artikel','kategori','pesantren','provinsi','gallery','pesantren','berdoa','doa','doaharian','tokoh','kerajaan','walisongo'));
+        return view('welcome', compact('artikel','kategori','pesantren','provinsi','gallery','pesantren','doa','doaharian','tokoh','kerajaan','walisongo'));
     }
 
 
@@ -66,7 +64,7 @@ class FrontendController extends Controller
         $kategori = kategori::take(10)->get();
         $doaharian = doaharian::take(19)->get();
         $data = artikel::inRandomOrder()->take(1)->get();
-        return view('kategori',compact('artikel','kategori','data','judulkate','berdoa','doaharian','provinsi'));
+        return view('kategori',compact('artikel','kategori','data','judulkate','doaharian','provinsi'));
     }
 
     public function provinsi(Provinsi $provinsi){
@@ -77,10 +75,20 @@ class FrontendController extends Controller
         }
         $judulprov = \DB::select('select * from provinsis where id= '.$oke.'');
         $provinsi = Provinsi::take(10)->get();
-        $berdoa = Berdoa::take(3)->get();
+       
         $doaharian = doaharian::take(19)->get();
         $data = Pesantren::inRandomOrder()->take(1)->get();
-        return view('provinsi',compact('pesantren','provinsi','data','judulprov','berdoa','doaharian'));
+        return view('provinsi',compact('pesantren','provinsi','data','judulprov','doaharian'));
+    }
+
+    public function doa(Doa $doa){
+        $doaharian=$doa->doaharian()->latest()->paginate(8);
+        $doa = doa::take(10)->get();
+        $doaharian = doaharian::take(19)->get();
+        $provinsi = Provinsi::take(10)->get();
+        $tokoh = tokoh::take(10)->get();
+        $data = doaharian::inRandomOrder()->take(1)->get();
+        return view('doa',compact('doaharian','doa','data','provinsi','tokoh'));
     }
   
     public function doaharian($doaharian){
@@ -120,30 +128,23 @@ class FrontendController extends Controller
     public function foto(Foto $foto){
         $foto= Foto::take(3)->get();
         $provinsi = Provinsi::take(10)->get();
-        $berdoa = Berdoa::take(3)->get();
-        return view('foto', compact('foto','provinsi','berdoa'));
+       
+        return view('foto', compact('foto','provinsi'));
     }
 
     public function gallery(gallery $gallery){
         $gallery= gallery::take(9)->get();
         $provinsi = Provinsi::take(10)->get();
-        $doaharian = doaharian::take(3)->get();
+        $doaharian = doaharian::take(3)->get(); 
         return view('gallery', compact('gallery','provinsi','doaharian'));
     }
 
     public function detail($gallery){
         $gallery = gallery::where('slug', '=', $gallery)->first();
         $provinsi = provinsi::take(10)->get();
-        $berdoa = Berdoa::take(3)->get();
+       
         $doaharian = DoaHarian::take(19)->get();
-        return view('detail',compact('gallery','provinsi','berdoa','doaharian'));
-    }
-
-
-    public function berdoa(){
-        $berdoa = Berdoa::take(3)->get();
-        $provinsi = Provinsi::take(10)->get();
-        return view('berdoa',compact('berdoa','provinsi'));
+        return view('detail',compact('gallery','provinsi','doaharian'));
     }
 
         public function tokoh($tokoh){
@@ -161,7 +162,7 @@ class FrontendController extends Controller
         }
 
 
-        public function email()
+        public function kontak()
         {
             $provinsi = provinsi::take(10)->get();
             $doaharian = doaharian::take(10)->get();
@@ -183,7 +184,7 @@ class FrontendController extends Controller
 
            Mail::to('farhanhidayatulfattah@gmail.com')->send(new SendMail($data));
 
-           return back()->with('success', 'thank you!');
+           return back()->with('success', 'Thank You !');
         }
     } 
 

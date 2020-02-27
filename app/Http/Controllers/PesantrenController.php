@@ -50,6 +50,8 @@ class PesantrenController extends Controller
         $pesantren->alamat = $request->alamat;
         $pesantren->telepon = $request->telepon;
         $pesantren->email = $request->email;
+        $pesantren->website = $request->website;
+        $pesantren->maps = $request->maps;
         $pesantren->id_provinsi = $request->provinsi_id;
         $pesantren->id_user = Auth::user()->id; 
         # Foto
@@ -116,6 +118,8 @@ class PesantrenController extends Controller
         $pesantren->alamat = $request->alamat;
         $pesantren->telepon = $request->telepon;
         $pesantren->email = $request->email;
+        $pesantren->website = $request->website;
+        $pesantren->maps = $request->maps;
         $pesantren->id_user = Auth::user()->id;
         $pesantren->id_provinsi = $request->id_provinsi;
 
