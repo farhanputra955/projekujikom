@@ -51,17 +51,17 @@
     color: #f91842 !important;
     border: 1px solid #040e27;
 }
-        .header-area .main-header-area .main-menu ul li a {
-        color: #fff;
-        font-size: 13px;
-        text-transform: capitalize;
-        font-weight: 500;
-        display: grid;
-        padding: 35px 0px 30px 0px;
-        font-family: "Roboto", sans-serif;
-        position: relative;
-        text-transform: capitalize;
-    }
+.header-area .main-header-area .main-menu ul li a {
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: grid;
+    padding: 35px 0px 30px 0px;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    text-transform: capitalize;
+}
     </style>
 </head>
 

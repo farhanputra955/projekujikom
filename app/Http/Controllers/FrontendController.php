@@ -17,6 +17,9 @@ use App\Kerajaan;
 use App\WaliSongo;
 use App\SendEmail;
 use App\Mail\SendMail;
+use App\Kisah;
+use App\DetailKisah;
+use App\Nabi;
 use DB;
 
 use App\User;
@@ -26,6 +29,7 @@ class FrontendController extends Controller
     public function index(){
         $artikel = Artikel::take(2)->get();
         $kategori = Kategori::take(10)->get();
+        $kisah = kisah::take(10)->get();
         $provinsi = Provinsi::take(10)->get();
         $gallery = Gallery::take(10)->get();
         $pesantren = Pesantren::take(3)->get();
@@ -33,17 +37,11 @@ class FrontendController extends Controller
         $doaharian = DoaHarian::take(10)->get();
         $tokoh = Tokoh::take(9)->get();
         $kerajaan = Kerajaan::take(3)->get();
+        $kisah = kisah::take(8)->get();
         $walisongo = walisongo::take(9)->get();
-        return view('welcome', compact('artikel','kategori','pesantren','provinsi','gallery','pesantren','doa','doaharian','tokoh','kerajaan','walisongo'));
+        return view('welcome', compact('artikel','kisah','kategori','pesantren','provinsi','gallery','pesantren','doa','doaharian','tokoh','kerajaan','walisongo','kisah'));
     }
 
-
-    public function blog(Kategori $kategori){
-        $artikel=$kategori->artikel()->latest()->paginate(8);
-        $kategori = Kategori::take(10)->get();
-        $data = Artikel::inRandomOrder()->take(1)->get();
-        return view('blog',compact('artikel','kategori','data'));
-    }
 
     public function singleblog($artikel){
         $artikel = Artikel::where('slug', '=', $artikel)->first();
@@ -81,14 +79,41 @@ class FrontendController extends Controller
         return view('provinsi',compact('pesantren','provinsi','data','judulprov','doaharian'));
     }
 
+    public function kisah(kisah $kisah){
+        $nabi=$kisah->nabi()->latest()->paginate(8);
+        $judul=$kisah->nabi()->take(1)->get();
+        foreach($judul as $data){
+           $oke = $data->id_kisah;
+        }
+        $judulkisah = \DB::select('select * from kisahs where id= '.$oke.'');
+        $kisah = kisah::take(10)->get();
+        $provinsi = provinsi::take(10)->get();
+        $doaharian = doaharian::take(19)->get();
+        $data = nabi::inRandomOrder()->take(1)->get();
+        return view('kisah',compact('nabi','kisah','data','judulkisah','doaharian','provinsi'));
+    }
+
+    public function detailkisah($nabi){
+        $nabi = nabi::with('user', 'kisah')->where('slug', '=', $nabi)->first();
+        $provinsi = provinsi::take(10)->get();
+        $doa = doa::take(19)->get();
+        return view('detailkisah',compact('nabi','provinsi','doa'));
+    }
+
+
     public function doa(Doa $doa){
         $doaharian=$doa->doaharian()->latest()->paginate(8);
-        $doa = doa::take(10)->get();
-        $doaharian = doaharian::take(19)->get();
+        $judul=$doa->doaharian()->take(1)->get();
+        foreach($judul as $data){
+           $oke = $data->id_doa;
+        }
+        $doa = Doa::take(10)->get();
+        $juduldoa = \DB::select('select * from doas where id= '.$oke.'');
         $provinsi = Provinsi::take(10)->get();
         $tokoh = tokoh::take(10)->get();
+        $doaharian = doaharian::take(19)->get();
         $data = doaharian::inRandomOrder()->take(1)->get();
-        return view('doa',compact('doaharian','doa','data','provinsi','tokoh'));
+        return view('doa',compact('doa','data','provinsi','tokoh','juduldoa','doaharian'));
     }
   
     public function doaharian($doaharian){
@@ -121,8 +146,8 @@ class FrontendController extends Controller
     public function pondok($pesantren){
         $pesantren = Pesantren::with('user', 'provinsi')->where('slug', '=', $pesantren)->first();
         $provinsi = provinsi::take(10)->get();
-        $doaharian = doaharian::take(19)->get();
-        return view('pondok',compact('pesantren','provinsi','doaharian'));
+        $doa = doa::take(19)->get();
+        return view('pondok',compact('pesantren','provinsi','doa'));
     }
 
     public function foto(Foto $foto){
@@ -166,7 +191,8 @@ class FrontendController extends Controller
         {
             $provinsi = provinsi::take(10)->get();
             $doaharian = doaharian::take(10)->get();
-            return view('kontak', compact('provinsi','doaharian'));
+            $doa = Doa::take(10)->get();
+            return view('kontak', compact('provinsi','doaharian','doa'));
         }
 
         function send(Request $request)

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="{{ asset ('assets/img/doa.png')}}">
     <title>Berdoa</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,17 +46,22 @@
     padding: 30px;
     margin-bottom: 30px;
 }
-    .header-area .main-header-area .main-menu ul li a {
-        color: #fff;
-        font-size: 13px;
-        text-transform: capitalize;
-        font-weight: 500;
-        display: grid;
-        padding: 35px 0px 30px 0px;
-        font-family: "Roboto", sans-serif;
-        position: relative;
-        text-transform: capitalize;
-    }
+.header-area .main-header-area .main-menu ul li a {
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: grid;
+    padding: 35px 0px 30px 0px;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.blog_details {
+    padding: 40px 40px 45px 40px;
+    box-shadow: 0px 10px 20px 0px rgb(163, 245, 166);
+}
     </style>
 </head>
 
@@ -101,7 +107,7 @@
                                                 @endforeach
                                                 
                                                 </ul>
-                                                <li><a href="/kerajaan">Sholat</a></li>
+                                               
                                                 <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
@@ -122,20 +128,22 @@
         </div>
     </header>
     <!-- header-end -->
-  
-      <!-- bradcam_area  -->
-      <div class="bradcam_area bradcam_bg_3">
+    <div class="bradcam_area bradcam_bg_2">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                     
+                        <h3>
+                        @foreach($juduldoa as $oke)
+                            {{ $oke->nama_doa }}
+                        @endforeach</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--/ bradcam_area  -->
+      <!-- bradcam_area  -->
+      <!--/ bradcam_area  -->
 
     <!--================Blog Area =================-->
     <section class="blog_area section-padding">

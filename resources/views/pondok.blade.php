@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="{{ asset ('assets/img/sekilas.png')}}">
     <title>Sekilasnya</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +36,7 @@
     </style>
 
     <style>
+    
         body {
     font-family: cursive;
     font-weight: normal;
@@ -58,16 +60,44 @@
     border: 1px solid #040e27;
 }
 .header-area .main-header-area .main-menu ul li a {
-        color: #fff;
-        font-size: 13px;
-        text-transform: capitalize;
-        font-weight: 500;
-        display: grid;
-        padding: 35px 0px 30px 0px;
-        font-family: "Roboto", sans-serif;
-        position: relative;
-        text-transform: capitalize;
-    }
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: grid;
+    padding: 35px 0px 30px 0px;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    text-transform: capitalize;
+}
+    .about_area.plus_padding {
+    padding-top: 75px;
+}
+.boxed-btn4 {
+    display: inline-block;
+    padding: 11px 29px 13px 29px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff !important;
+    text-transform: capitalize;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+    color: #096465 !important;
+    border: 1px solid #33D4D6;
+    background: transparent;
+}
+.about_area .about_info p {
+    color: #2f2c2c;
+    font-size: 16px;
+}
     </style>
 </head>
 
@@ -106,9 +136,9 @@
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($doaharian as $data)
+                                                @foreach($doa as $data)
                                                     <li>
-                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/doa/{{ $data->slug}}">{{ $data->nama_doa}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
@@ -186,7 +216,7 @@
                         <div class="d-sm-flex justify-content-between text-left">                       
                             <p class="like-info"><span class="align-middle"><i class=""></i></span>   
                             <div class="d-none d-lg-block">
-                            <a class="boxed-btn4" href="{{$pesantren->website}}">Selengkapnya</a>
+                            <a class="boxed-btn4" href="{{$pesantren->website}}" target="_blank" >Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -197,9 +227,7 @@
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class=""></i></span>
                         <div class="row">
-                        <a href="{{$pesantren->maps}}">
-                        <li><i class="fa fa-map-marker" style="font-size:45px;color:red; margin-left:10px" ></i></li>
-                        </a>
+                      
                         </div>
                         <div class="media-body" style="margin-left: 35px">
                         <li><i class="ti-home"></i>  :  {{$pesantren->alamat}}</h5></li>            
@@ -217,12 +245,15 @@
                         <li><i class="ti-email"></i>    :  {{$pesantren->email}}</h5></li>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-                    <!-- testimonial_area  -->
+    <br>
+    <center>
+    <iframe src="{{$pesantren->maps}}" height="500" width="1100"></iframe>
+    </center>   
+    <!-- testimonial_area  -->
     
     <!-- /testimonial_area  -->
 

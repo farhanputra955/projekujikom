@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="{{ asset ('assets/img/iconmasjid.png')}}">
     <title>Pondok Pesantren Modern & Terbaik</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +25,6 @@
     <link rel="stylesheet" href="{{ asset ('assets/baru/css/animate.min.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/baru/css/slick.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/baru/css/slicknav.css')}}">
-
     <link rel="stylesheet" href="{{ asset ('assets/baru/css/style.css')}}">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <style>
@@ -135,6 +135,33 @@
 }
 
     </style>
+    <style type="text/css">
+        body {
+            height: 50px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 77px;
+            right: 48px;
+            color: #FFF;
+            background: #41CAD4;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            width: 37px;
+            height: 38px;
+            border: 0;
+            border-radius: 50%;
+            display: none;
+            cursor: pointer;
+            z-index: 9999;
+        }
+        
+        .back-to-top:hover {
+            background: #2DB6C0;
+        }
+        </style>
 </head>
 
 <body>
@@ -175,7 +202,16 @@
                                                 @endforeach 
                                                 
                                                 </ul>
-                                                <li><a href="/solat">Sholat</a></li>
+                                                <li><a href="#"> Kisah <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                @foreach($kisah as $data)
+                                                    <li>
+                                                        <a href="/kisah/{{ $data->slug}}">{{ $data->nama_kisah}}</a>
+                                                    </li>
+                                                @endforeach 
+                                                
+                                                </ul>
+                                              
                                                 <li><a href="/kerajaan">Kerajaan Islam</a></li>
                                                 
                                             <li><a href="/gallery">Gallery</a></li>
@@ -479,7 +515,7 @@
                     </div>       
                 </div>
     <!-- /testimonial_area  -->
-
+    
     <!-- footer start -->
     <footer class="footer">
         <div class="footer_top">
@@ -560,15 +596,14 @@
                         </div>
                     </div>
                     <a href class="back-to-top hidden-md-down" style="display: block;">
-                <i class="fa fa-angle-up"></i>
-            </a>
+                     <i class="fa fa-angle-up fa-2x"></i>
+                    </a>
                 </div>
             </div>
            
         </div>
     </footer>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <!--/ footer end  -->
+  <!--/ footer end  -->
 
     <!-- link that opens popup -->
     <!-- JS here -->
@@ -600,9 +635,30 @@
     <script src="{{ asset ('assets/baru/js/jquery.form.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/jquery.validate.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/mail-script.js')}}"></script>
-
-
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){ 
+            $(window).on('scroll', function() {
+                if ($(this).scrollTop() > 1000) {
+                    $('.back-to-top').fadeIn();
+                } else {
+                    $('.back-to-top').fadeOut();
+                }
+            });
+            
+            $('.back-to-top').on('click', function(e) {
+                e.preventDefault();
+                $('html,body').animate({scrollTop: 0}, 600);
+            });
+        });
+        </script>
+        <script>
+            $('.back-to-top').on('click', function(e) {
+    e.preventDefault();
+    $('html,body').animate({scrollTop: 0}, 600);
+});
+        </script>
 </body>
 
 </html>

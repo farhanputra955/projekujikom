@@ -23,7 +23,7 @@ class CreatePesantrensTable extends Migration
             $table->char('telepon');
             $table->string('email');
             $table->string('website');
-            $table->string('maps');
+            $table->text('maps');
             $table->unsignedBigInteger('id_provinsi');
             $table->foreign('id_provinsi')->references('id')->on('provinsis')->onDelete('cascade');
             $table->unsignedBigInteger('id_user');

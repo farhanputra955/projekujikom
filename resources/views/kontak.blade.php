@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="{{ asset ('assets/img/kontak.png')}}">
     <title>
         Kontak
     </title>
@@ -75,16 +76,16 @@
     padding: 90px 0 100px;
 }
 .header-area .main-header-area .main-menu ul li a {
-        color: #fff;
-        font-size: 13px;
-        text-transform: capitalize;
-        font-weight: 500;
-        display: grid;
-        padding: 35px 0px 30px 0px;
-        font-family: "Roboto", sans-serif;
-        position: relative;
-        text-transform: capitalize;
-    }
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: grid;
+    padding: 35px 0px 30px 0px;
+    font-family: cursive;
+    position: relative;
+    text-transform: capitalize;
+}
     </style>
 </head>
 
@@ -122,9 +123,9 @@
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($doaharian as $data)
+                                                @foreach($doa as $data)
                                                     <li>
-                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/doa/{{ $data->slug}}">{{ $data->nama_doa}}</a>
                                                     </li>
                                                 @endforeach 
                                                 

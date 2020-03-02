@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Daftar</title>
+    <title>Detail Kisah</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,7 +26,57 @@
     <link rel="stylesheet" href="{{ asset ('assets/baru/css/slicknav.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/baru/css/style.css')}}">
     <!-- <link rel="stylesheet" href="css/responsive.css')}}"> -->
-  
+    <style>
+    .bradcam_bg_2 {
+        background-image: url(/assets/baru/img/banner/2.jpg);
+    }
+ 
+        h1, h2, h3, h4, h5 {
+    font-family: cursive;
+    color: rgb(255, 255, 255);
+}
+    .footer .socail_links ul li a {
+        color: #f91842 !important;
+        border: 1px solid #040e27;
+    }
+    .header-area .main-header-area .main-menu ul li a {
+    color: #fff;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: inline-block;
+    padding: 35px 0px 35px 0px;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    text-transform: capitalize;
+    }
+    .blog_right_sidebar .single_sidebar_widget {
+        background: #12483e;
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+    p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #ffffff;
+    margin-bottom: 13px;
+    font-family: sans-serif;
+}
+.blog_details {
+    padding: 60px 40px 5px 30px;
+}
+.header-area .main-header-area .main-menu ul li a {
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: grid;
+    padding: 35px 0px 30px 0px;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    text-transform: capitalize;
+}    </style>
 
 </head>
 
@@ -53,17 +103,28 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="/">home</a></li>
+                                              <li><a href="/">home</a></li>
                                           
                                             <li><a href="#">Pondok Pesantren <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                 @foreach($provinsi as $data)
                                                     <li>
-                                                        <a href="/blog/{{ $data->slug}}">{{ $data->nama_provinsi}}</a>
+                                                        <a href="/provinsi/{{ $data->slug}}">{{ $data->nama_provinsi}}</a>
                                                     </li>
                                                 @endforeach 
                                                 </ul>
-                                            <li><a href="contact.html">Gallery</a></li>
+                                                <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                @foreach($doa as $data)
+                                                    <li>
+                                                        <a href="/doa/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                    </li>
+                                                @endforeach 
+                                                
+                                                </ul>
+                                                <li><a href="/kerajaan">Kerajaan Islam</a></li>
+                                            <li><a href="/gallery">Gallery</a></li>
+                                            <li><a href="/kontak">Kontak</a></li>
                                             </li>
                                         </ul>
                                     </nav>
@@ -88,14 +149,14 @@
         </div>
     </header>
     <!-- header-end -->
-
+    
       <!-- bradcam_area  -->
       <div class="bradcam_area bradcam_bg_2">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Daftar {{ $data->nama_provinsi}}</h3>
+                        <h3> Sekilas</h3>
                     </div>
                 </div>
             </div>
@@ -105,41 +166,29 @@
 
     
     <!-- about_area_start  -->
-    <div class="about_area plus_padding">
+    <section class="blog_area section-padding">
         <div class="container">
-            <div class="row align-items-center">           
-            @foreach($artikel as $data)
-                <div class="col-lg-6 col-md-6">
-                    <div class="about_img wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                    <img class="img-fluid" src="/assets/img/ponpes/{{ $data->foto }}" width="200px" height="300px" alt="">
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="about_info pl-68">
-                        <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
-                        <?php $no= 1; ?>
-                            <h4> {{$data->judul}}</h4>
-                        </div>                     
-                        <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s"></p>
-                        <div class="about_list">
-                            <div class="about_btn wow fadeInRight" data-wow-duration="1.3s" data-wow-delay=".5s">
-                                <a class="boxed-btn3" href="/singleblog/{{$data->slug}}">Sekilasnya</a>
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="/assets/img/kisah/{{ $nabi->foto }}" alt="">
                             </div>
-                            <br>
-                            <br>
-                        </div>  
+                            <div class="blog_details">
+                                <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
+                                    <h4> <strong> {{$nabi->nama_nabi}} </strong> </h4>
+                                    <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$nabi->konten}} </p>
+                                </div>  
+                              </div>                       
+                        </article>
                     </div>
-                </div>         
-                @endforeach
+                </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- about_area_end  -->
-  
+    
 
     <!-- testimonial_area  -->
   
