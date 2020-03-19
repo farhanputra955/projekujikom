@@ -7,7 +7,7 @@
     <title>Detail Kerajaan</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -68,7 +68,7 @@
 }
 .header-area .main-header-area .main-menu ul li a {
     color: #fff;
-    font-size: 15px;
+    font-size: 13px;
     text-transform: capitalize;
     font-weight: 500;
     display: grid;
@@ -76,7 +76,19 @@
     font-family: "Roboto", sans-serif;
     position: relative;
     text-transform: capitalize;
-}    </style>
+}   
+.section-padding {
+    padding-top: 90px;
+    padding-bottom: 120px;
+}
+.footer .footer_top {
+    padding-top: 14px;
+    padding-bottom: 129px;
+}
+.blog_details {
+    padding: 20px 13px 5px 30px;
+}
+ </style>
 
 </head>
 
@@ -115,14 +127,25 @@
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($doaharian as $data)
+                                                @foreach($doaseharihari as $data)
                                                     <li>
-                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/doaseharihari/{{ $data->slug}}">{{ $data->nama_doa}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
                                                 </ul>
+                                                <li><a href="#"> Kisah <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                @foreach($kisah as $data)
+                                                    <li>
+                                                        <a href="/kisah/{{ $data->slug}}">{{ $data->nama_kisah}}</a>
+                                                    </li>
+                                                @endforeach 
+                                                
+                                                </ul>
+                                              
                                                 <li><a href="/kerajaan">Kerajaan Islam</a></li>
+                                                
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
@@ -173,7 +196,7 @@
                     <div class="blog_left_sidebar">
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="/assets/img/kerajaan/{{ $kerajaan->foto }}" alt="">
+                                <img src="/assets/img/kerajaan/{{ $kerajaan->foto }}" alt="Image" height="370" width="720">
                             </div>
                             <div class="blog_details">
                                 <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
@@ -184,6 +207,7 @@
                         </article>
                     </div>
                 </div>
+                
                 <div class="col-lg-4">              
                     <div class="blog_right_sidebar">             
                         <aside class="single_sidebar_widget popular_post_widget">

@@ -1,18 +1,66 @@
 @extends('argon')
-@section('css')
-    <link rel="stylesheet" href="{{asset('assets/backend/assets/vendor/select2/select2.min.css')}}">
-@endsection
 
-@section('js')
-    <script src="{{asset('assets/backend/assets/vendor/ckeditor/ckeditor.js')}}"></script>
-    <script src="{{asset('assets/backend/assets/vendor/select2/select2.min.js')}}"></script>
-    <script src="{{asset('assets/backend/assets/js/components/select2-init.js')}}"></script>
-    <script>
-        CKEDITOR.replace( 'editor1' );
-        $(document).ready(function () {
-        $('#select2').select2();
-    })
-    </script>
+<script type="text/javascript" src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
+<script>
+    CKEDITOR.replace('editor1');
+</script>
+
+@section('sidebar')
+<ul class="navbar-nav">
+          <li class="nav-item  class=" active"">
+          <a class=" nav-link active "> <i class="ni ni-tv-2 text-primary"></i> MENU</a> 
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/artikel') }}">
+             Artikel
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kategori') }}">
+              Kategori
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/pesantren') }}">
+               Pesantren
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/provinsi') }}">
+               Provinsi
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/more') }}">
+              Doa Harian
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/doaseharihari') }}">
+              Kategori Doa 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kerajaan') }}">
+             Kerajaan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/nabi') }}">
+             Kisah Kisah
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kisah') }}">
+             Kategori Kisah
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/gallery') }}">
+              Gallery
+            </a>
+          </li>
+        </ul>
 @endsection
 
 @section('content')
@@ -20,26 +68,40 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Membuat Data gallery</div>
+                <div class="card-header">Membuat Data Gallery</div>
                 <div class="card-body">
                 <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-              <label for="">Judul gallery</label>
+              <label for="">Judul Gallery</label>
               <input type="text" name="judul" id="" class="form-control" aria-describedby="helpId" required>
             </div>
-                  <div class="form-group">
-                    <label for="">Konten</label>
-                    <textarea name="konten" id="texteditor" cols="30" rows="9" class="form-control" required></textarea>
-                  </div>
-                  <div class="form-group">
+            <div class="form-group">
                     <label for="">Foto</label>
                     <input type="file" name="foto" id="foto" class="form-control" required>
                   </div>
+                  <div class="form-group">
+                  <div class="form-group">
+                            <label for="">Konten</label>
+
+                            <textarea class="form-control ckeditor 
+                            @error('konten') is-invalid @enderror"
+                             name="konten" id="editor1" require>
+                            
+                             </textarea>
+                             @error('konten')
+                             <span class="invalid-feedback" role="alert">
+                                <strong>{{$message}}</strong>
+                             </span>
+                             @enderror
+                        </div>
                  
                     <button type="submit" name="Simpan"class="btn btn-md btn-info">Simpan</button>
+                    
                     <a name="" id="" class="btn btn-md btn-warning" href="{{route('gallery.index')}}" role="button">Kembali</a>
+                
               </form>
+              
                     </form>
                 </div>
             </div>

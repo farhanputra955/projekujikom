@@ -59,7 +59,7 @@
 }
 .header-area .main-header-area .main-menu ul li a {
     color: #fff;
-    font-size: 15px;
+    font-size: 13px;
     text-transform: capitalize;
     font-weight: 500;
     display: grid;
@@ -105,16 +105,27 @@
                                                     </li>
                                                 @endforeach 
                                                 </ul>
-                                                <li><a href="/berdoa"> Doa Harian <i class="ti-angle-down"></i></a>
+                                                <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($doaharian as $data)
+                                                @foreach($doaseharihari as $data)
                                                     <li>
-                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/doaseharihari/{{ $data->slug}}">{{ $data->nama_doa}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
                                                 </ul>
+                                                <li><a href="#"> Kisah <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                @foreach($kisah as $data)
+                                                    <li>
+                                                        <a href="/kisah/{{ $data->slug}}">{{ $data->nama_kisah}}</a>
+                                                    </li>
+                                                @endforeach 
+                                                
+                                                </ul>
+                                              
                                                 <li><a href="/kerajaan">Kerajaan Islam</a></li>
+                                                
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
@@ -184,7 +195,7 @@
                         <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s"></p>
                         <div class="about_list">
                             <div class="about_btn wow fadeInRight" data-wow-duration="1.3s" data-wow-delay=".5s">
-                                <a class="boxed-btn3" href="/detailkisah/{{$data->slug}}">Sekilasnya</a>
+                                <a class="boxed-btn3" href="/detailkisah/{{$data->slug}}">Baca Kisah</a>
                             </div>
                             <br>
                             <br>

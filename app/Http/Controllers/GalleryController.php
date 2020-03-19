@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Gallery;
-use App\Kategori;
 use Session;
-use Illuminate\Support\Facades\File;
+use File;
 use Illuminate\Queue\Jobs\SyncJob;
 
 class GalleryController extends Controller

@@ -1,18 +1,61 @@
 @extends('argon')
-@section('css')
-    <link rel="stylesheet" href="{{asset('assets/backend/assets/vendor/select2/select2.min.css')}}">
-@endsection
 
-@section('js')
-    <script src="{{asset('assets/backend/assets/vendor/ckeditor/ckeditor.js')}}"></script>
-    <script src="{{asset('assets/backend/assets/vendor/select2/select2.min.js')}}"></script>
-    <script src="{{asset('assets/backend/assets/js/components/select2-init.js')}}"></script>
-    <script>
-        CKEDITOR.replace( 'editor1' );
-        $(document).ready(function () {
-        $('#select2').select2();
-    })
-    </script>
+@section('sidebar')
+<ul class="navbar-nav">
+          <li class="nav-item  class=" active"">
+          <a class=" nav-link active "> <i class="ni ni-tv-2 text-primary"></i> MENU</a> 
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/artikel') }}">
+             Artikel
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kategori') }}">
+              Kategori
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/pesantren') }}">
+               Pesantren
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/provinsi') }}">
+               Provinsi
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/more') }}">
+              Doa Harian
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/doaseharihari') }}">
+              Kategori Doa 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kerajaan') }}">
+             Kerajaan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/nabi') }}">
+             Kisah Kisah
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kisah') }}">
+             Kategori Kisah
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/foto') }}">
+              Gallery
+            </a>
+          </li>
+        </ul>
 @endsection
 
 @section('content')
@@ -25,7 +68,7 @@
                 <form action="{{ route('pesantren.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-              <label for="">Judul pesantren</label>
+              <label for="">Nama pesantren</label>
               <input type="text" name="judul" id="" class="form-control" aria-describedby="helpId" required>
             </div>
                   <div class="form-group">
@@ -37,7 +80,7 @@
                     <input type="file" name="foto" id="foto" class="form-control" required>
                   </div>
                   <div class="form-group">
-                    <label for="">Nama provinsi</label>
+                    <label for="">Nama Provinsi</label>
                     <select name="provinsi_id" class="form-control" required>
                         @foreach($provinsi as $data)
                         <option value="{{ $data->id }}">{{ $data->nama_provinsi }}</option>

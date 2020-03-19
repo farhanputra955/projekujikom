@@ -100,4 +100,5 @@ class DoaController extends Controller
         $doa->delete();
         return redirect()->route('doa.index');
     }
+
 }

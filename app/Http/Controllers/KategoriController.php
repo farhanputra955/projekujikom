@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Kategori;
+use App\kategori;
 use Session;
 use Auth;
 
@@ -38,15 +38,16 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         $kategori = new kategori();
-        $kategori->nama_kategori = $request->kategori;
-        $kategori->slug = Str::slug($request->kategori, '-');
+        $kategori->nama_kategori = $request->nama_kategori;
+        $kategori->slug = Str::slug($request->nama_kategori, '-');
         $kategori->save();
         Session::flash("flash_notification", [
             "level" => "success",
-            "message" => "Berhasil menyimpan kategori <b>$kategori->nama</b>!"
+            "message" => "Berhasil menyimpan kategori <b>$kategori->nama_kategori</b>!"
         ]);
         return redirect()->route('kategori.index');
     }
+  
     /**
      * Display the specified resource.
      *
@@ -80,15 +81,15 @@ class KategoriController extends Controller
     {
         //
         $request->validate([
-            'nama' => 'required',
+            'nama_kategori' => 'required',
         ]);
         $kategori = kategori::findOrFail($id);
-        $kategori->nama_kategori = $request->nama;
-        $kategori->slug = Str::slug($request->nama, '-');
+        $kategori->nama_kategori = $request->nama_kategori;
+        $kategori->slug = Str::slug($request->nama_kategori, '-');
         $kategori->save();
         Session::flash("flash_notification", [
             "level" => "primary",
-            "message" => "Berhasil mengubah menjadi kategori <b>$kategori->nama</b>!"
+            "message" => "Berhasil mengubah menjadi kategori <b>$kategori->nama_kategori</b>!"
         ]);
         return redirect()->route('kategori.index');
     }

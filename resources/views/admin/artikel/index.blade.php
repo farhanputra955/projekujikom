@@ -1,14 +1,62 @@
 @extends('argon')
 
-{{-- @section('css')
-        <link rel="stylesheet" href="{{asset('assets/backend/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.css')}}">
+@section('sidebar')
+<ul class="navbar-nav">
+          <li class="nav-item  class=" active"">
+          <a class=" nav-link active "> <i class="ni ni-tv-2 text-primary"></i> MENU</a> 
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/artikel') }}">
+             Artikel
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kategori') }}">
+              Kategori
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/pesantren') }}">
+               Pesantren
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/provinsi') }}">
+               Provinsi
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/more') }}">
+              Doa Harian
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/doaseharihari') }}">
+              Kategori Doa 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kerajaan') }}">
+             Kerajaan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/nabi') }}">
+             Kisah Kisah
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kisah') }}">
+             Kategori Kisah
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/gallery') }}">
+              Gallery
+            </a>
+          </li>
+        </ul>
 @endsection
-
-@section('js')
-        <script src="{{asset('assets/backend/assets/vendor/datatables.net/js/jquery.dataTables.js')}}"></script>
-        <script src="{{asset('assets/backend/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js')}}"></script>
-        <script src="{{asset('assets/backend/assets/js/components/datatables-init.js')}}"></script>
-@endsection --}}
 
 @section('content')
 <section class="page-content container-fluid">
@@ -25,7 +73,7 @@
                     <table id="datatable" class="table">
                     <thead class="thead-dark">
                             <tr>
-                                <th>Judul</th>
+                                <th>Judul Artikel</th>
                             
                                 <th style="text-align: center;">Foto</th>
                                 <th style="text-align: center;">Opsi</th>

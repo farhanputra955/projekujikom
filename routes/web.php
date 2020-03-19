@@ -15,6 +15,7 @@
     Route::get('/kontak', 'FrontendController@kontak');  
     Route::get('/provinsi/{provinsi}', 'FrontendController@provinsi');
     Route::get('/kisah/{kisah}', 'FrontendController@kisah');
+    Route::get('/doaseharihari/{doaseharihari}', 'FrontendController@doaseharihari');
     Route::get('/doa/{doa}', 'FrontendController@doa');   
     Route::get('/blog/{blog}', 'FrontendController@blog');   
     route::get('/singleblog/{artikel}', 'FrontendController@singleblog');
@@ -50,11 +51,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
        Route::resource('kategori', 'KategoriController');
        Route::resource('artikel', 'ArtikelController');
        Route::resource('gallery', 'GalleryController');
-       Route::resource('doa', 'DoaController'); 
+       Route::resource('doa', 'DoaController');
+       Route::resource('doaseharihari', 'DoaseharihariController'); 
+       Route::resource('more', 'MoreController');
        Route::resource('doaharian', 'DoaHarianController');
        Route::resource('kisah', 'KisahController'); 
        Route::resource('nabi', 'NabiController');
-       
+       Route::resource('book', 'BookController');
+       Route::resource('category', 'CategoryController');
+      
 });
 
 Auth::routes(['register' => false]);

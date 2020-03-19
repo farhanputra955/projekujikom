@@ -1,19 +1,63 @@
 @extends('argon')
-@section('css')
-<link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
+
+@section('sidebar')
+<ul class="navbar-nav">
+          <li class="nav-item  class=" active"">
+          <a class=" nav-link active "> <i class="ni ni-tv-2 text-primary"></i> MENU</a> 
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/artikel') }}">
+             Artikel
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kategori') }}">
+              Kategori
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/pesantren') }}">
+               Pesantren
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/provinsi') }}">
+               Provinsi
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/more') }}">
+              Doa Harian
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/doaseharihari') }}">
+              Kategori Doa 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kerajaan') }}">
+             Kerajaan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/nabi') }}">
+             Kisah Kisah
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/kisah') }}">
+             Kategori Kisah
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url('admin/gallery') }}">
+              Gallery
+            </a>
+          </li>
+        </ul>
 @endsection
 
-@section('js')
-    <script src="{{ asset('js/select2.min.js')}}"></script>
-    <script src="{{ asset('backend/assets/js/components/select2-init.js')}}"></script>
-    <script src="{{ asset('backend/assets/vendor/ckeditor/ckeditor.js')}}"></script>
-<script>
-    CKEDITOR.replace('editorl');
-    $(document).ready(function () {
-        $('#select2').select2();
-    })
-</script>
-@endsection
 
 @section('content')
 <div class="container">
@@ -27,15 +71,16 @@
 
     <div class="form-group">
         <label for="">Kategori</label>
-        <input class="form-control" type="text" name="kategori">
+        <input class="form-control" type="text" name="nama_kategori">
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-outline-info">
         Simpan Data
         </button>
     </div>
+    
     <div class="form-group">
-        <a href="{{ url('kategori') }}" class="btn btn-outline-info">Kembali</a>
+        <a href="{{ url('admin/kategori') }}" class="btn btn-outline-info">Kembali</a>
     </div>
         </form>
             </div>

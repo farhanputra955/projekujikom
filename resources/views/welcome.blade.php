@@ -142,8 +142,8 @@
         
         .back-to-top {
             position: fixed;
-            bottom: 77px;
-            right: 48px;
+            bottom: 93px;
+            right: 65px;
             color: #FFF;
             background: #41CAD4;
             line-height: 30px;
@@ -640,7 +640,7 @@
         <script type="text/javascript">
         $(document).ready(function(){ 
             $(window).on('scroll', function() {
-                if ($(this).scrollTop() > 1000) {
+                if ($(this).scrollTop() > 1500) {
                     $('.back-to-top').fadeIn();
                 } else {
                     $('.back-to-top').fadeOut();
@@ -653,12 +653,7 @@
             });
         });
         </script>
-        <script>
-            $('.back-to-top').on('click', function(e) {
-    e.preventDefault();
-    $('html,body').animate({scrollTop: 0}, 600);
-});
-        </script>
+
 </body>
 
 </html>

@@ -11,7 +11,7 @@ class Doa extends Model
 
     public function doaharian()
     {
-        return $this->hasMany('App\DoaHarian', 'id_doa');
+        return $this->hasMany('App\Doaharian', 'id_doa');
     }
 
     public static function boot()

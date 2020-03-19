@@ -65,7 +65,7 @@
 }
 .header-area .main-header-area .main-menu ul li a {
     color: #fff;
-    font-size: 15px;
+    font-size: 13px;
     text-transform: capitalize;
     font-weight: 500;
     display: grid;
@@ -74,6 +74,11 @@
     position: relative;
     text-transform: capitalize;
 }
+.section-padding {
+    padding-top: 80px;
+    padding-bottom: 120px;
+}
+
     </style>
 
 </head>
@@ -113,14 +118,25 @@
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($doaharian as $data)
+                                                @foreach($doaseharihari as $data)
                                                     <li>
-                                                        <a href="/doaharian/{{ $data->slug}}">{{ $data->judul}}</a>
+                                                        <a href="/doaseharihari/{{ $data->slug}}">{{ $data->nama_doa}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
                                                 </ul>
+                                                <li><a href="#"> Kisah <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                @foreach($kisah as $data)
+                                                    <li>
+                                                        <a href="/kisah/{{ $data->slug}}">{{ $data->nama_kisah}}</a>
+                                                    </li>
+                                                @endforeach 
+                                                
+                                                </ul>
+                                              
                                                 <li><a href="/kerajaan">Kerajaan Islam</a></li>
+                                                
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>
@@ -174,8 +190,9 @@
                             <div class="blog_details">
                                 <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
                                     <h4> {{$walisongo->nama_walisongo}}</h4>
-                                    <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$walisongo->konten}} </p>
-                                    <img class="blog_left_sidebar" src="/assets/img/walisongo/{{ $walisongo->foto }}" alt="">                            
+                                    <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{!!$walisongo->konten!!} </p>
+                                    
+                                    <img class="blog_left_sidebar" src="/assets/img/walisongo/{{ $walisongo->foto }}" alt="Image" width="570" height="370">                            
                                 </div>  
                               </div>                       
                         </article>

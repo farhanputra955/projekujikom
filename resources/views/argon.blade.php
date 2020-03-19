@@ -19,6 +19,40 @@
   <link rel="stylesheet" type="text/css" href="/DataTables/css/jquery.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css">
   <link rel="stylesheet" href="/SweetAlert/sweetalert2.min.css">
+
+  <style>
+  .navbar-vertical.navbar-expand-md .navbar-brand {
+    display: block;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 0rem;
+}
+.navbar-vertical.navbar-expand-md .navbar-collapse {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 2rem;
+    padding-right: 1.5rem;
+}
+.navbar-vertical.navbar-expand-md .navbar-nav .nav-link {
+    padding: 0.6rem 2rem;
+}
+.navbar-vertical .navbar-nav .nav-link>i {
+    min-width: 1.7rem;
+    font-size: .9375rem;
+    line-height: 1.5rem;
+}
+.nav-link i.ni {
+    position: static;
+    top: 2px;
+}
+.text-white {
+    color: #000 !important;
+}
+  </style>
 </head>
 
 <body class="">
@@ -98,44 +132,7 @@
           </div>
         </form>
         <!-- Navigation -->
-        <ul class="navbar-nav">
-          <li class="nav-item  class=" active"">
-          <a class=" nav-link active "> <i class="ni ni-tv-2 text-primary"></i> MENU</a> 
-          <li class="nav-item">
-            <a class="nav-link " href="artikel">
-             Artikel
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="kategori">
-              Kategori
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="pesantren">
-               Pesantren
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="provinsi">
-               Provinsi
-            </a>
-          </li>
-         
-          <li class="nav-item">
-            <a class="nav-link " href="berdoa">
-              Doa Harian
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link " href="foto">
-              Gallery
-            </a>
-          </li>
-         
-         
-        </ul>
+        @yield('sidebar')
         <!-- Divider -->
         <hr class="my-3">
         <!-- Heading -->
@@ -149,7 +146,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h2 mb-0 text-white text-uppercase d-none d-lg-inline-block">Dashboard</a>
+        <div class="h2 mb-0 text-white text-uppercase d-none d-lg-inline-block">Dashboard</div>
         <!-- Form -->
        
         <!-- User -->

@@ -98,6 +98,38 @@
     color: #2f2c2c;
     font-size: 16px;
 }
+.header-area .main-header-area .main-menu ul li a {
+    color: #fff;
+    font-size: 13px;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: grid;
+    padding: 35px 0px 30px 0px;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    text-transform: capitalize;
+}
+.boxed-btn4 {
+    display: inline-block;
+    padding: 11px 29px 13px 29px;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff !important;
+    text-transform: capitalize;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+    color: #33D4D6 !important;
+    border: 1px solid #33D4D6;
+    background: #fffefe00;
+}
     </style>
 </head>
 
@@ -136,14 +168,25 @@
                                                 </ul>
                                                 <li><a href="#"> Doa Harian <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                @foreach($doa as $data)
+                                                @foreach($doaseharihari as $data)
                                                     <li>
-                                                        <a href="/doa/{{ $data->slug}}">{{ $data->nama_doa}}</a>
+                                                        <a href="/doaseharihari/{{ $data->slug}}">{{ $data->nama_doa}}</a>
                                                     </li>
                                                 @endforeach 
                                                 
                                                 </ul>
+                                                <li><a href="#"> Kisah <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                @foreach($kisah as $data)
+                                                    <li>
+                                                        <a href="/kisah/{{ $data->slug}}">{{ $data->nama_kisah}}</a>
+                                                    </li>
+                                                @endforeach 
+                                                
+                                                </ul>
+                                              
                                                 <li><a href="/kerajaan">Kerajaan Islam</a></li>
+                                                
                                             <li><a href="/gallery">Gallery</a></li>
                                             <li><a href="/kontak">Kontak</a></li>
                                             </li>

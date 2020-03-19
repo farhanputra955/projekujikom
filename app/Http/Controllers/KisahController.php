@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Kisah;
 use Session;
 use Auth;
+use DB;
 
 class KisahController extends Controller
 {
@@ -75,11 +76,11 @@ class KisahController extends Controller
     {
         //
         $request->validate([
-            'nama' => 'required',
+            'nama_kisah' => 'required',
         ]);
         $kisah = kisah::findOrFail($id);
-        $kisah->nama_kisah = $request->nama;
-        $kisah->slug = Str::slug($request->nama, '-');
+        $kisah->nama_kisah = $request->nama_kisah;
+        $kisah->slug = Str::slug($request->nama_kisah, '-');
         $kisah->save();
         Session::flash("flash_notification", [
             "level" => "primary",

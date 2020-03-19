@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\WaliSongo;
 use Session; 
 use DB;
-use Illuminate\Support\Facades\File;
+use File;
 
 
 class WaliSongoController extends Controller

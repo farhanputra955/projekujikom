@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Kerajaan;
 use Session; 
 use DB;
-use Illuminate\Support\Facades\File;
+use File;
 
 class KerajaanController extends Controller
     
@@ -122,8 +122,8 @@ class KerajaanController extends Controller
     public function update(Request $request, $id)
     {
         $kerajaan = kerajaan::findOrFail($id);
-        $kerajaan->judul = $request->judul;
-        $kerajaan->slug = Str::slug($request->judul, '-');
+        $kerajaan->nama_kerajaan = $request->nama_kerajaan;
+        $kerajaan->slug = Str::slug($request->nama_kerajaan, '-');
         $kerajaan->konten = $request->konten;
        
         // foto
@@ -153,7 +153,7 @@ class KerajaanController extends Controller
         Session::flash("flash_notification", [
             "level" => "success",
             "message" => "Berhasil edit <b>"
-                . $kerajaan->judul . "</b>"
+                . $kerajaan->nama_kerajaan . "</b>"
         ]);
         return redirect()->route('kerajaan.index');
     

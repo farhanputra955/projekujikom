@@ -12,6 +12,8 @@ use App\Provinsi;
 use App\Gallery;
 use App\Tokoh;
 use App\Doa;
+use App\Doaseharihari;
+use App\More;
 use App\DoaHarian;
 use App\Kerajaan;
 use App\WaliSongo;
@@ -34,12 +36,14 @@ class FrontendController extends Controller
         $gallery = Gallery::take(10)->get();
         $pesantren = Pesantren::take(3)->get();
         $doa = Doa::take(10)->get();
-        $doaharian = DoaHarian::take(10)->get();
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
+        $doaharian = doaharian::take(10)->get();
         $tokoh = Tokoh::take(9)->get();
         $kerajaan = Kerajaan::take(3)->get();
         $kisah = kisah::take(8)->get();
         $walisongo = walisongo::take(9)->get();
-        return view('welcome', compact('artikel','kisah','kategori','pesantren','provinsi','gallery','pesantren','doa','doaharian','tokoh','kerajaan','walisongo','kisah'));
+        return view('index', compact('artikel','kisah','kategori','pesantren','provinsi','gallery','pesantren','doaseharihari','tokoh','kerajaan','walisongo','kisah','doaseharihari','more'));
     }
 
 
@@ -48,7 +52,10 @@ class FrontendController extends Controller
         $kategori = Kategori::take(10)->get();  
         $doaharian =  DoaHarian::take(10)->get();  
         $provinsi = Provinsi::take(10)->get();
-        return view('singleblog',compact('artikel','kategori','provinsi','doaharian'));
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
+        $doa = doa::take(10)->get();
+        return view('singleblog',compact('artikel','kategori','provinsi','doaseharihari','more'));
     }
 
     public function kategori(kategori $kategori){
@@ -60,9 +67,10 @@ class FrontendController extends Controller
         }
         $judulkate = \DB::select('select * from kategoris where id= '.$oke.'');
         $kategori = kategori::take(10)->get();
-        $doaharian = doaharian::take(19)->get();
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
         $data = artikel::inRandomOrder()->take(1)->get();
-        return view('kategori',compact('artikel','kategori','data','judulkate','doaharian','provinsi'));
+        return view('kategori',compact('artikel','kategori','data','judulkate','provinsi','doaseharihari','more'));
     }
 
     public function provinsi(Provinsi $provinsi){
@@ -73,11 +81,31 @@ class FrontendController extends Controller
         }
         $judulprov = \DB::select('select * from provinsis where id= '.$oke.'');
         $provinsi = Provinsi::take(10)->get();
-       
-        $doaharian = doaharian::take(19)->get();
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
         $data = Pesantren::inRandomOrder()->take(1)->get();
-        return view('provinsi',compact('pesantren','provinsi','data','judulprov','doaharian'));
+        $kisah = kisah::take(10)->get();
+        return view('provinsi',compact('pesantren','provinsi','data','judulprov','doaseharihari','kisah','more'));
     }
+
+
+    public function doa(Doa $doa){
+        $doaharian=$doa->doaharian()->latest()->paginate(8);
+        $judul=$doa->doaharian()->take(1)->get();
+        foreach($judul as $data){
+           $oke = $data->id_doa;
+        }
+        $juduldoa = \DB::select('select * from doas where id= '.$oke.'');
+       
+        $provinsi = provinsi::take(10)->get();
+        $tokoh = tokoh::take(10)->get();
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
+        $data = doaharian::inRandomOrder()->take(1)->get();
+        $kisah = kisah::take(10)->get();
+        return view('doa',compact('doaharian','doaseharihari','data','juduldoa','provinsi','doaseharihari','more','kisah','tokoh'));
+    }
+  
 
     public function kisah(kisah $kisah){
         $nabi=$kisah->nabi()->latest()->paginate(8);
@@ -88,40 +116,35 @@ class FrontendController extends Controller
         $judulkisah = \DB::select('select * from kisahs where id= '.$oke.'');
         $kisah = kisah::take(10)->get();
         $provinsi = provinsi::take(10)->get();
-        $doaharian = doaharian::take(19)->get();
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
         $data = nabi::inRandomOrder()->take(1)->get();
-        return view('kisah',compact('nabi','kisah','data','judulkisah','doaharian','provinsi'));
+        return view('kisah',compact('nabi','kisah','data','judulkisah','provinsi','doaseharihari','more'));
     }
+
+    public function doaseharihari(doaseharihari $doaseharihari){
+        $more=$doaseharihari->more()->latest()->paginate(8);
+        $judul=$doaseharihari->more()->take(1)->get();
+        foreach($judul as $data){
+           $oke = $data->id_doaseharihari;
+        }
+        $juduldoaseharihari = \DB::select('select * from doasehariharis where id= '.$oke.'');
+        $doaseharihari = doaseharihari::take(10)->get();
+        $provinsi = provinsi::take(10)->get();
+        $tokoh = tokoh::take(10)->get();
+        $kisah = kisah::take(10)->get();
+        $data = more::inRandomOrder()->take(1)->get();
+        return view('doaseharihari',compact('more','kisah','data','juduldoaseharihari','provinsi','doaseharihari','more','kisah','tokoh'));
+    }
+    
 
     public function detailkisah($nabi){
         $nabi = nabi::with('user', 'kisah')->where('slug', '=', $nabi)->first();
         $provinsi = provinsi::take(10)->get();
-        $doa = doa::take(19)->get();
-        return view('detailkisah',compact('nabi','provinsi','doa'));
-    }
-
-
-    public function doa(Doa $doa){
-        $doaharian=$doa->doaharian()->latest()->paginate(8);
-        $judul=$doa->doaharian()->take(1)->get();
-        foreach($judul as $data){
-           $oke = $data->id_doa;
-        }
-        $doa = Doa::take(10)->get();
-        $juduldoa = \DB::select('select * from doas where id= '.$oke.'');
-        $provinsi = Provinsi::take(10)->get();
-        $tokoh = tokoh::take(10)->get();
-        $doaharian = doaharian::take(19)->get();
-        $data = doaharian::inRandomOrder()->take(1)->get();
-        return view('doa',compact('doa','data','provinsi','tokoh','juduldoa','doaharian'));
-    }
-  
-    public function doaharian($doaharian){
-        $doaharian = DoaHarian::with('user')->where('slug', '=', $doaharian)->first();
-        $doaharian2 =  DoaHarian::with('user')->get();
-        $provinsi = provinsi::take(10)->get();
-        $tokoh = tokoh::take(10)->get();
-        return view('doaharian',compact('doaharian','provinsi','doaharian2','tokoh'));
+        $kisah = kisah::take(10)->get();
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
+        return view('detailkisah',compact('nabi','provinsi','doaseharihari','more','kisah'));
     }
 
 
@@ -129,8 +152,10 @@ class FrontendController extends Controller
         $kerajaan= kerajaan::take(7)->get();
         $provinsi = provinsi::take(10)->get();
         $tokoh = tokoh::take(10)->get();
-        $doaharian = doaharian::take(19)->get();
-        return view('kerajaan',compact('kerajaan','provinsi','tokoh','doaharian'));
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
+        $kisah = kisah::take(10)->get();
+        return view('kerajaan',compact('kerajaan','provinsi','tokoh','kisah','doaseharihari','more'));
     }
 
 
@@ -138,61 +163,66 @@ class FrontendController extends Controller
         $kerajaan = kerajaan::where('slug', '=', $kerajaan)->first();
         $provinsi = provinsi::take(10)->get();
         $walisongo = walisongo::take(10)->get();
-        $doaharian = doaharian::take(19)->get();
-        return view('kerajaanislam',compact('kerajaan','provinsi','doaharian','walisongo'));
+        $kisah = kisah::take(10)->get();
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
+        return view('kerajaanislam',compact('kerajaan','provinsi','walisongo','kisah','doaseharihari','more'));
     }
 
 
     public function pondok($pesantren){
         $pesantren = Pesantren::with('user', 'provinsi')->where('slug', '=', $pesantren)->first();
         $provinsi = provinsi::take(10)->get();
-        $doa = doa::take(19)->get();
-        return view('pondok',compact('pesantren','provinsi','doa'));
-    }
-
-    public function foto(Foto $foto){
-        $foto= Foto::take(3)->get();
-        $provinsi = Provinsi::take(10)->get();
-       
-        return view('foto', compact('foto','provinsi'));
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
+        $kisah = kisah::take(19)->get();
+        return view('pondok',compact('pesantren','provinsi','doaseharihari','kisah','more'));
     }
 
     public function gallery(gallery $gallery){
         $gallery= gallery::take(9)->get();
         $provinsi = Provinsi::take(10)->get();
-        $doaharian = doaharian::take(3)->get(); 
-        return view('gallery', compact('gallery','provinsi','doaharian'));
+        $kisah = kisah::take(10)->get();
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
+        return view('gallery', compact('gallery','provinsi','doaseharihari','kisah','more'));
     }
 
     public function detail($gallery){
         $gallery = gallery::where('slug', '=', $gallery)->first();
         $provinsi = provinsi::take(10)->get();
-       
-        $doaharian = DoaHarian::take(19)->get();
-        return view('detail',compact('gallery','provinsi','doaharian'));
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
+        $kisah = kisah::take(10)->get();
+        return view('detail',compact('gallery','provinsi','kisah','doaseharihari','more'));
     }
 
         public function tokoh($tokoh){
             $tokoh = tokoh::where('slug', '=', $tokoh)->first();
             $provinsi = provinsi::take(10)->get();
-            $doaharian = DoaHarian::take(10)->get();
-            return view('tokoh',compact('tokoh','provinsi','doaharian'));
+            $kisah = kisah::take(10)->get();
+            $doaseharihari = Doaseharihari::take(10)->get();
+            $more = More::take(10)->get();
+            return view('tokoh',compact('tokoh','provinsi','doaseharihari','more','kisah'));
         }
 
         public function walisongo($walisongo){
             $walisongo = walisongo::where('slug', '=', $walisongo)->first();
             $provinsi = provinsi::take(10)->get();
-            $doaharian = DoaHarian::take(10)->get();
-            return view('walisongo',compact('walisongo','provinsi','doaharian'));
+            $kisah = kisah::take(10)->get();
+            $doaseharihari = Doaseharihari::take(10)->get();
+            $more = More::take(10)->get();
+            return view('walisongo',compact('walisongo','provinsi','doaseharihari','kisah','more'));
         }
 
 
         public function kontak()
         {
             $provinsi = provinsi::take(10)->get();
-            $doaharian = doaharian::take(10)->get();
-            $doa = Doa::take(10)->get();
-            return view('kontak', compact('provinsi','doaharian','doa'));
+            $kisah = kisah::take(10)->get();
+            $doaseharihari = Doaseharihari::take(10)->get();
+            $more = More::take(10)->get();
+            return view('kontak', compact('provinsi','doaseharihari','kisah','more'));
         }
 
         function send(Request $request)
@@ -210,7 +240,7 @@ class FrontendController extends Controller
 
            Mail::to('farhanhidayatulfattah@gmail.com')->send(new SendMail($data));
 
-           return back()->with('success', 'Thank You !');
+           return back()->with('success', 'Thank You ;)');
         }
     } 
 
