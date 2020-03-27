@@ -45,6 +45,9 @@
         color: #205788;
         font-size: 18px;
     }
+    .pl-68 {
+    padding-left: 6px;
+}
     </style>
     <style>
    .footer .socail_links ul li a {
@@ -160,20 +163,24 @@
     </div>
     <!--/ bradcam_area  -->
 
-    
     <!-- about_area_start  --> 
     <div class="about_area plus_padding">
         <div class="container">
+       
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
                 <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
                 <h4> {{$gallery->judul}}</h4>
                         </div>
                     <div class="about_img wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                    <img class="img-fluid" src="../assets/img/ponpes/{{ $gallery->foto }} "height="200px" alt="">
+                    <img class="img-fluid" src=" "height="200px" alt="">
                     </div>
+                    <div class="zoom-gallery">
+                    <a href="../assets/img/ponpes/{{ $gallery->foto }}" data-source="http://500px.com/photo/32736307" title="Perbesar Gambar" style="width:193px;height:125px;">
+		            <img src="../assets/img/ponpes/{{ $gallery->foto }}" width="410" height="290">
+	                </a>
                 </div>
-                   
+                </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="about_info pl-68">   
                         <br> 
@@ -312,9 +319,35 @@
     <script src="{{ asset ('assets/baru/js/jquery.form.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/jquery.validate.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/mail-script.js')}}"></script>
-
-
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+	$('.zoom-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		image: {
+			verticalFit: true,
+			titleSrc: function(item) {
+				return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+			}
+		},
+		gallery: {
+			enabled: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300, // don't foget to change the duration also in CSS
+			opener: function(element) {
+				return element.find('img');
+			}
+		}
+		
+	});
+});
+    </script>
 </body>
 
 </html>

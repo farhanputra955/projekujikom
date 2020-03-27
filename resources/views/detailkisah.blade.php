@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Detail Kisah</title>
+    <title>Baca Kisah</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -189,7 +189,7 @@
                             <div class="blog_details">
                                 <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
                                     <h4> <strong> {{$nabi->nama_nabi}} </strong> </h4>
-                                    <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$nabi->konten}} </p>
+                                    <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{!!$nabi->konten!!} </p>
                                 </div>  
                               </div>                       
                         </article>

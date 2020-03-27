@@ -22,6 +22,7 @@ use App\Mail\SendMail;
 use App\Kisah;
 use App\DetailKisah;
 use App\Nabi;
+use App\Myprofile;
 use DB;
 
 use App\User;
@@ -55,13 +56,15 @@ class FrontendController extends Controller
         $doaseharihari = Doaseharihari::take(10)->get();
         $more = More::take(10)->get();
         $doa = doa::take(10)->get();
-        return view('singleblog',compact('artikel','kategori','provinsi','doaseharihari','more'));
+        $kisah = kisah::take(10)->get();
+        return view('singleblog',compact('artikel','kategori','provinsi','doaseharihari','more','kisah'));
     }
 
     public function kategori(kategori $kategori){
         $artikel=$kategori->artikel()->latest()->paginate(8);
         $judul=$kategori->artikel()->take(1)->get();
         $provinsi = Provinsi::take(10)->get();
+        $kisah = kisah::take(10)->get();
         foreach($judul as $data){
            $oke = $data->id_kategori;
         }
@@ -70,7 +73,7 @@ class FrontendController extends Controller
         $doaseharihari = Doaseharihari::take(10)->get();
         $more = More::take(10)->get();
         $data = artikel::inRandomOrder()->take(1)->get();
-        return view('kategori',compact('artikel','kategori','data','judulkate','provinsi','doaseharihari','more'));
+        return view('kategori',compact('artikel','kategori','data','judulkate','provinsi','doaseharihari','more','kisah'));
     }
 
     public function provinsi(Provinsi $provinsi){
@@ -212,9 +215,19 @@ class FrontendController extends Controller
             $kisah = kisah::take(10)->get();
             $doaseharihari = Doaseharihari::take(10)->get();
             $more = More::take(10)->get();
-            return view('walisongo',compact('walisongo','provinsi','doaseharihari','kisah','more'));
+            $kerajaan = Kerajaan::take(10)->get();
+            return view('walisongo',compact('walisongo','provinsi','doaseharihari','kisah','more','kerajaan'));
         }
 
+        public function myprofile(){
+          
+            return view('myprofile');
+        }
+
+        public function profil(){
+          
+            return view('profil');
+        }
 
         public function kontak()
         {
@@ -244,3 +257,4 @@ class FrontendController extends Controller
         }
     } 
 
+    

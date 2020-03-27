@@ -11,7 +11,7 @@ class Category extends Model
 
     public function article()
     {
-        return $this->hasMany('App\Article', 'id_categori');
+        return $this->hasMany('App\Article', 'id_category');
     }
 
     public function getRouteKeyName()

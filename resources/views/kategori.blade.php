@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="{{ asset ('assets/img/tv.png')}}">
     <title>Berita </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,6 +63,31 @@
     text-transform: capitalize;
 }
     </style>
+     <style>
+.zoomeffect {
+width:100%;
+height:100%;
+text-align:center;
+overflow:hidden;
+position:relative;
+cursor:default;
+}
+
+.zoomeffect img {
+display:block;
+position:relative;
+cursor:pointer;
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+width:100%;
+}
+
+.zoomeffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+</style>
 
 </head>
 
@@ -171,12 +197,16 @@
             @foreach($artikel as $data)
                 <div class="col-lg-6 col-md-6">
                     <div class="about_img wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                    <img class="img-fluid" src="/assets/img/artikel/{{ $data->foto }}" width="200px" height="300px" alt="">
+                    <div class="zoomeffect">
+                    <a href="/singleblog/{{$data->slug}}">
+                        <img src="/assets/img/artikel/{{ $data->foto }}" alt="Image" height="340" width="135">
+                    </a>
                     </div>
                     <br>
                     <br>
                     <br>
                     <br>
+                    </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="about_info pl-68">
@@ -187,7 +217,7 @@
                         <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s"></p>
                         <div class="about_list">
                             <div class="about_btn wow fadeInRight" data-wow-duration="1.3s" data-wow-delay=".5s">
-                                <a class="boxed-btn3" href="/singleblog/{{$data->slug}}">Sekilasnya</a>
+                                <a class="boxed-btn3" href="/singleblog/{{$data->slug}}">Baca Berita</a>
                             </div>
                             <br>
                             <br>

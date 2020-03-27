@@ -197,7 +197,24 @@
                               </div>                       
                         </article>
                     </div>
-                </div>       
+                </div>  
+                <div class="col-lg-4">              
+                    <div class="blog_right_sidebar">             
+                        <aside class="single_sidebar_widget popular_post_widget">
+                        <h3 class="widget_title">Kerajaan Islam</h3> 
+                        @foreach($kerajaan as $data)                                                        
+                            <div class="media post_item">                     
+                                <img src="/assets/img/kerajaan/{{ $data->foto }}"  alt="Image" height="50" width="80">
+                                <div class="media-body">
+                                    <a href="/kerajaanislam/{{ $data->slug}}">
+                                        <h3>{{$data->nama_kerajaan}}</h3>
+                                    </a>
+                                </div>                          
+                            </div>
+                            @endforeach
+                        </aside>                            
+                    </div>                
+                </div>     
             </div>
         </div>
     </section>

@@ -86,7 +86,36 @@
     position: relative;
     text-transform: capitalize;
 }
+.boxed-btn {
+    background: #fff;
+    color: #131313;
+    display: inline-block;
+    padding: 12px 35px;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    border: 0;
+    border: 1px solid #33D4D6;
+    text-align: center;
+    color: #33D4D6 !important;
+    text-transform: capitalize;
+    cursor: pointer;
+}
     </style>
+    <style>
+    .footer .footer_top .footer_widget .footer_title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+    font-family: "Roboto", sans-serif;
+}
+.footer .footer_top {
+    padding-top: 38px;
+    padding-bottom: 129px;
+}
+</style>
 </head>
 
 <body>

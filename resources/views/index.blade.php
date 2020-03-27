@@ -124,13 +124,17 @@
     .mb-90 {
     margin-bottom: 65px;
 }
+.service_area .single_service .service_icon {
+    margin: 40px auto 20px auto;
+    display: inline-block;
+    }
 .header-area .main-header-area .main-menu ul li a {
     color: #fff;
     font-size: 13px;
     text-transform: capitalize;
     font-weight: 500;
     display: grid;
-    padding: 35px 0px 30px 0px;
+    padding: 35px 0px 25px 0px;
     font-family: "Roboto", sans-serif;
     position: relative;
     text-transform: capitalize;
@@ -142,6 +146,7 @@
     margin-bottom: 18px;
 }
 
+
     </style>
     <style type="text/css">
         body {
@@ -151,7 +156,7 @@
         .back-to-top {
             position: fixed;
             bottom: 93px;
-            right: 45px;
+            right: 41px;
             color: #FFF;
             background: #41CAD4;
             line-height: 30px;
@@ -169,13 +174,58 @@
         .back-to-top:hover {
             background: #2DB6C0;
         }
-    
+        .service_area {
+    padding-top: 15px;
+    padding-bottom: 48px;
+}
         </style>
+        <style>
+.zoomeffect {
+width:100%;
+height:100%;
+text-align:center;
+overflow:hidden;
+position:relative;
+cursor:default;
+}
+
+.zoomeffect img {
+display:block;
+position:relative;
+cursor:pointer;
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+width:100%;
+}
+
+.zoomeffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+</style>
+<style>
+    .footer .footer_top .footer_widget .footer_title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+    font-family: "Roboto", sans-serif;
+}
+</style>
+<style>
+    .footer .footer_top .footer_widget .footer_logo {
+    font-size: 22px;
+    font-weight: 400;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+}
+</style>
 </head>
 
 <body>
-
-<audio src="deenassalam.mp3" autoplay="autoplay"></audio>
     <!--[if lte IE 9]>  
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -280,14 +330,16 @@
             @foreach($artikel as $data)
                 <div class="col-lg-6 col-md-6">
                     <div class="about_img wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+                    <div class="zoomeffect">
                     <a href="/singleblog/{{$data->slug}}">
-                        <img class="img-fluid" src="/assets/img/artikel/{{ $data->foto }}" width="200px" height="300px" alt="">
+                        <img src="/assets/img/artikel/{{ $data->foto }}" alt="Image" height="340" width="135">
                     </a>
                     <br>
                     <br>
                     <br>
                     <br>
                     </div>       
+                </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="about_info pl-68">
@@ -296,7 +348,7 @@
                                 <h4>{{$data->judul}}</h4>
                             </a>
                         </div>
-                        <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{ Str::limit($data->konten,150)}}</p>
+                        <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{!!Str::limit($data->konten, 150)!!}</p>
                     </div>
                 </div>        
                 @endforeach
@@ -368,11 +420,9 @@
                     <div class="single_service wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".5s">
                         <div class="service_icon_wrap text-center">
                             <div class="service_icon ">
-                            
                             <img src="../assets/img/ponpes/{{ $data->foto }}" alt="Image" height="170" width="260">
                             </div>
                         </div>
-                        
                         <div class="info text-center">
                             <span>{{$data->judul}}</span>
                         </div>
@@ -539,7 +589,7 @@
                             <div class="socail_links">
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://mobile.facebook.com/profile.php?ref=bookmarks" target="_blank">
                                             <i class="ti-facebook"></i>
                                         </a>
                                     </li>
@@ -549,7 +599,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.instagram.com/farhan.putra29/?hl=id">
+                                        <a href="https://www.instagram.com/farhan.putra29/?hl=id" target="_blank">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
@@ -564,10 +614,10 @@
                                 Services
                             </h3>
                             <ul>
-                                <li><a href="#">SEO/SEM </a></li>
-                                <li><a href="#">Web design </a></li>
-                                <li><a href="#">Ecommerce</a></li>
-                                <li><a href="#">Digital marketing</a></li>
+                                <li>SEO/SEM </li>
+                                <li>Web design </li>
+                                <li>Ecommerce</li>
+                                <li>Digital marketing</li>
                             </ul>
 
                         </div>
@@ -575,13 +625,13 @@
                     <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".5s">
                             <h3 class="footer_title">
-                                Useful Links
+                               My Profile
                             </h3>
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Blog</a></li>
+                                <li><a href="/profil">About</a></li>
+                                <li><a href="/myprofile">Blog</a></li>
+                                <li><a href="/myprofile">Support</a></li>
                                 <li><a href="/kontak"> Contact</a></li>
-                                <li><a href="#">Support</a></li>
                             </ul>
                         </div>
                     </div>

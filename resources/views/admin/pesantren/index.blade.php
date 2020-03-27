@@ -74,18 +74,14 @@
                     <thead class="thead-dark">
                             <tr>
                                 <th>Nama Pesantren</th>                           
-                                <th>Email</th>
-                                
-                                <th style="text-align: center;">Foto</th>
+                                <th>Foto</th>
                                 <th style="text-align: center;">Opsi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($pesantren as $data)
                             <tr>
-                                <td>{{$data->judul}}</td>                             
-                                <td>{{$data->email}}</td>
-                              
+                                <td>{{$data->judul}}</td>                               
                                 <td><img src="{{asset('assets/img/ponpes/' .$data->foto. '')}}"
                                     style="width:240px; height:140px;" alt="Foto"></td>
 

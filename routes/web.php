@@ -33,6 +33,8 @@
     Route::get('/email','FrontendController@email');
     Route::get('/kategori/{kategori}', 'FrontendController@kategori');  
     Route::get('/kontak','FrontendController@kontak');
+    Route::get('/myprofile', 'FrontendController@myprofile');  
+    Route::get('/profil', 'FrontendController@profil');  
     Route::post('/sendemail/send','FrontendController@send');
    
     

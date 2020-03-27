@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="{{ asset ('assets/img/berita.png')}}">
     <title>Berita Islam</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,6 +41,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
     </style>
 
     <style>
@@ -83,6 +85,13 @@ p {
     margin-bottom: 13px;
     font-family: sans-serif;
 }
+.blog_details p {
+    margin-bottom: 0.1px;
+    font-family: "Roboto", sans-serif;
+}
+.blog_details {
+    padding: 40px 30px 30px 30px;
+}
 .blog_right_sidebar .single_sidebar_widget {
     background: #3F51B5;
     padding: 30px;
@@ -98,6 +107,10 @@ p {
     font-family: "Roboto", sans-serif;
     position: relative;
     text-transform: capitalize;
+}
+.blog_details h2 {
+    font-size: 24px;
+    margin-bottom: 1px;
 }
     </style>
 </head>
@@ -223,7 +236,7 @@ p {
                             </ul>
                             <div class="blog_details">                              
                                 <h2>{{$artikel->judul}}</h2>                              
-                                <p> &nbsp;&nbsp;&nbsp;&nbsp;{{$artikel->konten}}</p>               
+                                <p> &nbsp;&nbsp;&nbsp;&nbsp;{!!$artikel->konten!!}</p>               
                             </div>
                          
                         </article>

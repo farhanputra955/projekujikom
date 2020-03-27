@@ -8,7 +8,7 @@ use App\nabi;
 use Session;
 use Auth;
 use App\User;
-use Illuminate\Support\Facades\File;
+use File;
 use Illuminate\Queue\Jobs\SyncJob;
 
 class NabiController extends Controller
@@ -38,6 +38,7 @@ class NabiController extends Controller
      */
     public function store(Request $request)
     {
+        
         $nabi = new nabi;
         $nabi->nama_nabi = $request->nama_nabi;
         $nabi->slug = Str::slug($request->nama_nabi, '-');
@@ -81,7 +82,6 @@ class NabiController extends Controller
     {
         $nabi = nabi::findOrFail($id);
         $kisah = kisah::all();
-       
         return view('admin.nabi.edit', compact('nabi', 'kisah'));
     }
 
@@ -94,25 +94,14 @@ class NabiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'judul' => 'required|unique:nabis',
-        //     'konten' => 'required|min:50',
-        //     'foto' => 'required|mimes:jpeg.jpg.png.gif|required|max:2048',
-        //     'id_kisah' => 'required',
-        //     'tag_id' => 'required']);
-
+  
         $nabi = nabi::findOrFail($id);
-        $nabi->judul = $request->judul;
-        $nabi->slug = Str::slug($request->judul, '-');
+        $nabi->nama_nabi = $request->nama_nabi;
+        $nabi->slug = Str::slug($request->nama_nabi, '-');
         $nabi->konten = $request->konten;
-        $nabi->alamat = $request->alamat;
-        $nabi->telepon = $request->telepon;
-        $nabi->email = $request->email;
-        $nabi->website = $request->website;
-        $nabi->maps = $request->maps;
-        $nabi->id_user = Auth::user()->id;
-        $nabi->id_kisah = $request->id_kisah;
-
+        $nabi->id_kisah = $request->kisah_id;
+        $nabi->id_user = Auth::user()->id; 
+       
         // foto
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
