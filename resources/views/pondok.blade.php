@@ -130,7 +130,61 @@
     border: 1px solid #33D4D6;
     background: #fffefe00;
 }
+h1, h2, h3, h4, h5, h6 {
+    line-height: 3.2em;
+}
+h6 {
+    font-size: 13px;
+}
+.about_area.plus_padding {
+    padding-top: 45px;
+}
     </style>
+    <style>
+        button.mfp-close, button.mfp-arrow {
+    overflow: visible;
+    cursor: pointer;
+    background: #ef1b1b;
+    border: 0;
+    -webkit-appearance: button;
+    display: block;
+    outline: none;
+    padding: 0px;
+    z-index: 1046;
+    box-shadow: none;
+    touch-action: manipulation;
+}
+    </style>
+    <style>
+img.mfp-img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    line-height: 0;
+    box-sizing: border-box;
+    padding: 29px 0 40px;
+    margin: 0 auto;
+}
+li {
+    list-style: inside;
+}
+.footer .footer_top .footer_widget .footer_logo {
+    font-size: 22px;
+    font-weight: 400;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+}
+.footer .footer_top .footer_widget .footer_title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+    font-family: "Roboto", sans-serif;
+}
+</style>
 </head>
 
 <body>
@@ -245,8 +299,12 @@
                 <h4> {{$pesantren->judul}}</h4>
                         </div>
                     <div class="about_img wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                    <img class="img-fluid" src="../assets/img/ponpes/{{ $pesantren->foto }}" alt="">
-                    </div>
+                    <div class="zoom-gallery">
+                    <a href="../assets/img/ponpes/{{ $pesantren->foto }}" data-source="http://500px.com/photo/32736307" title="Perbesar Gambar" style="width:20px;height:125px;">
+		            <img src="../assets/img/ponpes/{{ $pesantren->foto }}" alt="Image" width="450" height="350">
+	                </a>
+                   <h6>*Klik Untuk Memperbesar Gambar</h6>
+                </div></div>
                 </div>   
                 <div class="col-lg-6 col-md-6">
                     <div class="about_info pl-68">   
@@ -415,9 +473,35 @@
     <script src="{{ asset ('assets/baru/js/jquery.form.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/jquery.validate.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/mail-script.js')}}"></script>
-
-
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+	$('.zoom-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		image: {
+			verticalFit: true,
+			titleSrc: function(item) {
+				return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+			}
+		},
+		gallery: {
+			enabled: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300, // don't foget to change the duration also in CSS
+			opener: function(element) {
+				return element.find('img');
+			}
+		}
+		
+	});
+});
+    </script>
 </body>
 
 </html>

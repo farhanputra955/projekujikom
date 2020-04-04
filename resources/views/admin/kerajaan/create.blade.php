@@ -71,16 +71,16 @@
 
                         <div class="form-group">
                             <label for="">Nama Kerajaan</label>
-                            <input class="form-control" type="text" name="nama_kerajaan">
+                             <input type="text" name="nama_kerajaan" id="" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="">Foto</label>
-                            <input type="file" class="form-control" name="foto">
+                            <input type="file" name="foto" id="" class="form-control" required>
                         </div>
-                            <div class="form-group">
-                            <label>Konten</label>
-                            <textarea id="ck" rows="9" cols="60" type="text" name="konten"></textarea>
-                        </div>
+                        <div class="form-group">
+                        <label for="">Konten</label>
+                        <textarea name="konten" id="texteditor" cols="30" rows="9" class="form-control" required></textarea>
+                      </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-outline-info">
                             Simpan Data

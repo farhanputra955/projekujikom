@@ -37,10 +37,7 @@ class KisahController extends Controller
         $kisah->nama_kisah = $request->kisah;
         $kisah->slug = Str::slug($request->kisah, '-');
         $kisah->save();
-        Session::flash("flash_notification", [
-            "level" => "success",
-            "message" => "Berhasil menyimpan kisah <b>$kisah->nama</b>!"
-        ]);
+        
         return redirect()->route('kisah.index');
     }
     /**

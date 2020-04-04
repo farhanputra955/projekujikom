@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="icon" href="{{ asset ('assets/img/pondok.png')}}">
-    <title>Kisah - Kisah</title>
+    <link rel="icon" href="{{ asset ('assets/img/news.png')}}">
+    <title>Semua Berita </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -51,12 +51,6 @@
     position: relative;
     text-transform: capitalize;
 }
-.bradcam_area h4 {
-    font-size: 60px;
-    font-weight: 300;
-    color: #fff;
-    margin: 10px 0;
-}
 .header-area .main-header-area .main-menu ul li a {
     color: #fff;
     font-size: 13px;
@@ -84,6 +78,31 @@
     font-family: "Roboto", sans-serif;
 }
     </style>
+     <style>
+.zoomeffect {
+width:100%;
+height:100%;
+text-align:center;
+overflow:hidden;
+position:relative;
+cursor:default;
+}
+
+.zoomeffect img {
+display:block;
+position:relative;
+cursor:pointer;
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+width:100%;
+}
+
+.zoomeffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+</style>
 
 </head>
 
@@ -174,11 +193,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h4>
-                        @foreach($judulkisah as $oke)
-                            {{ $oke->nama_kisah }}
-                        @endforeach
-                        </h4>
+                    <h3>Berita Lainnya
+                       </h3>
                     </div>
                 </div>
             </div>
@@ -191,26 +207,30 @@
     <div class="about_area plus_padding">
         <div class="container">
             <div class="row align-items-center">           
-            @foreach($nabi as $data)
+            @foreach($artikel as $data)
                 <div class="col-lg-6 col-md-6">
                     <div class="about_img wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                    <img class="img-fluid" src="/assets/img/kisah/{{ $data->foto }}" width="200px" height="300px" alt="">
+                    <div class="zoomeffect">
+                    <a href="/singleblog/{{$data->slug}}">
+                        <img src="/assets/img/artikel/{{ $data->foto }}" alt="Image" height="340" width="135">
+                    </a>
                     </div>
                     <br>
                     <br>
                     <br>
                     <br>
+                    </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="about_info pl-68">
                         <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
                         
-                            <h4> {{$data->nama_nabi}}</h4>
+                            <h4> {{$data->judul}}</h4>
                         </div>                     
                         <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s"></p>
                         <div class="about_list">
                             <div class="about_btn wow fadeInRight" data-wow-duration="1.3s" data-wow-delay=".5s">
-                                <a class="boxed-btn3" href="/detailkisah/{{$data->slug}}">Baca Kisah</a>
+                                <a class="boxed-btn3" href="/singleblog/{{$data->slug}}">Baca Berita</a>
                             </div>
                             <br>
                             <br>

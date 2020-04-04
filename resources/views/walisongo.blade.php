@@ -78,7 +78,21 @@
     padding-top: 80px;
     padding-bottom: 120px;
 }
-
+.footer .footer_top .footer_widget .footer_logo {
+    font-size: 22px;
+    font-weight: 400;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+}
+.footer .footer_top .footer_widget .footer_title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+    font-family: "Roboto", sans-serif;
+}
     </style>
 
 </head>
@@ -191,8 +205,11 @@
                                 <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
                                     <h4> {{$walisongo->nama_walisongo}}</h4>
                                     <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{!!$walisongo->konten!!} </p>
-                                    
-                                    <img class="blog_left_sidebar" src="/assets/img/walisongo/{{ $walisongo->foto }}" alt="Image" width="570" height="370">                            
+                                    <div class="zoom-gallery">
+                                        <a href="../assets/img/walisongo/{{ $walisongo->foto }}" data-source="http://500px.com/photo/32736307" title="Perbesar Gambar" style="width:193px;height:125px;">
+                                        <img src="/assets/img/walisongo/{{ $walisongo->foto }}" alt="Image" width="570" height="370">
+                                    </a>
+                                    </div>                       
                                 </div>  
                               </div>                       
                         </article>
@@ -203,7 +220,8 @@
                         <aside class="single_sidebar_widget popular_post_widget">
                         <h3 class="widget_title">Kerajaan Islam</h3> 
                         @foreach($kerajaan as $data)                                                        
-                            <div class="media post_item">                     
+                            <div class="media post_item">
+                                                 
                                 <img src="/assets/img/kerajaan/{{ $data->foto }}"  alt="Image" height="50" width="80">
                                 <div class="media-body">
                                     <a href="/kerajaanislam/{{ $data->slug}}">
@@ -339,9 +357,35 @@
     <script src="{{ asset ('assets/baru/js/jquery.form.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/jquery.validate.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/mail-script.js')}}"></script>
-
-
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+	$('.zoom-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		image: {
+			verticalFit: true,
+			titleSrc: function(item) {
+				return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+			}
+		},
+		gallery: {
+			enabled: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300, // don't foget to change the duration also in CSS
+			opener: function(element) {
+				return element.find('img');
+			}
+		}
+		
+	});
+});
+    </script>
 </body>
 
 </html>

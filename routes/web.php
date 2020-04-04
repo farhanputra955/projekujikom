@@ -33,9 +33,14 @@
     Route::get('/email','FrontendController@email');
     Route::get('/kategori/{kategori}', 'FrontendController@kategori');  
     Route::get('/kontak','FrontendController@kontak');
+    Route::get('beritalainnya','FrontendController@beritalainnya');
     Route::get('/myprofile', 'FrontendController@myprofile');  
     Route::get('/profil', 'FrontendController@profil');  
     Route::post('/sendemail/send','FrontendController@send');
+    Route::get('/select2',function(){
+        $lastNames = App\Nabi::pluck('kisah','id')->toArray();
+        return view('select2',compact('kisahs'));
+    });
    
     
 Auth::routes();

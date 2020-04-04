@@ -62,6 +62,21 @@
     padding: 40px 40px 45px 40px;
     box-shadow: 0px 10px 20px 0px rgb(163, 245, 166);
 }
+.footer .footer_top .footer_widget .footer_logo {
+    font-size: 22px;
+    font-weight: 400;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+}
+.footer .footer_top .footer_widget .footer_title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+    font-family: "Roboto", sans-serif;
+}
     </style>
 </head>
 
@@ -169,7 +184,7 @@
                                 </div>  
                                 <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$data->arab}} </p>
                                 <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$data->latin}}</p>
-                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">Artinya : <br> "{{$data->arti}}</p>
+                                <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">Artinya : <br> "{{$data->arti}}"</p>
                             </div>
                         @endforeach
                         </article>

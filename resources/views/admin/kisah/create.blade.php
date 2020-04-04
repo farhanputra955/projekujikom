@@ -70,7 +70,7 @@
 
     <div class="form-group">
         <label for="">Kisah</label>
-        <input class="form-control" type="text" name="kisah">
+        <input type="text" name="kisah" id="" class="form-control" required>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-outline-info">

@@ -38,6 +38,13 @@
     p {
     font-family: cursive;
     }
+    p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #7A838B;
+    margin-bottom: 13px;
+}
     .about_area.plus_padding {
     padding-top: 80px;
     }
@@ -65,7 +72,61 @@
     position: relative;
     text-transform: capitalize;
 }
+.footer .footer_top .footer_widget .footer_logo {
+    font-size: 22px;
+    font-weight: 400;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+}
+.footer .footer_top .footer_widget .footer_title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+    font-family: "Roboto", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 3.2em;
+}
+h6 {
+    font-size: 13px;
+}
+.section_title h4 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #001D38;
+    padding-bottom: 1px;
+}
     </style>
+      <style>
+        button.mfp-close, button.mfp-arrow {
+    overflow: visible;
+    cursor: pointer;
+    background: #ef1b1b;
+    border: 0;
+    -webkit-appearance: button;
+    display: block;
+    outline: none;
+    padding: 0px;
+    z-index: 1046;
+    box-shadow: none;
+    touch-action: manipulation;
+}
+    </style>
+<style>
+img.mfp-img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    line-height: 0;
+    box-sizing: border-box;
+    padding: 29px 0 40px;
+    margin: 0 auto;
+}
+</style>
 </head>
 
 <body>
@@ -177,8 +238,9 @@
                     </div>
                     <div class="zoom-gallery">
                     <a href="../assets/img/ponpes/{{ $gallery->foto }}" data-source="http://500px.com/photo/32736307" title="Perbesar Gambar" style="width:193px;height:125px;">
-		            <img src="../assets/img/ponpes/{{ $gallery->foto }}" width="410" height="290">
+		            <img src="../assets/img/ponpes/{{ $gallery->foto }}" alt="Image" width="450" height="290">
 	                </a>
+                    <h6>*Klik Untuk Memperbesar Gambar</h6>
                 </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

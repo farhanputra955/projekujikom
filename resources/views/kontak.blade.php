@@ -115,6 +115,21 @@
     padding-top: 38px;
     padding-bottom: 129px;
 }
+.footer .footer_top .footer_widget .footer_logo {
+    font-size: 22px;
+    font-weight: 400;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+}
+.footer .footer_top .footer_widget .footer_title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+    font-family: "Roboto", sans-serif;
+}
 </style>
 </head>
 
@@ -259,6 +274,8 @@
             </div>
           </form>
         </div>
+
+        
         <div class="col-lg-4">
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-home"></i></span>

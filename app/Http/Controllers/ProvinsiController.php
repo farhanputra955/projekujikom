@@ -41,10 +41,7 @@ class ProvinsiController extends Controller
         $provinsi->nama_provinsi = $request->provinsi;
         $provinsi->slug = Str::slug($request->provinsi, '-');
         $provinsi->save();
-        Session::flash("flash_notification", [
-            "level" => "success",
-            "message" => "Berhasil menyimpan provinsi <b>$provinsi->nama</b>!"
-        ]);
+       
         return redirect()->route('provinsi.index');
     }
     /**

@@ -55,7 +55,6 @@ class FrontendController extends Controller
         $provinsi = Provinsi::take(10)->get();
         $doaseharihari = Doaseharihari::take(10)->get();
         $more = More::take(10)->get();
-        $doa = doa::take(10)->get();
         $kisah = kisah::take(10)->get();
         return view('singleblog',compact('artikel','kategori','provinsi','doaseharihari','more','kisah'));
     }
@@ -76,6 +75,19 @@ class FrontendController extends Controller
         return view('kategori',compact('artikel','kategori','data','judulkate','provinsi','doaseharihari','more','kisah'));
     }
 
+
+    public function beritalainnya(){
+        $artikel = Artikel::take(10)->get();
+        $provinsi = Provinsi::take(10)->get();
+        $doaseharihari = Doaseharihari::take(10)->get();
+        $more = More::take(10)->get();
+        $kerajaan = kerajaan::take(10)->get();
+        $gallery = gallery::take(10)->get();
+        $kisah = kisah::take(10)->get();
+
+        return view('beritalainnya', compact('artikel','provinsi','doaseharihari','more','kerajaan','gallery','kisah'));
+    }
+    
     public function provinsi(Provinsi $provinsi){
         $pesantren=$provinsi->pesantren()->latest()->paginate(8);
         $judul=$provinsi->pesantren()->take(1)->get();

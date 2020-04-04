@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    
   
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
@@ -230,6 +231,79 @@ transform:scale(1.2);
     padding-bottom: 1px;
 }
 </style>
+
+
+<style>
+	.center-page{
+        display: flex;
+        width:calc(100vw - 40px);
+        height:calc(100vh - 40px);
+        align-items: center;
+        text-align: center;
+    }
+    .sk-cube-grid {
+        width: 40px;
+        height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+ 
+    .sk-cube-grid .sk-cube {
+        width: 33%;
+        height: 33%;
+        background-color: #333;
+        float: left;
+        -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+        animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+    }
+    .sk-cube-grid .sk-cube1 {
+    -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+    .sk-cube-grid .sk-cube2 {
+    -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s; }
+    .sk-cube-grid .sk-cube3 {
+    -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s; }
+    .sk-cube-grid .sk-cube4 {
+    -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
+    .sk-cube-grid .sk-cube5 {
+    -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+    .sk-cube-grid .sk-cube6 {
+    -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s; }
+    .sk-cube-grid .sk-cube7 {
+    -webkit-animation-delay: 0s;
+              animation-delay: 0s; }
+    .sk-cube-grid .sk-cube8 {
+    -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
+    .sk-cube-grid .sk-cube9 {
+    -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+ 
+    @-webkit-keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+        -webkit-transform: scale3D(1, 1, 1);
+                transform: scale3D(1, 1, 1);
+    } 35% {
+        -webkit-transform: scale3D(0, 0, 1);
+                transform: scale3D(0, 0, 1);
+    }
+    }
+ 
+    @keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+        -webkit-transform: scale3D(1, 1, 1);
+                transform: scale3D(1, 1, 1);
+    } 35% {
+        -webkit-transform: scale3D(0, 0, 1);
+                transform: scale3D(0, 0, 1);
+    }
+    }
+	</style>
 </head>
 
 <body>
@@ -238,6 +312,7 @@ transform:scale(1.2);
         <![endif]-->
 
     <!-- header-start -->
+  
     <header>
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
@@ -320,24 +395,24 @@ transform:scale(1.2);
         </div>
     </div>
 
-     <div id="preloader"> 
-
-<div id="loader">	   
-<div class="sk-cube-grid">
-<div class="sk-cube sk-cube1"></div>
-<div class="sk-cube sk-cube2"></div>
-<div class="sk-cube sk-cube3"></div>
-<div class="sk-cube sk-cube4"></div>
-<div class="sk-cube sk-cube5"></div>
-<div class="sk-cube sk-cube6"></div>
-<div class="sk-cube sk-cube7"></div>
-<div class="sk-cube sk-cube8"></div>
-<div class="sk-cube sk-cube9"></div>
-</div>
-<br>    
-<font color=white>Loading...</font>
-</div>
-</div>
+    <!-- Loading  -->
+    <div id="preloader"> 
+        <div id="loader">	   
+        <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+        </div>
+        <br>    
+        <font color=black>Loading...</font>
+        </div>
+        </div>
     
     <!-- Berita -->
     <div class="service_area oyeah">
@@ -587,7 +662,7 @@ transform:scale(1.2);
                                             </div>
                                             
                                             <div class="info">
-                                            <p>&nbsp;&nbsp;&nbsp;" {{Str::limit($data->konten, 280)}}</p>
+                                            <p>" {{Str::limit($data->konten, 280)}}</p>
                                             <a href="/detail/{{ $data->slug}}">
                                             <span>- {{$data->judul}}</span>
                                             </a>
@@ -690,6 +765,7 @@ transform:scale(1.2);
            
         </div>
     </footer>
+    
     <!--/ footer end  -->
 
     <!-- link that opens popup -->
@@ -723,7 +799,6 @@ transform:scale(1.2);
     <script src="{{ asset ('assets/baru/js/mail-script.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
     
-    
     <script type="text/javascript">
         $(document).ready(function(){ 
             $(window).on('scroll', function() {
@@ -749,6 +824,9 @@ function action() { document.title=txt;
 txt=txt.substring(1,txt.length)+txt.charAt(0);
 refresh=setTimeout("action()",speed);}action();
 </script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<!-- Preloader -->
 <script type="text/javascript">
     //<![CDATA[
     function showSite(){
@@ -761,6 +839,5 @@ refresh=setTimeout("action()",speed);}action();
         })
     //]]>
 </script>
-
 </body>
 </html>

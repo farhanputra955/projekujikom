@@ -70,7 +70,7 @@
 
     <div class="form-group">
         <label for="">Provinsi</label>
-        <input class="form-control" type="text" name="provinsi">
+        <input type="text" name="provinsi" id="" class="form-control" required>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-outline-info">

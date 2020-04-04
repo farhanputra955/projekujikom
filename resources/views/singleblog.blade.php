@@ -112,6 +112,21 @@ p {
     font-size: 24px;
     margin-bottom: 1px;
 }
+.footer .footer_top .footer_widget .footer_logo {
+    font-size: 22px;
+    font-weight: 400;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+}
+.footer .footer_top .footer_widget .footer_title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #040E27;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+    font-family: "Roboto", sans-serif;
+}
     </style>
 </head>
 
@@ -232,6 +247,10 @@ p {
                                     @foreach($kategori as $data)
                                     <li><a href="/kategori/{{ $data->slug}}"><i class="fa fa-newspaper-o" style="font-size:20px"></i> {{$data->nama_kategori}}</a></li>
                                     @endforeach
+                            <li><a href="#"><i class=""></i></a></li>                            
+                                    
+                                    <li><a href="/beritalainnya"><i class="fa fa-search" style="font-size:20px"></i> Berita Lainnya</a></li>
+                                   
                             <li><a href="#"><i class=""></i></a></li>       
                             </ul>
                             <div class="blog_details">                              
@@ -242,6 +261,7 @@ p {
                         </article>
                     </div>
                 </div>
+               
             </div>
         </div>
 </section>

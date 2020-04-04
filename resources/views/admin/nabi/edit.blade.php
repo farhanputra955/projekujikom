@@ -10,13 +10,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Mengubah Data nabi</div>
+                <div class="card-header">Mengubah Data Nabi & Sahabat Nabi</div>
                 <div class="card-body">
                     <form action="{{ route('nabi.update', $nabi->id) }}" method="post" enctype="multipart/form-data">
                         <input name="_method" type="hidden" value="PATCH">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="">Nama nabi</label>
+                            <label for="">Nama Nabi atau Sahabat Nabi</label>
                             <input class="form-control" value="{{ $nabi->nama_nabi }}" type="text" name="nama_nabi">
                         </div>
                         <div class="form-group">
@@ -47,7 +47,7 @@
                     <option value="{{ $data->id }}" 
                     {{$nabi->id_kisah == $data->id ? ' selected="selected" ':''}}>{{ $data->nama_kisah }}
                     </option>
-                    @endforeach    
+                    @endforeach
                     </select>
                     </div>
                      
