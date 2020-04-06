@@ -227,14 +227,14 @@
                                 </a>
                             </div>
                             <p>
-                                finloan@support.com <br>
-                                +10 873 672 6782 <br>
-                                600/D, Green road, NewYork
+                                farhanputra955@gmail.com <br>
+                               0895 3201 02320 <br>
+                                Bandung City, Indonesia
                             </p>
                             <div class="socail_links">
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://mobile.facebook.com/profile.php?ref=bookmarks" target="_blank">
                                             <i class="ti-facebook"></i>
                                         </a>
                                     </li>
@@ -244,12 +244,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/farhan.putra29/?hl=id" target="_blank">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
@@ -264,10 +259,10 @@
                                 Services
                             </h3>
                             <ul>
-                                <li><a href="#">SEO/SEM </a></li>
-                                <li><a href="#">Web design </a></li>
-                                <li><a href="#">Ecommerce</a></li>
-                                <li><a href="#">Digital marketing</a></li>
+                                <li>SEO/SEM </li>
+                                <li>Web design </li>
+                                <li>Ecommerce</li>
+                                <li>Digital marketing</li>
                             </ul>
 
                         </div>
@@ -275,13 +270,13 @@
                     <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".5s">
                             <h3 class="footer_title">
-                                Useful Links
+                               My Profile
                             </h3>
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#"> Contact</a></li>
-                                <li><a href="#">Support</a></li>
+                                <li><a href="/profil">About</a></li>
+                                <li><a href="/myprofile">Blog</a></li>
+                                <li><a href="/myprofile">Support</a></li>
+                                <li><a href="/kontak"> Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -298,22 +293,12 @@
                                 luckily.</p>
                         </div>
                     </div>
+                    <a href class="back-to-top hidden-md-down" style="display: block;">
+                     <i class="fa fa-angle-up fa-2x"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
-            <div class="container">
-                <div class="footer_border"></div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     </footer>
     <!--/ footer end  -->

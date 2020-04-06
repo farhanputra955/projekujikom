@@ -291,7 +291,7 @@ p {
                             <div class="socail_links">
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://mobile.facebook.com/profile.php?ref=bookmarks" target="_blank">
                                             <i class="ti-facebook"></i>
                                         </a>
                                     </li>
@@ -301,7 +301,7 @@ p {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/farhan.putra29/?hl=id" target="_blank">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
@@ -316,10 +316,10 @@ p {
                                 Services
                             </h3>
                             <ul>
-                                <li><a href="#">SEO/SEM </a></li>
-                                <li><a href="#">Web design </a></li>
-                                <li><a href="#">Ecommerce</a></li>
-                                <li><a href="#">Digital marketing</a></li>
+                                <li>SEO/SEM </li>
+                                <li>Web design </li>
+                                <li>Ecommerce</li>
+                                <li>Digital marketing</li>
                             </ul>
 
                         </div>
@@ -327,13 +327,13 @@ p {
                     <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".5s">
                             <h3 class="footer_title">
-                                Useful Links
+                               My Profile
                             </h3>
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#"> Contact</a></li>
-                                <li><a href="#">Support</a></li>
+                                <li><a href="/profil">About</a></li>
+                                <li><a href="/myprofile">Blog</a></li>
+                                <li><a href="/myprofile">Support</a></li>
+                                <li><a href="/kontak"> Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -350,8 +350,12 @@ p {
                                 luckily.</p>
                         </div>
                     </div>
+                    <a href class="back-to-top hidden-md-down" style="display: block;">
+                     <i class="fa fa-angle-up fa-2x"></i>
+                    </a>
                 </div>
             </div>
+           
         </div>
     </footer>
     <!--/ footer end  -->

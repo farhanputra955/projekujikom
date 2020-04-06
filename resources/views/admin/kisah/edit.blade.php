@@ -1,6 +1,4 @@
-@extends('argon')
-
-
+@extends('backend.srtdash')
 
 @section('content')
 <div class="container">

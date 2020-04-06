@@ -1,4 +1,4 @@
-@extends('argon')
+@extends('backend.srtdash')
 
 @section('sidebar')
 <ul class="navbar-nav">
@@ -92,7 +92,7 @@
                                     <form action="{{route('gallery.destroy', $data->id)}}" method="post">
                                         {{csrf_field()}}
 									<a href="{{route('gallery.edit', $data->id)}}"
-										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pen"></i>
+										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pencil"></i>
                                     </a>
 										<input type="hidden" name="_method" value="DELETE">
 										<button type="submit" class="zmdi zmdi-delete  btn-rounded btn-floating btn btn-dangerbtn btn-danger btn-outline"> <i class="	fa fa-trash"></i></button>

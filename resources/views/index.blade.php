@@ -499,7 +499,7 @@ transform:scale(1.2);
                                                
                                             </div>   
                                             <div class="info">
-                                            <p>{!!Str::limit($data->konten, 270)!!}</p>
+                                            <p>{!!Str::limit($data->konten, 310)!!}</p>
                                             <a href="/walisongo/{{ $data->slug}}">
                                             <span>- {{$data->nama_walisongo}}</span>
                                             </a>
