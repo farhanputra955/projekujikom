@@ -1,4 +1,5 @@
 @extends('backend.srtdash')
+
 <script type="text/javascript" src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
 <script>
     CKEDITOR.replace('editor1');

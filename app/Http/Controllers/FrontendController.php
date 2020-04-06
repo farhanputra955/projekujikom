@@ -215,10 +215,11 @@ class FrontendController extends Controller
         public function tokoh($tokoh){
             $tokoh = tokoh::where('slug', '=', $tokoh)->first();
             $provinsi = provinsi::take(10)->get();
+            $nabi = nabi::take(10)->get();
             $kisah = kisah::take(10)->get();
             $doaseharihari = Doaseharihari::take(10)->get();
             $more = More::take(10)->get();
-            return view('tokoh',compact('tokoh','provinsi','doaseharihari','more','kisah'));
+            return view('tokoh',compact('tokoh','provinsi','doaseharihari','more','kisah','nabi'));
         }
 
         public function walisongo($walisongo){
