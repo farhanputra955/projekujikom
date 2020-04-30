@@ -147,7 +147,7 @@ class FrontendController extends Controller
         $doaseharihari = doaseharihari::take(10)->get();
         $provinsi = provinsi::take(10)->get();
         $tokoh = tokoh::take(10)->get();
-        $nabi = nabi::take(10)->get();
+        $nabi = nabi::take(30)->get();
         $kisah = kisah::take(10)->get();
         $data = more::inRandomOrder()->take(1)->get();
         return view('doaseharihari',compact('more','kisah','data','nabi','juduldoaseharihari','provinsi','doaseharihari','more','kisah','tokoh'));
