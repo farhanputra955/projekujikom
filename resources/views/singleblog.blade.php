@@ -108,9 +108,16 @@ p {
     position: relative;
     text-transform: capitalize;
 }
+.footer .socail_links ul li a {
+    color: #040e27 !important;
+    border: 1px solid #040e27;
+}
 .blog_details h2 {
     font-size: 24px;
     margin-bottom: 1px;
+}
+.blog-info-link li a {
+    color: #696767;
 }
 .footer .footer_top .footer_widget .footer_logo {
     font-size: 22px;
@@ -230,13 +237,12 @@ p {
 
     
     <!-- about_area_start  --> 
-    <section class="blog_area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mb-5 mb-lg-0">
-                    <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            
+    <section class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+        <article class="blog_item">                
+            <div class="blog_details">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0" src="../assets/img/artikel/{{ $artikel->foto }}" alt="">               
                             </div>
@@ -330,10 +336,10 @@ p {
                                My Profile
                             </h3>
                             <ul>
-                                <li><a href="/profil">About</a></li>
-                                <li><a href="/myprofile">Blog</a></li>
-                                <li><a href="/myprofile">Support</a></li>
-                                <li><a href="/kontak"> Contact</a></li>
+                                <li>About</li>
+                                <li>Blog</li>
+                                <li>Support</li>
+                                <li>Contact</li>
                             </ul>
                         </div>
                     </div>
@@ -350,9 +356,7 @@ p {
                                 luckily.</p>
                         </div>
                     </div>
-                    <a href class="back-to-top hidden-md-down" style="display: block;">
-                     <i class="fa fa-angle-up fa-2x"></i>
-                    </a>
+                   
                 </div>
             </div>
            

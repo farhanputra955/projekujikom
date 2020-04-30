@@ -16,14 +16,17 @@
                     <table id="datatable" class="table ">
                     <thead class="thead-dark">
                             <tr>
+                                <th>No</th>
                                 <th>Kategori Doa</th>
                                 <th>Slug</th>
                                 <th style="text-align: center;">Opsi</th>
                             </tr>
                         </thead>
                         <tbody>
+                        @php $no=1; endphp
                             @foreach ($doaseharihari as $data)
                             <tr>
+                                <td>{{$no++}}</td>
                                 <td>{{$data->nama_doa}}</td>
                                 <td>{{$data->slug}}</td>
 								<td style="text-align: center;">
@@ -31,11 +34,9 @@
                                         {{csrf_field()}}
                                      
 									<a href="{{route('doaseharihari.edit', $data->id)}}"
-										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pen"></i>
+										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pencil"></i>
                                     </a>   
-                                    <a href="{{route('doaseharihari.show', $data->id)}}"
-										class="zmdi zmdi-eye btn btn-primary btn-rounded btn-floating btn-outline"> <i class="	fa fa-eye"></i> 
-                                    </a >
+                                   
                                     <form action="{{ route('doaseharihari.destroy', $data->id) }}" method="post">
                                 @csrf
                                 <input type="hidden" name="_method" value="DELETE">

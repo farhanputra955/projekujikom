@@ -123,7 +123,7 @@ class FrontendController extends Controller
   
 
     public function kisah(kisah $kisah){
-        $nabi=$kisah->nabi()->latest()->paginate(8);
+        $nabi=$kisah->nabi()->latest()->paginate(28);
         $judul=$kisah->nabi()->take(1)->get();
         foreach($judul as $data){
            $oke = $data->id_kisah;
@@ -147,9 +147,10 @@ class FrontendController extends Controller
         $doaseharihari = doaseharihari::take(10)->get();
         $provinsi = provinsi::take(10)->get();
         $tokoh = tokoh::take(10)->get();
+        $nabi = nabi::take(10)->get();
         $kisah = kisah::take(10)->get();
         $data = more::inRandomOrder()->take(1)->get();
-        return view('doaseharihari',compact('more','kisah','data','juduldoaseharihari','provinsi','doaseharihari','more','kisah','tokoh'));
+        return view('doaseharihari',compact('more','kisah','data','nabi','juduldoaseharihari','provinsi','doaseharihari','more','kisah','tokoh'));
     }
     
 
@@ -251,6 +252,7 @@ class FrontendController extends Controller
             return view('kontak', compact('provinsi','doaseharihari','kisah','more'));
         }
 
+        //Laravel Email
         function send(Request $request)
         {
             $this->validate($request, [

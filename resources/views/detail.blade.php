@@ -99,6 +99,10 @@ h6 {
     color: #001D38;
     padding-bottom: 1px;
 }
+.footer .socail_links ul li a {
+    color: #040e27 !important;
+    border: 1px solid #040e27;
+}
     </style>
       <style>
         button.mfp-close, button.mfp-arrow {
@@ -325,10 +329,10 @@ img.mfp-img {
                                My Profile
                             </h3>
                             <ul>
-                                <li><a href="/profil">About</a></li>
-                                <li><a href="/myprofile">Blog</a></li>
-                                <li><a href="/myprofile">Support</a></li>
-                                <li><a href="/kontak"> Contact</a></li>
+                                <li>About</li>
+                                <li>Blog</li>
+                                <li>Support</li>
+                                <li>Contact</li>
                             </ul>
                         </div>
                     </div>
@@ -344,7 +348,8 @@ img.mfp-img {
                             <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
                                 luckily.</p>
                         </div>
-                    </div> 
+                    </div>
+                   
                 </div>
             </div>
            

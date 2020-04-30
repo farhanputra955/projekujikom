@@ -15,14 +15,17 @@
                     <table id="datatable" class="table table-striped table-bordered">
                         <thead>
                             <tr>
+                            <th style="text-align: center;">No</th>
                                 <th>Nama kerajaan</th>
                                 <th>Foto</th>
                                 <th style="text-align: center;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                        @php $no=1; @endphp
                             @foreach ($kerajaan as $data)
                             <tr>
+                            <td style="text-align: center;">{{$no++}}</td>
                                 <td>{{$data->nama_kerajaan}}</td>
                                 <td><img src="{{asset('assets/img/kerajaan/' .$data->foto. '')}}"
                                 style="width:270px; height:190px;" alt="Foto"></td>

@@ -4,7 +4,7 @@
 @section('content')
 <section class="page-content container-fluid">
     <div class="row">
-        <div class="col-14">
+        <div class="col-12">
             <div class="card">
                 <h5 class="card-header">Data Tables Profil Murid</h5><br>
                 <center>

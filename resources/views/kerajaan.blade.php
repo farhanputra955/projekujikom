@@ -82,6 +82,8 @@
     font-family: "Roboto", sans-serif;
 }
     </style>
+    
+    <!-- Zoom Efect -->
  <style>
 .zoomeffect {
 width:100%;
@@ -105,6 +107,10 @@ width:100%;
 -ms-transform:scale(1.2);
 -webkit-transform:scale(1.2);
 transform:scale(1.2);
+}
+.footer .socail_links ul li a {
+    color: #040e27 !important;
+    border: 1px solid #040e27;
 }
 </style>
 </head>
@@ -308,10 +314,10 @@ transform:scale(1.2);
                                My Profile
                             </h3>
                             <ul>
-                                <li><a href="/profil">About</a></li>
-                                <li><a href="/myprofile">Blog</a></li>
-                                <li><a href="/myprofile">Support</a></li>
-                                <li><a href="/kontak"> Contact</a></li>
+                                <li>About</li>
+                                <li>Blog</li>
+                                <li>Support</li>
+                                <li>Contact</li>
                             </ul>
                         </div>
                     </div>
@@ -328,9 +334,7 @@ transform:scale(1.2);
                                 luckily.</p>
                         </div>
                     </div>
-                    <a href class="back-to-top hidden-md-down" style="display: block;">
-                     <i class="fa fa-angle-up fa-2x"></i>
-                    </a>
+                   
                 </div>
             </div>
            

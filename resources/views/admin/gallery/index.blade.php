@@ -73,31 +73,33 @@
                     <table id="datatable" class="table">
                     <thead class="thead-dark">
                             <tr>
-                                <th>Judul Gallery</th>                          
-                                                             
+                                <th>No</th>
+                                <th>Judul Gallery</th>                                                  
                                 <th>Foto</th>
                                 <th style="text-align: center;">Opsi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @php $no=1; @endphp
                             @foreach ($gallery as $data)
+                           
                             <tr>
+                                <td>{{$no++}}</td>
                                 <td>{{$data->judul}}</td>                   
-                                
-                              
+            
                                 <td><img src="{{asset('assets/img/ponpes/' .$data->foto. '')}}"
                                     style="width:270px; height:160px;" alt="Foto"></td>
 
-								<td style="text-align: center;">
-                                    <form action="{{route('gallery.destroy', $data->id)}}" method="post">
-                                        {{csrf_field()}}
-									<a href="{{route('gallery.edit', $data->id)}}"
-										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pencil"></i>
+                                <td style="text-align: center;">
+                                      <form action="{{route('gallery.destroy', $data->id)}}" method="post">
+                                      {{csrf_field()}}
+                                    <a href="{{route('gallery.edit', $data->id)}}"
+                                    class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pencil"></i>
                                     </a>
-										<input type="hidden" name="_method" value="DELETE">
-										<button type="submit" class="zmdi zmdi-delete  btn-rounded btn-floating btn btn-dangerbtn btn-danger btn-outline"> <i class="	fa fa-trash"></i></button>
-									</form>
-								</td>
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="zmdi zmdi-delete  btn-rounded btn-floating btn btn-dangerbtn btn-danger btn-outline"> <i class="	fa fa-trash"></i></button>
+                                  </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

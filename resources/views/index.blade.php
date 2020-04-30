@@ -48,9 +48,7 @@
     .service_area .single_service {
         background: linear-gradient(to bottom, #000000 0%, #540000 100%);    }
         
-        .oyeah{
-        background-image: url('/assets/baru/img/banner/.jpg');
-    }
+       
     .footer .socail_links ul li a {
         color: #040e27 !important;
         border: 1px solid #040e27;
@@ -76,6 +74,11 @@
     z-index: 0;
     padding-left: 29px;
     }
+    .service_area .single_service .service_content {
+    padding: 6px 50px 50px 50px;
+    margin-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
     .boxed-btn3 {
     background: #28a745;
     color: #fff;
@@ -145,8 +148,10 @@
     line-height: unset;
     margin-bottom: 18px;
 }
-
-
+.testimonial_area .single_testmonial .info {
+    padding-left: 56px;
+    padding-right: 15px;
+}
     </style>
     <style type="text/css">
         body {
@@ -178,6 +183,14 @@
     padding-top: 15px;
     padding-bottom: 48px;
 }
+p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #ffffff;
+    margin-bottom: 13px;
+    font-family: "Roboto", sans-serif;
+}
 
         </style>
         <style>
@@ -206,6 +219,9 @@ transform:scale(1.2);
 }
 </style>
 <style>
+body {
+    color: #ffffff;
+}
     .footer .footer_top .footer_widget .footer_title {
     font-size: 18px;
     font-weight: 500;
@@ -213,6 +229,10 @@ transform:scale(1.2);
     text-transform: capitalize;
     margin-bottom: 18px;
     font-family: "Roboto", sans-serif;
+}
+.footer .footer_top {
+    padding-top: 90px;
+    padding-bottom: 90px;
 }
 </style>
 <style>
@@ -232,12 +252,13 @@ transform:scale(1.2);
 </style>
 </head>
 
-<body>
+<body body onload="viewjam(); hari();">
     <!--[if lte IE 9]>  
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
     <!-- header-start -->
+   
     <header>
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
@@ -320,6 +341,7 @@ transform:scale(1.2);
         </div>
     </div>
 
+    <!-- Loading  -->
      <div id="preloader"> 
 
 <div id="loader">	   
@@ -546,7 +568,7 @@ transform:scale(1.2);
                         </div>
                         <div class="service_content">
                             <ul>
-                                <li>  {{Str::limit($data->konten, 100)}} </li>
+                                <li> &nbsp;&nbsp;&nbsp;{!!Str::limit($data->konten, 140)!!} </li>
                                
                             </ul>
                             <div class="apply_btn">
@@ -600,8 +622,17 @@ transform:scale(1.2);
                         </div>
                     </div>       
                 </div>
+                
+               
     <!-- /testimonial_area  -->
 
+<br>
+<br>
+<br>
+      <!-- Jam  -->
+    <div style="color:#000000;">Sekarang Jam : <strong><big><a id="tampiljam"></a></big></strong></div>
+    <div style="color:#000000;">Hari ini : <strong><big><a id="tampilhari"></a></big></strong></div>
+    <br>
 
     <!-- footer start -->
     <footer class="footer">
@@ -722,8 +753,8 @@ transform:scale(1.2);
     <script src="{{ asset ('assets/baru/js/jquery.validate.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/mail-script.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
-    
-    
+
+
     <script type="text/javascript">
         $(document).ready(function(){ 
             $(window).on('scroll', function() {
@@ -749,6 +780,8 @@ function action() { document.title=txt;
 txt=txt.substring(1,txt.length)+txt.charAt(0);
 refresh=setTimeout("action()",speed);}action();
 </script>
+
+  <!-- Loading JS  -->
 <script type="text/javascript">
     //<![CDATA[
     function showSite(){
@@ -760,6 +793,28 @@ refresh=setTimeout("action()",speed);}action();
         setTimeout(function(){ showSite() }, 2000);
         })
     //]]>
+</script>
+
+  <!-- Jam JS  -->
+<script>
+          function viewjam(){
+                   var jam;
+                   var jamku = new Date();//membuat objek waktu
+                   jam = "Sekarang Jam : "+jamku.getHours()+":"+jamku.getMinutes()+":"+jamku.getSeconds();//menempatkan data waktu pada variabel
+                   document.getElementById('tampiljam').innerHTML=jam;//menampilkan variabel jam pada html
+                   setTimeout('viewjam()',0);//meload function secara terus menerus
+          }
+
+var hariseminggu = new Array('Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu');
+          var bulansetahun = new Array('Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
+         
+          function hari(){
+                   var hariini;
+                   var hari = new Date();//membuat objek waktu
+                   hariini = hariseminggu[hari.getDay()]+", "+hari.getDate()+" "+bulansetahun[hari.getMonth()]+" "+hari.getFullYear();//menempatkan data waktu pada variabel
+                   document.getElementById('tampilhari').innerHTML=hariini; //menampilkan variabel hariini pada html
+                   setTimeout('hari()',300); //meload function secara terus menerus
+          }
 </script>
 
 </body>

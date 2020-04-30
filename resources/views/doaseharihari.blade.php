@@ -77,6 +77,37 @@
     margin-bottom: 18px;
     font-family: "Roboto", sans-serif;
 }
+p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #495056;
+    margin-bottom: 13px;
+    font-family: "Roboto", sans-serif;
+}
+.footer .socail_links ul li a {
+    color: #040e27 !important;
+    border: 1px solid #040e27;
+}
+h1, h2, h3, h4, h5 {
+    font-family: fantasy;
+    color: #FFEB3B;
+}
+.blog_right_sidebar .single_sidebar_widget {
+    background: #b71d12;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+.footer .footer_top {
+    padding-top: 45px;
+    padding-bottom: 129px;
+}
+.blog_right_sidebar .popular_post_widget .post_item .media-body h3 {
+    font-size: 19px;
+    line-height: 20px;
+    margin-bottom: 6px;
+    transition: all 0.3s linear;
+}
     </style>
 </head>
 
@@ -193,13 +224,12 @@
                 <div class="col-lg-4">              
                     <div class="blog_right_sidebar">             
                         <aside class="single_sidebar_widget popular_post_widget">
-                        <h3 class="widget_title"> Tokoh Islam yang Menginspirasi</h3> 
-                        @foreach($tokoh as $data)                                                        
+                        <h3 class="widget_title"> Kisah Nabi dan Sahabat</h3> 
+                        @foreach($nabi as $data)                                                        
                             <div class="media post_item">                     
-                                <img src="/assets/img/tokoh/{{ $data->foto }}" alt="Image" width="70" height="70">
                                 <div class="media-body">
-                                    <a href="/tokoh/{{ $data->slug}}">
-                                        <h3>{{$data->nama_tokoh}}</h3>
+                                    <a href="/detailkisah/{{ $data->slug}}">
+                                        <h3>{{$data->nama_nabi}}</h3>
                                     </a>
                                 </div>                          
                             </div>
@@ -273,10 +303,10 @@
                                My Profile
                             </h3>
                             <ul>
-                                <li><a href="/profil">About</a></li>
-                                <li><a href="/myprofile">Blog</a></li>
-                                <li><a href="/myprofile">Support</a></li>
-                                <li><a href="/kontak"> Contact</a></li>
+                                <li>About</li>
+                                <li>Blog</li>
+                                <li>Support</li>
+                                <li>Contact</li>
                             </ul>
                         </div>
                     </div>
@@ -293,9 +323,7 @@
                                 luckily.</p>
                         </div>
                     </div>
-                    <a href class="back-to-top hidden-md-down" style="display: block;">
-                     <i class="fa fa-angle-up fa-2x"></i>
-                    </a>
+                   
                 </div>
             </div>
            
@@ -347,5 +375,7 @@
 
         });
     </script>
+
+
 </body>
 </html>

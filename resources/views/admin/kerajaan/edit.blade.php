@@ -1,5 +1,7 @@
 @extends('backend.srtdash')
 
+<script type="text/javascript" src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -21,16 +23,22 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>Konten</label>
-                            <textarea class="form-control" id="ck" rows="8" cols="30" type="text" name="konten">{{ $kerajaan->konten }}</textarea>
+                            <label for="">Konten</label>
+
+                            <textarea class="form-control ckeditor 
+                            @error('konten') is-invalid @enderror"
+                             name="konten" id="editor1" require>
+                             {{$kerajaan->konten}}
+                             </textarea>
+                             @error('konten')
+                             <span class="invalid-feedback" role="alert">
+                                <strong>{{$message}}</strong>
+                             </span>
+                             @enderror
                         </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-outline-info">
-                            Simpan Data
-                            </button>
-                        <div class="form-group">
-                            <a href="{{ url('admin/kerajaan') }}" class="btn btn-outline-info">Kembali</a>
-                        </div>
+                        <button type="submit" name="Simpan"class="btn btn-md btn-info">Simpan</button>
+                    <a name="" id="" class="btn btn-md btn-warning" href="{{route('artikel.index')}}" role="button">Kembali</a>
+            
                     </form>
                     </div>
                 </div>

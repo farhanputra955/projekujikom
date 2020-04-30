@@ -77,6 +77,10 @@
     position: relative;
     text-transform: capitalize;
 }   
+.footer .socail_links ul li a {
+    color: #040e27 !important;
+    border: 1px solid #040e27;
+}
 .section-padding {
     padding-top: 90px;
     padding-bottom: 120px;
@@ -216,7 +220,7 @@
                             <div class="blog_details">
                                 <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
                                     <h4> <strong> {{$kerajaan->nama_kerajaan}} </strong> </h4>
-                                    <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{{$kerajaan->konten}} </p>
+                                    <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{!!$kerajaan->konten!!} </p>
                                 </div>  
                               </div>                       
                         </article>
@@ -308,10 +312,10 @@
                                My Profile
                             </h3>
                             <ul>
-                                <li><a href="/profil">About</a></li>
-                                <li><a href="/myprofile">Blog</a></li>
-                                <li><a href="/myprofile">Support</a></li>
-                                <li><a href="/kontak"> Contact</a></li>
+                                <li>About</li>
+                                <li>Blog</li>
+                                <li>Support</li>
+                                <li>Contact</li>
                             </ul>
                         </div>
                     </div>
@@ -328,9 +332,7 @@
                                 luckily.</p>
                         </div>
                     </div>
-                    <a href class="back-to-top hidden-md-down" style="display: block;">
-                     <i class="fa fa-angle-up fa-2x"></i>
-                    </a>
+                   
                 </div>
             </div>
            

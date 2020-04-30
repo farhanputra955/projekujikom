@@ -27,19 +27,14 @@
                             <tr>
                                 <td>{{$data->nama_provinsi}}</td>
                                 <td>{{$data->slug}}</td>
-								<td style="text-align: center;">
+                                <td style="text-align: center;">
                                     <form action="{{route('provinsi.destroy', $data->id)}}" method="post">
                                         {{csrf_field()}}
-                                     
 									<a href="{{route('provinsi.edit', $data->id)}}"
-										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pen"></i>
-                                    </a>   
-                                    
-                                    <form action="{{ route('provinsi.destroy', $data->id) }}" method="post">
-                                @csrf
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button class="btn btn -sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-                            </form>
+										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pencil"></i>
+                                    </a>
+										<input type="hidden" name="_method" value="DELETE">
+										<button type="submit" class="zmdi zmdi-delete  btn-rounded btn-floating btn btn-dangerbtn btn-danger btn-outline"> <i class="	fa fa-trash"></i></button>
 									</form>
 								</td>
                             </tr>

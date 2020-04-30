@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="icon" href="{{ asset ('assets/img/tokoh.png')}}">
     <title>Tokoh Islam yang Menginspirasi</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +32,7 @@
     }
  
         h1, h2, h3, h4, h5 {
-    font-family: fantasy;
+    font-family: cursive;
     color: rgb(255, 255, 255);
 }
     .footer .socail_links ul li a {
@@ -64,6 +63,9 @@
     margin-bottom: 13px;
     font-family: sans-serif;
 }
+.blog_details {
+    padding: 60px 40px 5px 30px;
+}
 .header-area .main-header-area .main-menu ul li a {
     color: #fff;
     font-size: 13px;
@@ -74,11 +76,7 @@
     font-family: "Roboto", sans-serif;
     position: relative;
     text-transform: capitalize;
-}
-.section-padding {
-    padding-top: 50px;
-    padding-bottom: 120px;
-}
+}    
 .footer .footer_top .footer_widget .footer_logo {
     font-size: 22px;
     font-weight: 400;
@@ -94,7 +92,27 @@
     margin-bottom: 18px;
     font-family: "Roboto", sans-serif;
 }
-    </style>
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 13px;
+    font-family: sans-serif;
+}
+h1, h2, h3, h4, h5 {
+    font-family: inherit;
+    color: #009688;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 3em;
+}
+.footer .socail_links ul li a {
+    color: #040e27 !important;
+    border: 1px solid #040e27;
+}
+</style>
+
 
 </head>
 
@@ -172,7 +190,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -185,7 +202,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Tokoh Islam</h3>
+                        <h3> Tokoh Islam</h3>
                     </div>
                 </div>
             </div>
@@ -195,51 +212,31 @@
 
     
     <!-- about_area_start  -->
-    <section class="blog_area section-padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 mb-5 mb-lg-0">
-                    <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            
-                            <div class="blog_details">
-                                <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
-                                    <h4> {{$tokoh->nama_tokoh}}</h4>
-                                    <img class="blog_left_sidebar" src="/assets/img/tokoh/{{ $tokoh->foto }}" alt="" >                            
-                                    <br>
-                                    <br>
-                                    <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">&nbsp;&nbsp;&nbsp;{{$tokoh->konten}} </p>
-                                   </div>  
-                              </div>                       
-                        </article>
-                    </div>
+    <section class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+        <article class="blog_item">                
+            <div class="blog_details">
+                <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
+                    <img class="blog_left_sidebar" src="/assets/img/tokoh/{{ $tokoh->foto }}" alt="" >                            
+                <br>
+                <br>
+                <h2>{{$tokoh->nama_tokoh}}</h2>
+                <p class="lead">&nbsp;&nbsp;&nbsp;{!!$tokoh->konten!!}.</p>
                 </div>
-                <div class="col-lg-4">              
-                    <div class="blog_right_sidebar"> 
-                <aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title">Kisah Nabi dan Sahabat</h4>
-                            <ul class="list cat-list">
-                            @foreach($nabi as $data)
-                                <li>
-                                    <a href="/detailkisah/{{ $data->slug}}" class="d-flex">
-                                        <p>{{$data->nama_nabi}}</p>
-                                    </a>
-                                    @endforeach
-                                </li>
-                               
-                            </ul>
-                        </aside>
-                    </div>                
-                </div>         
             </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
     <!-- about_area_end  -->
     
 
     <!-- testimonial_area  -->
   
     <!-- /testimonial_area  -->
+    
     <!-- footer start -->
     <footer class="footer">
         <div class="footer_top">
@@ -299,10 +296,10 @@
                                My Profile
                             </h3>
                             <ul>
-                                <li><a href="/profil">About</a></li>
-                                <li><a href="/myprofile">Blog</a></li>
-                                <li><a href="/myprofile">Support</a></li>
-                                <li><a href="/kontak"> Contact</a></li>
+                                <li>About</li>
+                                <li>Blog</li>
+                                <li>Support</li>
+                                <li>Contact</li>
                             </ul>
                         </div>
                     </div>
@@ -319,9 +316,7 @@
                                 luckily.</p>
                         </div>
                     </div>
-                    <a href class="back-to-top hidden-md-down" style="display: block;">
-                     <i class="fa fa-angle-up fa-2x"></i>
-                    </a>
+                   
                 </div>
             </div>
            
@@ -351,17 +346,14 @@
     <script src="{{ asset ('assets/baru/js/gijgo.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/slick.min.js')}}"></script>
 
-
-
     <!--contact js-->
     <script src="{{ asset ('assets/baru/js/contact.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/jquery.ajaxchimp.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/jquery.form.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/jquery.validate.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/mail-script.js')}}"></script>
-
-
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
+
 </body>
 
 </html>

@@ -57,6 +57,13 @@
     color: #fff;
     margin: 10px 0;
 }
+.img-fluid {
+    max-width: 75%;
+    height: auto;
+}
+.pl-68 {
+    padding-left: 10px;
+}
 .header-area .main-header-area .main-menu ul li a {
     color: #fff;
     font-size: 13px;
@@ -82,6 +89,10 @@
     text-transform: capitalize;
     margin-bottom: 18px;
     font-family: "Roboto", sans-serif;
+}
+.footer .socail_links ul li a {
+    color: #040e27 !important;
+    border: 1px solid #040e27;
 }
     </style>
 
@@ -194,7 +205,7 @@
             @foreach($nabi as $data)
                 <div class="col-lg-6 col-md-6">
                     <div class="about_img wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                    <img class="img-fluid" src="/assets/img/kisah/{{ $data->foto }}" width="200px" height="300px" alt="">
+                    <img class="img-fluid" src="/assets/img/kisah/{{ $data->foto }}" alt="Image" height="170" width="260" >
                     </div>
                     <br>
                     <br>
@@ -286,10 +297,10 @@
                                My Profile
                             </h3>
                             <ul>
-                                <li><a href="/profil">About</a></li>
-                                <li><a href="/myprofile">Blog</a></li>
-                                <li><a href="/myprofile">Support</a></li>
-                                <li><a href="/kontak"> Contact</a></li>
+                                <li>About</li>
+                                <li>Blog</li>
+                                <li>Support</li>
+                                <li>Contact</li>
                             </ul>
                         </div>
                     </div>
@@ -306,9 +317,7 @@
                                 luckily.</p>
                         </div>
                     </div>
-                    <a href class="back-to-top hidden-md-down" style="display: block;">
-                     <i class="fa fa-angle-up fa-2x"></i>
-                    </a>
+                   
                 </div>
             </div>
            
@@ -349,6 +358,8 @@
 
 
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
+    <script type="text/javascript" src='https://cdn.statically.io/gh/analisyuki/animasi/4e39258a/rainblue.js'></script>
+
 </body>
 
 </html>

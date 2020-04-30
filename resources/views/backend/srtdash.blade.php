@@ -23,11 +23,10 @@
     <link rel="stylesheet" href="{{ asset ('assets/srtdash/css/styles.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/srtdash/css/responsive.css')}}">
 
-
+    <!-- Datatable CSS -->
     <link rel="stylesheet" type="text/css" href="/DataTables/dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css">
 
-        
     <!-- modernizr css -->
     <script src="{{ asset ('assets/srtdash/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 
@@ -62,7 +61,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="index.html"><img src="{{ asset ('assets/srtdash/images/icon/logo.png')}}" alt="logo"></a>
+                    <a href=""><img src="{{ asset ('assets/srtdash/images/icon/logo.png')}}" alt="logo"></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -101,10 +100,13 @@
                             </li>
                            
                             <li><a href="{{ url('admin/kerajaan') }}"><i class="ti-map-alt"></i> <span>Kerajaan Islam</span></a></li>
+
                             <li><a href="{{ url('admin/walisongo') }}"><i class="ti-receipt"></i> <span>Wali Songo</span></a></li>
-                            
+
                             <li><a href="{{ url('admin/tokoh') }}"><i class="ti-layers-alt"></i> <span>Tokoh Islam</span></a></li>
-                        
+
+                            <li><a href="{{ url('admin/gallery') }}"><i class="ti-map-alt"></i> <span>Gallery</span></a></li>
+                            
                         </ul>
                     </nav>
                 </div>
@@ -205,15 +207,16 @@
                         <div class="breadcrumbs-area clearfix">
                             <h4 class="page-title pull-left">Dashboard</h4>
                             <ul class="breadcrumbs pull-left">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="">Home</a></li>
                                 <li><span>Dashboard</span></li>
                             </ul>
                         </div>
                     </div>
+                    
                     <div class="col-sm-6 clearfix">
                         <div class="user-profile pull-right">
                             <img class="avatar user-thumb" src="{{ asset ('assets/srtdash/images/author/avatar.png')}}" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown"> Admin Ganteng<i class="fa fa-angle-down"></i></h4>
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown"> Admin Ganteng &#x1F60E;<i class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href=""{{ route('logout')}}"" class="dropdown-item"
                                 onclick="event.preventDefault();
@@ -453,14 +456,17 @@
     <script src="{{ asset ('assets/srtdash/js/plugins.js')}}"></script>
     <script src="{{ asset ('assets/srtdash/js/scripts.js')}}"></script>
     
-  <script type="text/javascript" src="/DataTables/dataTables.js"></script>
-  <script type="text/javascript" src="/DataTables/datatables.min.js"></script>
-  <script>
-  $(document).ready(function() {
-    $('#datatable').DataTable();
-    responsive: true;
-  });
-  </script>
+   <!-- Datatable JS --> 
+        <script type="text/javascript" src="/DataTables/dataTables.js"></script>
+        <script type="text/javascript" src="/DataTables/datatables.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('#datatable').DataTable();
+            responsive: true;
+        });
+        </script>
+    <!-- End Datatable -->
+
   <script>
     window.TrackJS &&
       TrackJS.install({
@@ -468,6 +474,11 @@
         application: "argon-dashboard-free"
       });
   </script>
-</body>
 
+  <!-- Animasi -->
+  <script src="https://cdn.rawgit.com/bungfrangki/efeksalju/2a7805c7/efek-salju.js" type="text/javascript"></script>
+  <script type="text/javascript" src='https://cdn.statically.io/gh/analisyuki/animasi/4e39258a/rainblue.js'></script>
+  <!-- End Animasi -->
+
+   </body>
 </html>

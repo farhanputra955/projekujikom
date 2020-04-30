@@ -92,7 +92,27 @@
     margin-bottom: 18px;
     font-family: "Roboto", sans-serif;
 }
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 13px;
+    font-family: sans-serif;
+}
+h1, h2, h3, h4, h5 {
+    font-family: inherit;
+    color: #009688;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 3em;
+}
+.footer .socail_links ul li a {
+    color: #040e27 !important;
+    border: 1px solid #040e27;
+}
 </style>
+
 
 </head>
 
@@ -170,7 +190,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -183,7 +202,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3> Sekilas</h3>
+                        <h3>Baca Kisah</h3>
                     </div>
                 </div>
             </div>
@@ -193,27 +212,18 @@
 
     
     <!-- about_area_start  -->
-    <section class="blog_area section-padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 mb-5 mb-lg-0">
-                    <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="/assets/img/kisah/{{ $nabi->foto }}" alt="">
-                            </div>
-                            <div class="blog_details">
-                                <div class="section_title wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".3s">
-                                    <h4> <strong> {{$nabi->nama_nabi}} </strong> </h4>
-                                    <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">{!!$nabi->konten!!} </p>
-                                </div>  
-                              </div>                       
-                        </article>
-                    </div>
-                </div>
-            </div>
+    <section class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+        <br>
+        <br>
+          <h2>{{$nabi->nama_nabi}}</h2>
+          <p class="lead">{!!$nabi->konten!!}.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
     <!-- about_area_end  -->
     
 
@@ -280,10 +290,10 @@
                                My Profile
                             </h3>
                             <ul>
-                                <li><a href="/profil">About</a></li>
-                                <li><a href="/myprofile">Blog</a></li>
-                                <li><a href="/myprofile">Support</a></li>
-                                <li><a href="/kontak"> Contact</a></li>
+                                <li>About</li>
+                                <li>Blog</li>
+                                <li>Support</li>
+                                <li>Contact</li>
                             </ul>
                         </div>
                     </div>
@@ -300,9 +310,7 @@
                                 luckily.</p>
                         </div>
                     </div>
-                    <a href class="back-to-top hidden-md-down" style="display: block;">
-                     <i class="fa fa-angle-up fa-2x"></i>
-                    </a>
+                   
                 </div>
             </div>
            
@@ -332,17 +340,14 @@
     <script src="{{ asset ('assets/baru/js/gijgo.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/slick.min.js')}}"></script>
 
-
-
     <!--contact js-->
     <script src="{{ asset ('assets/baru/js/contact.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/jquery.ajaxchimp.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/jquery.form.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/jquery.validate.min.js')}}"></script>
     <script src="{{ asset ('assets/baru/js/mail-script.js')}}"></script>
-
-
     <script src="{{ asset ('assets/baru/js/main.js')}}"></script>
+
 </body>
 
 </html>

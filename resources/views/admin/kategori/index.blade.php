@@ -25,18 +25,15 @@
                             <tr>
                                 <td>{{$data->nama_kategori}}</td>
                                 <td>{{$data->slug}}</td>
-								<td style="text-align: center;">
+
+                                <td style="text-align: center;">
                                     <form action="{{route('kategori.destroy', $data->id)}}" method="post">
                                         {{csrf_field()}}
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<a href="{{route('kategori.edit', $data->id)}}"
-										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> Edit
+										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pencil"></i>
                                     </a>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="{{route('kategori.show', $data->id)}}"
-										class="zmdi zmdi-eye btn btn-primary btn-rounded btn-floating btn-outline"> Show
-                                    </a >
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<input type="hidden" name="_method" value="DELETE">
+										<button type="submit" class="zmdi zmdi-delete  btn-rounded btn-floating btn btn-dangerbtn btn-danger btn-outline"> <i class="	fa fa-trash"></i></button>
 									</form>
 								</td>
                             </tr>

@@ -30,18 +30,11 @@
 								<td style="text-align: center;">
                                     <form action="{{route('kisah.destroy', $data->id)}}" method="post">
                                         {{csrf_field()}}
-                                     
 									<a href="{{route('kisah.edit', $data->id)}}"
-										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pen"></i>
-                                    </a>   
-                                    <a href="{{route('kisah.show', $data->id)}}"
-										class="zmdi zmdi-eye btn btn-primary btn-rounded btn-floating btn-outline"> <i class="	fa fa-eye"></i> 
-                                    </a >
-                                    <form action="{{ route('kisah.destroy', $data->id) }}" method="post">
-                                @csrf
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button class="btn btn -sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-                            </form>
+										class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline"> <i class="	fa fa-pencil"></i>
+                                    </a>
+										<input type="hidden" name="_method" value="DELETE">
+										<button type="submit" class="zmdi zmdi-delete  btn-rounded btn-floating btn btn-dangerbtn btn-danger btn-outline"> <i class="	fa fa-trash"></i></button>
 									</form>
 								</td>
                             </tr>
