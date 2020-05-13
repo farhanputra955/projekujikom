@@ -252,7 +252,7 @@ body {
 </style>
 </head>
 
-<body body onload="viewjam(); hari();">
+<body >
     <!--[if lte IE 9]>  
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -629,10 +629,7 @@ body {
 <br>
 <br>
 <br>
-      <!-- Jam  -->
-    <div style="color:#000000;">Sekarang Jam : <strong><big><a id="tampiljam"></a></big></strong></div>
-    <div style="color:#000000;">Hari ini : <strong><big><a id="tampilhari"></a></big></strong></div>
-    <br>
+
 
     <!-- footer start -->
     <footer class="footer">
@@ -771,15 +768,15 @@ body {
             });
         });
         </script>
-        
+        <!-- Judul Bergerak -->
         <script language='JavaScript'>
-var txt="Pondok Pesantren Modern & Terbesar di Indonesia ";
-var speed=200;
-var refresh=null;
-function action() { document.title=txt;
-txt=txt.substring(1,txt.length)+txt.charAt(0);
-refresh=setTimeout("action()",speed);}action();
-</script>
+        var txt="Pondok Pesantren Modern & Terbesar di Indonesia ";
+        var speed=200;
+        var refresh=null;
+        function action() { document.title=txt;
+        txt=txt.substring(1,txt.length)+txt.charAt(0);
+        refresh=setTimeout("action()",speed);}action();
+        </script>
 
   <!-- Loading JS  -->
 <script type="text/javascript">
@@ -795,27 +792,6 @@ refresh=setTimeout("action()",speed);}action();
     //]]>
 </script>
 
-  <!-- Jam JS  -->
-<script>
-          function viewjam(){
-                   var jam;
-                   var jamku = new Date();//membuat objek waktu
-                   jam = "Sekarang Jam : "+jamku.getHours()+":"+jamku.getMinutes()+":"+jamku.getSeconds();//menempatkan data waktu pada variabel
-                   document.getElementById('tampiljam').innerHTML=jam;//menampilkan variabel jam pada html
-                   setTimeout('viewjam()',0);//meload function secara terus menerus
-          }
-
-var hariseminggu = new Array('Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu');
-          var bulansetahun = new Array('Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
-         
-          function hari(){
-                   var hariini;
-                   var hari = new Date();//membuat objek waktu
-                   hariini = hariseminggu[hari.getDay()]+", "+hari.getDate()+" "+bulansetahun[hari.getMonth()]+" "+hari.getFullYear();//menempatkan data waktu pada variabel
-                   document.getElementById('tampilhari').innerHTML=hariini; //menampilkan variabel hariini pada html
-                   setTimeout('hari()',300); //meload function secara terus menerus
-          }
-</script>
 
 </body>
 </html>

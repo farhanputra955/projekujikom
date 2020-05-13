@@ -14,14 +14,20 @@ use App\Tokoh;
 use App\Doa;
 use App\Doaseharihari;
 use App\More;
+use App\Blog;
+use App\Aboutus;
+use App\Singlepost;
 use App\DoaHarian;
 use App\Kerajaan;
 use App\WaliSongo;
 use App\SendEmail;
 use App\Mail\SendMail;
 use App\Kisah;
+use App\Contact;
+use App\Tes;
 use App\DetailKisah;
 use App\Nabi;
+use App\Fashionpria;
 use App\Myprofile;
 use DB;
 
@@ -221,6 +227,30 @@ class FrontendController extends Controller
             $doaseharihari = Doaseharihari::take(10)->get();
             $more = More::take(10)->get();
             return view('tokoh',compact('tokoh','provinsi','doaseharihari','more','kisah','nabi'));
+        }
+
+        public function blog(){
+            return view('blog');
+        }
+
+        public function singlepost(){
+            return view('singlepost');
+        }
+
+        public function aboutus(){
+            return view('aboutus');
+        }
+
+        public function tes(){
+            return view('tes');
+        }
+
+        public function fashionpria(){
+            return view('fashionpria');
+        }
+
+        public function contact(){
+            return view('contact');
         }
 
         public function walisongo($walisongo){

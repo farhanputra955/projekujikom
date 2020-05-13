@@ -23,6 +23,12 @@
     route::get('/detail/{foto}', 'FrontendController@detail');
     Route::get('/foto', 'FrontendController@foto');
     Route::get('/gallery', 'FrontendController@gallery');
+    Route::get('/fashionpria', 'FrontendController@fashionpria');
+    Route::get('/blog', 'FrontendController@blog');
+    Route::get('/aboutus', 'FrontendController@aboutus');
+    Route::get('/contact', 'FrontendController@contact');
+    Route::get('/tes', 'FrontendController@tes');
+    Route::get('/singlepost', 'FrontendController@singlepost');
     Route::get('/contact', 'FrontendController@contact');
     Route::get('/doaharian/{doaharian}', 'FrontendController@doaharian'); 
     Route::get('/tokoh/{tokoh}', 'FrontendController@tokoh');

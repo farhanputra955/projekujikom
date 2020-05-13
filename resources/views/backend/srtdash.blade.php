@@ -39,7 +39,7 @@
 .card-header {
     padding: 0.99rem 1.25rem;
     margin-bottom: 1px;
-    background-color: cadetblue;
+    background-color: #735c98;
     border-bottom: 0px solid rgba(0,0,0,.125);
 }
     </style>
